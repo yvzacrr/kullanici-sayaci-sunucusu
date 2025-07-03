@@ -47,16 +47,13 @@ function broadcastActiveUserList() {
 function fetchSkinPrices() {
     console.log("[Fiyatlar] Lokal dosyadan (prices.json) okunuyor...");
     try {
-        // Sunucunun çalıştığı ana dizini bul ve prices.json dosyasının tam yolunu oluştur
         const filePath = path.resolve(process.cwd(), 'prices.json');
-        // Dosyayı oku
         const fileContent = fs.readFileSync(filePath, 'utf-8');
-        // Dosyanın içeriğini JSON olarak işle ve hafızaya al
         cachedPrices = JSON.parse(fileContent);
         console.log(`[Fiyatlar] Başarıyla lokal dosyadan ${Object.keys(cachedPrices).length} adet fiyat okundu.`);
     } catch (error) {
         console.error('[HATA] prices.json dosyası okunurken hata oluştu:', error.message);
-        cachedPrices = {}; // Hata olursa fiyatları boşalt ki site çökmesin.
+        cachedPrices = {};
     }
 }
 
