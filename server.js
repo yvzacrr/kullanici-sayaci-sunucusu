@@ -1,5 +1,6 @@
 // server.js (SIFIRDAN YAZILMIŞ, TEMİZ VE %100 DOĞRU FİNAL VERSİYON)
-
+import fs from 'fs';       // Dosya okuma/yazma işlemleri için
+import path from 'path';     // Dosya yollarını doğru oluşturmak için
 import { WebSocketServer } from 'ws';
 import axios from 'axios';
 import cron from 'node-cron';
@@ -39,32 +40,24 @@ function broadcastActiveUserList() {
 
 // ESKİ fetchSkinPrices FONKSİYONUNU SİL VE BUNU YAPIŞTIR
 // ESKİ fetchSkinPrices FONKSİYONUNU SİL VE BUNU YAPIŞTIR
-async function fetchSkinPrices() {
-    console.log("[Fiyatlar] Yeni API (csgobackpack.net) üzerinden fiyatlar çekilmeye başlandı...");
+function fetchSkinPrices() {
+    console.log("[Fiyatlar] Lokal dosyadan (prices.json) okunuyor...");
     try {
-        const response = await axios.get('http://csgobackpack.net/api/GetItemsList/v2/');
-
-        if (response.data && response.data.success) {
-            cachedPrices = response.data.items_list;
-            console.log(`[Fiyatlar] Başarıyla ${Object.keys(cachedPrices).length} adet detaylı eşya verisi çekildi.`);
-            
-            const priceMessage = JSON.stringify({ type: 'priceUpdate', data: cachedPrices });
-            broadcastToAll(priceMessage);
-        } else {
-            console.error("[HATA] Yeni API'den gelen veride sorun var.");
-        }
+        // Sunucunun çalıştığı ana dizini bul ve prices.json dosyasının tam yolunu oluştur
+        const filePath = path.resolve(process.cwd(), 'prices.json');
+        // Dosyayı oku
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        // Dosyanın içeriğini JSON olarak işle ve hafızaya al
+        cachedPrices = JSON.parse(fileContent);
+        console.log(`[Fiyatlar] Başarıyla lokal dosyadan ${Object.keys(cachedPrices).length} adet fiyat okundu.`);
     } catch (error) {
-        console.error('[HATA] Yeni API ile fiyatlar çekilirken bir hata oluştu:', error.message);
+        console.error('[HATA] prices.json dosyası okunurken hata oluştu:', error.message);
+        cachedPrices = {}; // Hata olursa fiyatları boşalt ki site çökmesin.
     }
 }
 
 // --- SUNUCU OLAYLARI ---
 
-// Her gün sabah 5'te fiyatları güncelle
-cron.schedule('0 5 * * *', () => {
-    console.log('[Cron] Zamanlanmış görev tetiklendi: Fiyatlar güncellenecek.');
-    fetchSkinPrices();
-}, { timezone: "Europe/Istanbul" });
 
 // Yeni bir kullanıcı bağlandığında...
 wss.on('connection', (ws) => {
