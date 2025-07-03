@@ -1,4 +1,6 @@
 // server.js (SIFIRDAN YAZILMIŞ, TEMİZ VE %100 DOĞRU FİNAL VERSİYON)
+import express from 'express';
+import http from 'http';
 import fs from 'fs';       // Dosya okuma/yazma işlemleri için
 import path from 'path';     // Dosya yollarını doğru oluşturmak için
 import { WebSocketServer } from 'ws';
@@ -6,8 +8,10 @@ import axios from 'axios';
 import cron from 'node-cron';
 
 const PORT = process.env.PORT || 8080;
-const wss = new WebSocketServer({ port: PORT });
-
+// ESKİ const wss = ... satırını silip bu bloğu yapıştır
+const app = express();
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server });
 let cachedPrices = {};
 console.log("Sunucu başlatılıyor...");
 
@@ -92,8 +96,20 @@ wss.on('connection', (ws) => {
     ws.on('error', (error) => console.error('[HATA] WebSocket hatası:', error));
 });
 
+// --- Bu kodu console.log(...) satırının hemen üstüne ekle ---
 
-// --- SUNUCUYU BAŞLATMA ---
-console.log(`WebSocket sunucusu ${PORT} portunda dinlemeye başladı.`);
-// Sunucu ilk açıldığında fiyatları bir kere çekmeyi dene
-fetchSkinPrices();
+// Proje klasörünü public olarak ayarla ki simulator.html'i bulabilsin
+app.use(express.static(process.cwd()));
+
+// Ana adrese ('/') bir istek geldiğinde, simulator.html dosyasını gönder
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(process.cwd(), 'simulator.html'));
+});
+
+
+// ESKİ console.log(...) ve fetchSkinPrices() satırlarını sil ve bunu yapıştır
+server.listen(PORT, () => {
+    console.log(`Sunucu ve WebSocket ${PORT} portunda çalışmaya başladı.`);
+    // Sunucu başladıktan sonra fiyatları çek
+    fetchSkinPrices();
+});
