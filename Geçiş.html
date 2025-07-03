@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - Kasa Simülatörü</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('https://i.imgur.com/f4SkInb.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-900">
+
+    <div class="form-container w-full max-w-md p-8 rounded-2xl shadow-lg">
+        <h1 class="text-4xl font-bold mb-6 text-white text-center">Welcome To The Case Simulator</h1>
+        
+        <div class="mb-4">
+            <label for="username" class="block text-gray-300 text-sm font-bold mb-2">Username:</label>
+            <input type="text" id="username" class="shadow appearance-none border border-gray-500 rounded w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+        <div class="mb-6">
+            <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password:</label>
+            <input type="password" id="password" class="shadow appearance-none border border-gray-500 rounded w-full py-2 px-3 bg-gray-700 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <button id="loginButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors">Log in</button>
+            <button id="registerButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors">Sign up</button>
+            <button id="guestButton" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors mt-4">Continue as a Guest</button>
+        </div>
+        <p id="message" class="text-center text-red-400 mt-4 h-4"></p>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+        const registerButton = document.getElementById('registerButton');
+        const guestButton = document.getElementById('guestButton');
+        const message = document.getElementById('message');
+
+        function getUsers() {
+            // localStorage'dan kullanıcıları al, eğer yoksa boş bir obje döndür.
+            return JSON.parse(localStorage.getItem('simulator_users')) || {};
+        }
+
+        function saveUsers(users) {
+            // Kullanıcılar objesini localStorage'a kaydet.
+            localStorage.setItem('simulator_users', JSON.stringify(users));
+        }
+
+        registerButton.addEventListener('click', () => {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!username || !password) {
+                message.textContent = 'Kullanıcı adı ve şifre boş bırakılamaz!';
+                return;
+            }
+
+            const users = getUsers();
+            if (users[username]) {
+                message.textContent = 'Bu kullanıcı adı zaten alınmış!';
+                return;
+            }
+            
+            // Yeni kullanıcıyı varsayılan verilerle oluştur
+            users[username] = {
+                password: password, // Gerçek bir projede şifre hash'lenmeli!
+                balance: 30.00,
+                inventory: []
+            };
+
+            saveUsers(users);
+            message.textContent = 'Kayıt başarılı! Yönlendiriliyor...';
+            
+            // Aktif kullanıcıyı oturum hafızasına kaydet ve yönlendir
+            sessionStorage.setItem('active_user', username);
+            window.location.href = 'index.html';
+        });
+
+        loginButton.addEventListener('click', () => {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!username || !password) {
+                message.textContent = 'Kullanıcı adı ve şifre boş bırakılamaz!';
+                return;
+            }
+
+            const users = getUsers();
+            const user = users[username];
+
+            if (!user || user.password !== password) {
+                message.textContent = 'Kullanıcı adı veya şifre hatalı!';
+                return;
+            }
+            
+            message.textContent = 'Giriş başarılı! Yönlendiriliyor...';
+            // Aktif kullanıcıyı oturum hafızasına kaydet ve yönlendir
+            sessionStorage.setItem('active_user', username);
+            window.location.href = 'index.html';
+        });
+
+        guestButton.addEventListener('click', () => {
+            // Misafir kullanıcısı için özel bir anahtar kullan
+            sessionStorage.setItem('active_user', 'guest');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
