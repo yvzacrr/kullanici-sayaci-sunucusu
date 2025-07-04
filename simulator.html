@@ -3963,13 +3963,9 @@ function openCase(unlockButtonElement) {
 
 // "Tekrar Dene" veya "Home" butonları bu fonksiyonu çağırır
 function resetToMenu() {
-    appState = 'IDLE'; // <-- DURUMU SIFIRLA
-    currentlySelectedCase = null; 
-
-    inventorySection.classList.add('hidden'); 
-    faqSection.classList.remove('hidden');    
-    
-    createCaseMenu(); 
+    currentlySelectedCase = null;
+    // DOĞRUDAN ANA BÖLÜM GÖSTERME FONKSİYONUNU ÇAĞIR
+    showSection('selection');
 }
 
         function filterCases() {
@@ -4271,7 +4267,7 @@ function showMultiItemModal(skins) {
     if (skins.length === 5) {
         // [DEĞİŞİKLİK 1]: justify-center'ı justify-between ile değiştirdik.
         // Bu, sol ve sağ sütunları ekranın kenarlarına yaslayacak.
-        itemsContainer.className = 'flex flex-row justify-center items-center w-full'; // Kenarlara boşluk için padding ekledik (px-8)
+        itemsContainer.className = 'flex flex-row justify-between items-center w-full'; // Kenarlara boşluk için padding ekledik (px-8)
 
         // Sütunlarımızı oluşturalım
         const leftColumn = document.createElement('div');
@@ -4498,7 +4494,6 @@ window.onload = () => {
 
     // --- SAYFAYI BAŞLAT ---
     updateBalanceDisplay();
-    createCaseMenu();
     connectWebSocket();
 };
 // ===== BAŞLANGIÇ KODUNUN SONU =====
