@@ -1,23 +1,24 @@
-// server.js (SIFIRDAN YAZILMIŞ, TEMİZ VE %100 DOĞRU FİNAL VERSİYON)
+// server.js (Temizlenmiş ve %100 hatasız)
+
 import express from 'express';
 import http from 'http';
-import fs from 'fs';       // Dosya okuma/yazma işlemleri için
-import path from 'path';     // Dosya yollarını doğru oluşturmak için
-import { WebSocketServer } from 'ws';
+import fs from 'fs';
+import path from 'path';
 import axios from 'axios';
 import cron from 'node-cron';
+import { exec } from 'child_process';
+import { WebSocketServer } from 'ws';
 
 const PORT = process.env.PORT || 8080;
-// ESKİ const wss = ... satırını silip bu bloğu yapıştır
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 let cachedPrices = {};
+
 console.log("Sunucu başlatılıyor...");
 
 // --- YARDIMCI FONKSİYONLAR ---
 
-// Tüm bağlı istemcilere mesaj gönderen ana fonksiyon
 function broadcastToAll(message) {
     wss.clients.forEach(client => {
         if (client.readyState === 1) {
@@ -26,7 +27,6 @@ function broadcastToAll(message) {
     });
 }
 
-// Aktif kullanıcı listesini güncelleyip herkese gönderen fonksiyon
 function broadcastActiveUserList() {
     const usernames = [];
     wss.clients.forEach(client => {
@@ -42,8 +42,6 @@ function broadcastActiveUserList() {
     broadcastToAll(message);
 }
 
-// ESKİ fetchSkinPrices FONKSİYONUNU SİL VE BUNU YAPIŞTIR
-// ESKİ fetchSkinPrices FONKSİYONUNU SİL VE BUNU YAPIŞTIR
 function fetchSkinPrices() {
     console.log("[Fiyatlar] Lokal dosyadan (prices.json) okunuyor...");
     try {
@@ -57,56 +55,69 @@ function fetchSkinPrices() {
     }
 }
 
-// --- SUNUCU OLAYLARI ---
+// --- WebSocket Olayları ---
 
-
-// Yeni bir kullanıcı bağlandığında...
 wss.on('connection', (ws) => {
     console.log(`[Bağlantı] Yeni bir kullanıcı bağlandı. Toplam: ${wss.clients.size}`);
 
-    // Yeni bağlanan kullanıcıya, sunucuda kayıtlı olan son fiyatları hemen gönder.
     if (Object.keys(cachedPrices).length > 0) {
         ws.send(JSON.stringify({ type: 'priceUpdate', data: cachedPrices }));
     }
 
-    // Kullanıcıdan gelen mesajları dinle
     ws.on('message', (message) => {
         try {
             const data = JSON.parse(message);
-            // Eğer mesaj 'register' tipindeyse ve kullanıcı adı içeriyorsa...
             if (data.type === 'register' && data.username) {
-                ws.username = data.username; // Kullanıcı adını bu bağlantıya özel olarak ata
+                ws.username = data.username;
                 console.log(`[Kayıt] ${ws.username} kullanıcısı kayıt oldu.`);
-                broadcastActiveUserList(); // Yeni kullanıcı listesini herkese duyur
+                broadcastActiveUserList();
             }
         } catch (e) {
             console.error('[HATA] Gelen mesaj işlenemedi:', e);
         }
     });
 
-    // Bir kullanıcı bağlantıyı kapattığında...
     ws.on('close', () => {
         console.log(`[Bağlantı] ${ws.username || 'Bilinmeyen kullanıcı'} ayrıldı.`);
-        broadcastActiveUserList(); // Bir kullanıcı ayrıldığı için listeyi tekrar herkese gönder
+        broadcastActiveUserList();
     });
 
     ws.on('error', (error) => console.error('[HATA] WebSocket hatası:', error));
 });
 
-// --- Bu kodu console.log(...) satırının hemen üstüne ekle ---
+// --- Static Dosya Ayarları ---
 
-// Proje klasörünü public olarak ayarla ki simulator.html'i bulabilsin
 app.use(express.static(process.cwd()));
-
-// Ana adrese ('/') bir istek geldiğinde, simulator.html dosyasını gönder
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(process.cwd(), 'simulator.html'));
 });
 
+// --- Sunucuyu Başlat ---
 
-// ESKİ console.log(...) ve fetchSkinPrices() satırlarını sil ve bunu yapıştır
 server.listen(PORT, () => {
     console.log(`Sunucu ve WebSocket ${PORT} portunda çalışmaya başladı.`);
-    // Sunucu başladıktan sonra fiyatları çek
     fetchSkinPrices();
+});
+
+// --- CRON sistemi ile fiyat güncelleme ---
+
+let currentStart = 0;
+const BATCH_SIZE = 500;
+
+cron.schedule('0 */2 * * *', () => {
+    const fileName = `part_${currentStart}_${currentStart + BATCH_SIZE}.json`;
+    if (fs.existsSync(fileName)) {
+        console.log(`[CRON] ${fileName} zaten var, sıradaki parçaya geçiliyor...`);
+        currentStart += BATCH_SIZE;
+    }
+
+    console.log(`[CRON] Fiyat çekimi başlatılıyor: ${currentStart} - ${currentStart + BATCH_SIZE}`);
+    exec(`node steamGunceller_parca.js ${currentStart} ${BATCH_SIZE}`, (err, stdout, stderr) => {
+        if (err) {
+            console.error(`[CRON] HATA: ${stderr}`);
+        } else {
+            console.log(`[CRON] Tamamlandı: ${stdout}`);
+            currentStart += BATCH_SIZE;
+        }
+    });
 });

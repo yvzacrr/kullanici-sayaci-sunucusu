@@ -4,9 +4,8 @@ const userCountElement = document.getElementById('active-user-count');
 // Sunucuya bağlanmayı ve bağlantı koptuğunda tekrar denemeyi sağlayan fonksiyon.
 function connectWebSocket() {
     // ÖNEMLİ: Bu adres, son adımda canlı sunucu adresinizle değiştirilecek.
-    const socketURL = 'wss://kullanici-sayaci-sunucusu.onrender.com'; 
-
-    const socket = new WebSocket(socketURL);
+const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
+const socket = new WebSocket(socketURL);
 
     // Sunucuya başarıyla bağlanıldığında çalışır.
     socket.onopen = () => {

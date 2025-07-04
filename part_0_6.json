@@ -1,0 +1,122 @@
+{
+  "AK-47 | Redline (Factory New)": {
+    "lowest": null,
+    "median": null
+  },
+  "AK-47 | Redline (Minimal Wear)": {
+    "lowest": null,
+    "median": "$350.21"
+  },
+  "AK-47 | Redline (Field-Tested)": {
+    "lowest": "$50.27",
+    "median": "$50.28"
+  },
+  "AK-47 | Redline (Well-Worn)": {
+    "lowest": "$38.98",
+    "median": "$40.33"
+  },
+  "AK-47 | Redline (Battle-Scarred)": {
+    "lowest": null,
+    "median": "$38.80"
+  },
+  "M4A4 | Temukau (Factory New)": {
+    "lowest": "$150.84",
+    "median": "$149.16"
+  },
+  "M4A4 | Temukau (Minimal Wear)": {
+    "lowest": "$52.37",
+    "median": "$51.96"
+  },
+  "M4A4 | Temukau (Field-Tested)": {
+    "lowest": null,
+    "median": "$13.41"
+  },
+  "M4A4 | Temukau (Well-Worn)": {
+    "lowest": "$12.26",
+    "median": "$12.77"
+  },
+  "M4A4 | Temukau (Battle-Scarred)": {
+    "lowest": "$8.11",
+    "median": "$8.13"
+  },
+  "AWP | Dragon Lore (Factory New)": {
+    "lowest": null,
+    "median": null
+  },
+  "AWP | Dragon Lore (Minimal Wear)": {
+    "lowest": null,
+    "median": null
+  },
+  "AWP | Dragon Lore (Field-Tested)": {
+    "lowest": null,
+    "median": null
+  },
+  "AWP | Dragon Lore (Well-Worn)": {
+    "lowest": null,
+    "median": null
+  },
+  "AWP | Dragon Lore (Battle-Scarred)": {
+    "lowest": null,
+    "median": null
+  },
+  "Desert Eagle | Blaze (Factory New)": {
+    "lowest": null,
+    "median": null
+  },
+  "Desert Eagle | Blaze (Minimal Wear)": {
+    "lowest": "$1,633.39",
+    "median": null
+  },
+  "Desert Eagle | Blaze (Field-Tested)": {
+    "lowest": null,
+    "median": null
+  },
+  "Desert Eagle | Blaze (Well-Worn)": {
+    "lowest": null,
+    "median": null
+  },
+  "Desert Eagle | Blaze (Battle-Scarred)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Karambit | Doppler (Factory New)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Karambit | Doppler (Minimal Wear)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Karambit | Doppler (Field-Tested)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Karambit | Doppler (Well-Worn)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Karambit | Doppler (Battle-Scarred)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Sport Gloves | Pandora's Box (Factory New)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Sport Gloves | Pandora's Box (Minimal Wear)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Sport Gloves | Pandora's Box (Field-Tested)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Sport Gloves | Pandora's Box (Well-Worn)": {
+    "lowest": null,
+    "median": null
+  },
+  "★ Sport Gloves | Pandora's Box (Battle-Scarred)": {
+    "lowest": null,
+    "median": null
+  }
+}
