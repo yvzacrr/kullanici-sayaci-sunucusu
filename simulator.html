@@ -819,7 +819,9 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
         window.location.href = 'Geçiş.html';
     }
        
-    let tumFiyatlar = {}; // Sunucudan gelen tüm fiyatları bu objede saklayacağız
+        // --- 1. GENEL DEĞİŞKENLER ---
+    let tumFiyatlar = {};
+    const caseSelectionMenu = document.getElementById('caseSelectionMenu');
   
     // ===== YENİ: DİL ÇEVİRİ SÖZLÜĞÜ =====
 const translations = {
@@ -3570,28 +3572,24 @@ function showSection(sectionName) {
         ];
 
         // Function to create the case menu
-        function createCaseMenu() {
-            caseSelectionMenu.innerHTML = ''; // Clear previous cases
-            allCases.forEach(caseData => {
-                const gridCellDiv = document.createElement('div');
-                gridCellDiv.classList.add('case-item-container');
-               // ===== YUKARIDAKİ ESKİ KODU SİLİP BUNU YAPIŞTIR =====
-gridCellDiv.innerHTML = `
-    <div class="case-item">
-        <img src="${caseData.image}" alt="${caseData.name}" onerror="this.onerror=null; this.src='https://placehold.co/90x90/555555/ffffff?text=Resim+Yok';">
-        <div class="case-price-overlay">${caseData.price}</div>
-    </div>
-    <p class="case-name">${caseData.name}</p>
-`;
-                // Add click event to each case item
-                gridCellDiv.addEventListener('click', () => {
-                    console.log(`[DEBUG] Click event registered for case: ${caseData.name}`);
-                    selectCase(caseData);
-                });
-                caseSelectionMenu.appendChild(gridCellDiv);
-            });
-            showSection('selection'); // Show the case selection menu
-        }
+ // Kasa menüsünü ekrana çizen fonksiyon
+    function createCaseMenu() {
+        caseSelectionMenu.innerHTML = ''; // Menüyü temizle
+        allCases.forEach(caseData => {
+            // Fiyatı, global fiyat listemizden almayı dene
+            const casePriceInfo = tumFiyatlar[caseData.name];
+            let displayPrice = "... $"; // Varsayılan fiyat
+            if (casePriceInfo && casePriceInfo.price && casePriceInfo.price['7_days']) {
+                displayPrice = `${parseFloat(casePriceInfo.price['7_days'].average).toFixed(2)} $`;
+            }
+
+            const caseDiv = document.createElement('div');
+            caseDiv.className = 'case-item';
+            caseDiv.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}"><p class="case-name">${caseData.name}</p><div class="case-price-overlay">${displayPrice}</div>`;
+            caseDiv.addEventListener('click', () => selectCase(caseData));
+            caseSelectionMenu.appendChild(caseDiv);
+        });
+    }
 
         // Function to run when a case is selected
 // ===== ESKİ selectCase FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR =====
@@ -3904,44 +3902,47 @@ function displayPossibleDrops(caseId) {
 // ===== ESKİ openCase FONKSİYONUNU SİL VE BUNU YAPIŞTIR =====
 // ===== ESKİ openCase FONKSİYONUNU SİL VE BUNU YAPIŞTIR =====
 
+// ESKİ openCase FONKSİYONUNU TAMAMEN SİLİP BUNU YAPIŞTIR
 function openCase(unlockButtonElement) {
+    // --- TEST KONTROLÜ ---
+    // Burayı `true` yaparsan, her zaman aşağıdaki test desenini açar.
+    // Burayı `false` yaparsan, normal rastgele kasa açar.
+    const isTestMode = true; 
+    // ---------------------
+
+    console.log(`[Kasa Açılıyor] Test modu aktif mi? ${isTestMode}`);
+
+    // Eğer test modu aktifse, diğer işlemleri atlayıp doğrudan test desenini gösterelim
+    if (isTestMode) {
+        console.log("[Test Modu] Aktif. Manuel test deseni oluşturuluyor...");
+        const testSkin = {
+            name: 'AK-47 | Redline',
+            rarity: 'Classified',
+            image: 'https://www.csgodatabase.com/images/skins/webp/AK-47_Redline.webpv',
+            color: 'text-pink-400',
+            caseOrigin: 'Test Kasası',
+            wear: { name: 'Field-Tested', abbr: 'FT' },
+            float: 0.25123456
+        };
+        // Test desenini göstermek için modal fonksiyonunu çağır
+        showMultiItemModal([testSkin]); // Fonksiyon bir dizi beklediği için köşeli parantez içinde yolluyoruz
+        return; // Fonksiyonun geri kalanını çalıştırmasını engelle.
+    }
+
+
+    // ***** AŞAĞIDAKİ KOD SADECE isTestMode = false İSE ÇALIŞIR *****
+    
     if (!currentlySelectedCase) return;
 
     unlockButtonElement.disabled = true;
     unlockButtonElement.textContent = 'Açılıyor...';
 
+    // Bakiye ve istatistik işlemleri...
     const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
-    if (isNaN(casePrice)) {
-        alert('Kasa fiyatı geçersiz!');
-        unlockButtonElement.disabled = false;
-        unlockButtonElement.textContent = 'Kasayı Aç';
-        return;
-    }
-
     const totalCost = casePrice * numberOfCasesToOpen;
     userBalance -= totalCost;
     updateBalanceDisplay();
-
-    // ==========================================================
-    // ===== YENİ İSTATİSTİK GÜNCELLEME KODLARI BAŞLANGICI =====
-    // ==========================================================
-
-    // En Düşük & En Yüksek Bakiye Takibi
-    if (userBalance < userStats.lowestBalance) {
-        userStats.lowestBalance = userBalance;
-    }
-    if (userBalance > userStats.highestBalance) {
-        userStats.highestBalance = userBalance;
-    }
-
-    // Açılan Kasa Sayısını Takip Etme
-    const caseName = currentlySelectedCase.name;
-    // Eğer bu kasa daha önce açılmadıysa sayacı başlat, açıldıysa 1 artır.
-    userStats.openedCases[caseName] = (userStats.openedCases[caseName] || 0) + numberOfCasesToOpen;
-
-    // ========================================================
-    // ===== YENİ İSTATİSTİK GÜNCELLEME KODLARI BİTİŞİ =====
-    // ========================================================
+    //... (diğer istatistik kodların)
 
     setTimeout(() => {
         let droppedSkins = [];
@@ -3949,22 +3950,13 @@ function openCase(unlockButtonElement) {
             const droppedSkin = getRandomSkin(currentlySelectedCase.id);
             droppedSkin.caseOrigin = currentlySelectedCase.name;
             droppedSkins.push(droppedSkin);
-
-            // ===== YENİ NADİRLİK SAYACI =====
-            // Her düşen desenin nadirliğini say
-            const rarity = droppedSkin.rarity;
-            userStats.rarityCounts[rarity] = (userStats.rarityCounts[rarity] || 0) + 1;
-            // ===============================
         }
-
         userInventory.push(...droppedSkins);
-        saveUserData(); // Artık bu fonksiyon tüm yeni istatistikleri de kaydediyor.
-
+        saveUserData();
         showMultiItemModal(droppedSkins);
         
         unlockButtonElement.disabled = false;
         unlockButtonElement.textContent = 'Kasayı Aç';
-
     }, 1500);
 }
 
@@ -4551,60 +4543,29 @@ closeEasterEggButton.addEventListener('click', () => {
 // ===== YUKARIDA SİLDİĞİNİZ BÖLÜMÜN YERİNE BU GELECEK =====
 
 // Sunucu adresi. Render.com üzerinde olduğu için bu doğru.
-const socketUrl = 'wss://kullanici-sayaci-sunucusu.onrender.com'; 
-let socket;
+  const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
+  const socket = new WebSocket(socketURL);
 
-function connectWebSocket() {
-    socket = new WebSocket(socketUrl);
+  socket.onopen = () => {
+    console.log("✅ WebSocket bağlantısı kuruldu.");
+  };
 
-    // 1. Bağlantı başarıyla açıldığında...
-    socket.onopen = () => {
-        console.log('Sunucuya başarıyla bağlanıldı.');
-        const username = sessionStorage.getItem('active_user');
-        // Eğer kullanıcı "guest" değilse, sunucuya kim olduğunu bildir.
-        if (username && username !== 'guest') {
-            socket.send(JSON.stringify({
-                type: 'register',
-                username: username
-            }));
-        }
-    };
+  socket.onerror = (err) => {
+    console.error("❌ WebSocket Hatası:", err);
+  };
 
-    // 2. Sunucudan bir mesaj geldiğinde...
-    socket.onmessage = (event) => {
-        const message = JSON.parse(event.data);
-        
-        // Sunucudan gelen mesajın tipine göre doğru fonksiyonu çağır.
-        switch (message.type) {
-            case 'userCount':
-                // Aktif kullanıcı sayısını güncelle
-                document.getElementById('active-user-count').textContent = message.count;
-                break;
-            // ESKİ 'case priceUpdate' BLOĞUNU BUNUNLA DEĞİŞTİR
-case 'priceUpdate':
-    console.log("Sunucudan tüm detaylı fiyat listesi geldi.");
-    tumFiyatlar = message.data; // Gelen dev listeyi değişkenimize ata
-    // Kasa önizleme fiyatlarını güncellemek için bir fonksiyon çağırabiliriz (şimdilik boş bırakalım)
-    break;
-            case 'activeUserList':
-                // Aktif kullanıcı listesi geldiğinde modal'ı güncelle
-                updateActiveUsersModal(message.users);
-                break;
-        }
-    };
+  socket.onmessage = (event) => {
+    const msg = JSON.parse(event.data);
+    if (msg.type === "priceUpdate") {
+      console.log("🎯 Fiyatlar geldi:", msg.data);
+      // burada fiyatları HTML'ye bastırabilirsin
+    }
+  };
 
-    // 3. Bağlantı kapandığında...
-    socket.onclose = () => {
-        console.log('Sunucu bağlantısı koptu. 5 saniye içinde tekrar bağlanmayı deniyor...');
-        // 5 saniye sonra tekrar bağlanmayı dene.
-        setTimeout(connectWebSocket, 5000);
-    };
-
-    // 4. Hata oluştuğunda...
-    socket.onerror = (error) => {
-        console.error('WebSocket Hatası:', error);
-    };
-}
+  socket.onclose = () => {
+    console.warn("⚠️ Bağlantı koptu. 3 saniyede yeniden denenecek...");
+    setTimeout(() => window.location.reload(), 3000);
+  };
 
 // Gelen kullanıcı listesiyle modal'ın (açılır pencere) içeriğini güncelleyen fonksiyon.
 // BU FONKSİYON ZATEN DOĞRU, OLDUĞU GİBİ KALIYOR.
@@ -4639,7 +4600,8 @@ connectWebSocket();
     
     </script>
 
-<script src="simulator-script.js" defer></script>
+<script src="simulator-script.js?v=2"></script>
+
 
 <div id="languageSelectorContainer" class="fixed bottom-5 left-5 z-[5000]">
     <button id="languageButton" class="custom-button bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded-lg">
