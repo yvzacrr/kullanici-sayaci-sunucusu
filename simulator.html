@@ -4589,13 +4589,14 @@ function updateActiveUsersModal(users) {
 
 
 // Sayfa ilk yüklendiğinde WebSocket bağlantısını başlat.
+window.addEventListener('DOMContentLoaded', () => {
 connectWebSocket();
-    
+});    
     
     
     </script>
 
-<script src="simulator-script.js?v=2"></script>
+<script src="simulator-script.js?v=2" defer></script>
 
 
 <div id="languageSelectorContainer" class="fixed bottom-5 left-5 z-[5000]">
