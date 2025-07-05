@@ -4273,84 +4273,91 @@ function showMultiItemModal(skins) {
     const modalContent = itemWonModal.querySelector('.modal-content');
     modalContent.innerHTML = ''; // Modalın içini her seferinde temizle!
 
-    // Ana konteyner. Bütün desenler bunun içine girecek.
     const itemsContainer = document.createElement('div');
-    
-    // "Devam Et" butonunu en başta bir kere oluşturalım.
     const continueButton = document.createElement('button');
     continueButton.id = 'closeModalButton';
-    continueButton.textContent = 'Devam Et';
+    let currentLanguage = localStorage.getItem('language') || 'en';
+    continueButton.textContent = translations.continueButton[currentLanguage];
     continueButton.className = 'custom-button bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl shadow-lg';
     continueButton.onclick = () => {
         itemWonModal.classList.add('hidden');
     };
 
-    // ========== ASIL MANTIK DEĞİŞİKLİĞİ ==========
-    // EĞER KAZANILAN DESEN SAYISI TAM OLARAK 5 İSE...
     if (skins.length === 5) {
-        // [DEĞİŞİKLİK 1]: justify-center'ı justify-between ile değiştirdik.
-        // Bu, sol ve sağ sütunları ekranın kenarlarına yaslayacak.
-        itemsContainer.className = 'flex flex-row justify-between items-center w-full'; // Kenarlara boşluk için padding ekledik (px-8)
+        itemsContainer.className = 'flex flex-row justify-between items-center w-full';
 
-        // Sütunlarımızı oluşturalım
         const leftColumn = document.createElement('div');
-        leftColumn.className = 'flex flex-col gap-4';
+        leftColumn.className = 'flex flex-col gap-2'; // Boşluğu (gap) azalttık
 
         const centerItemContainer = document.createElement('div');
-        // Ortadaki sütun artık dikey bir flex kutusu olacak, çünkü deseni ve butonu alt alta dizeceğiz.
-        centerItemContainer.className = 'flex flex-col items-center gap-4 mx-12'; // gap-4 ile desen ve buton arasına boşluk koyduk.
+        centerItemContainer.className = 'flex flex-col items-center gap-2 mx-4'; // Boşlukları (gap ve mx) azalttık
 
         const rightColumn = document.createElement('div');
-        rightColumn.className = 'flex flex-col gap-4'; 
+        rightColumn.className = 'flex flex-col gap-2'; // Boşluğu (gap) azalttık
 
-        // Gelen 5 deseni döngüye alıp doğru sütuna yerleştirelim
         skins.forEach((skin, index) => {
+            // Önce standart item'ı oluşturalım
             const itemWrapper = createItemElementForModal(skin, skins.length);
+
+            // --- YENİ KÜÇÜLTME KODLARI BURADA ---
+            const image = itemWrapper.querySelector('.item-image');
+            const plaque = itemWrapper.querySelector('.info-plaque');
+            const nameText = plaque.querySelector('h3');
+            const wearText = plaque.querySelector('p:nth-of-type(1)'); // Aşınma durumu
+            const priceText = plaque.querySelector('p:nth-of-type(2)'); // Fiyat
+            const floatText = plaque.querySelector('p:nth-of-type(3)'); // Float
+
+            // 1. Resim Boyutunu Ayarla (Ortadaki dahil hepsi küçülecek)
+            image.style.maxWidth = '220px';
+            image.style.maxHeight = '220px';
+
+            // 2. Bilgi Paneli Boşluklarını Azalt
+            plaque.classList.remove('p-3');
+            plaque.classList.add('p-2'); // Daha az iç boşluk
+
+            // 3. Yazı Boyutlarını Küçült
+            nameText.classList.remove('text-xl', 'text-2xl');
+            nameText.classList.add('text-lg'); // İsim
+
+            wearText.classList.remove('text-lg', 'text-md');
+            wearText.classList.add('text-sm'); // Aşınma
+
+            priceText.classList.remove('text-xl');
+            priceText.classList.add('text-lg'); // Fiyat
             
-            if (index < 2) { 
+            floatText.classList.remove('text-sm', 'text-xs');
+            floatText.classList.add('text-xs'); // Float (en küçük)
+            // --- KÜÇÜLTME KODLARI BİTTİ ---
+
+            // Öğeyi doğru sütuna yerleştir
+            if (index < 2) {
                 leftColumn.appendChild(itemWrapper);
-            } else if (index === 2) { 
-                itemWrapper.querySelector('.item-image').style.maxWidth = '350px';
-                itemWrapper.querySelector('.item-image').style.maxHeight = '350px';
-                centerItemContainer.appendChild(itemWrapper); // Önce deseni ekle
-            } else { 
+            } else if (index === 2) {
+                // Ortadaki eleman için olan özel büyütme kodunu kaldırdık.
+                centerItemContainer.appendChild(itemWrapper);
+            } else {
                 rightColumn.appendChild(itemWrapper);
             }
         });
 
-        // [DEĞİŞİKLİK 2]: Butonu, döngüden sonra ortadaki sütunun içine ekliyoruz.
+        // Butonu ortadaki sütuna ekle
         centerItemContainer.appendChild(continueButton);
-
-        // Oluşturulan 3 sütunu ana konteynere ekle
         itemsContainer.append(leftColumn, centerItemContainer, rightColumn);
+        modalContent.appendChild(itemsContainer);
 
     } else {
-        // EĞER DESEN SAYISI 5 DEĞİLSE (1, 2, 3, 4 ise), ESKİ MANTIK DEVAM ETSİN
+        // 1-4 arası eşya için eski mantık devam ediyor
         itemsContainer.className = 'flex flex-row flex-wrap justify-center items-center gap-6';
-
         skins.forEach(skin => {
             const itemWrapper = createItemElementForModal(skin, skins.length);
             itemsContainer.appendChild(itemWrapper);
         });
         
-        // [DEĞİŞİKLİK 3]: Buton, bu durumda tüm desenlerden sonra en alta ekleniyor.
-         continueButton.classList.add('mt-6'); // Üstten boşluk verelim
-         modalContent.appendChild(itemsContainer);
-         modalContent.appendChild(continueButton);
-    }
-    
-    // 5'li açılış dışında buton modalContent'e direkt eklenmediyse, buraya eklenir.
-    // Bu kontrol, kodun her iki durumda da doğru çalışmasını sağlar.
-    if (skins.length !== 5) {
-        // Bu blok aslında yukarıdaki else içinde zaten var, ama netlik için burada bırakabiliriz.
-        // Eğer yukarıdaki kod yapısını takip ettiysek bu if bloğuna aslında gerek yok.
-        // Netlik için düzenleyelim:
-    } else {
+        continueButton.classList.add('mt-6');
         modalContent.appendChild(itemsContainer);
+        modalContent.appendChild(continueButton);
     }
 
-
-    // Her şey hazır, şimdi modal'ı göster!
     itemWonModal.classList.remove('hidden');
 }   
     
@@ -4422,93 +4429,125 @@ function displayStats() {
 // ==========================================================
 // ===== SİLDİĞİN TÜM BAŞLANGIÇ KODLARININ YERİNE BUNU YAPIŞTIR =====
 
-window.onload = () => {
-    
-createCaseMenu(); 
+// ===== SAYFA YÜKLENDİĞİNDE ÇALIŞACAK TÜM KODLARIN TOPLANDIĞI ANA BLOK =====
 
-    // --- GÖREV 1: TEMEL KURULUM ---
-    let currentLanguage = localStorage.getItem('language') || 'en';
+window.onload = () => {
+    createCaseMenu();       // Kasaları hemen çiz
+    // --- GÖREV 1: TEMEL DEĞİŞKENLER VE KURULUM ---
+    let currentLanguage = localStorage.getItem('language') || 'tr';
     const activeUser = sessionStorage.getItem('active_user');
     const username = activeUser || 'Kullanıcı';
+
+    // Easter Egg için gizlenecek ana elementler
+    const mainPageElements = [
+        document.getElementById('topPanel'),
+        document.getElementById('mainContent'),
+        document.getElementById('inventorySection'),
+        document.getElementById('statsSection'),
+        document.getElementById('faqSection')
+    ];
 
     // --- GÖREV 2: GİRİŞ KONTROLÜ ---
     if (!activeUser) {
         alert("Bu sayfaya erişim için giriş yapmalısınız.");
         window.location.href = 'Geçiş.html';
-        return; 
+        return; // Kodun devamının çalışmasını engelle
     }
 
     // --- GÖREV 3: DİLİ VE STATİK METİNLERİ AYARLA ---
     setLanguage(currentLanguage);
 
-    // --- GÖREV 4: BUTONLARI VE OLAYLARI AYARLA ---
-    // Butonların ve diğer elementlerin olay dinleyicilerini burada topluyoruz.
+    // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ (EVENT LISTENER) EKLEME ---
+    
+    // Üst Panel Butonları
     document.getElementById('homeButton').addEventListener('click', resetToMenu);
     document.getElementById('inventoryButton').addEventListener('click', displayInventory);
+    
+    // Arama Çubuğu
     document.getElementById('searchBar').addEventListener('input', filterCases);
+
+    // İnceleme (Inspect) Penceresi Kapatma Butonu
     document.getElementById('inspectCloseButton').addEventListener('click', () => { 
         document.getElementById('inspectionModal').classList.add('hidden'); 
     });
+
+    // Aktif Kullanıcıları Gösterme Butonları
+    document.getElementById('showActiveUsersButton').addEventListener('click', () => {
+        document.getElementById('activeUsersModal').classList.remove('hidden');
+    });
+    document.getElementById('closeActiveUsersModal').addEventListener('click', () => {
+        document.getElementById('activeUsersModal').classList.add('hidden');
+    });
+
+    // DİL SEÇİMİ BUTONLARI (DOĞRU YER BURASI!)
+    const languageButton = document.getElementById('languageButton');
+    const languageModal = document.getElementById('languageModal');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    languageButton.addEventListener('click', (event) => {
+        event.stopPropagation(); // Diğer tıklama olaylarının tetiklenmesini engelle
+        languageModal.classList.toggle('hidden');
+    });
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.dataset.lang;
+            localStorage.setItem('language', selectedLang);
+            setLanguage(selectedLang);
+            
+            langOptions.forEach(btn => btn.classList.remove('active'));
+            option.classList.add('active');
+            
+            languageModal.classList.add('hidden');
+        });
+    });
     
+    // Dil menüsü dışına tıklayınca kapatma
+    document.addEventListener('click', (event) => {
+        if (!languageModal.contains(event.target) && !languageButton.contains(event.target)) {
+            languageModal.classList.add('hidden');
+        }
+    });
+
+    // EASTER EGG BUTONLARI
     document.getElementById('easterEggButton').addEventListener('click', () => {
-        document.getElementById('mainContent').classList.add('hidden');
-        document.getElementById('faqSection').classList.add('hidden');
+        mainPageElements.forEach(el => el && el.classList.add('hidden'));
         document.getElementById('easterEggScreen').classList.remove('hidden');
     });
 
     document.getElementById('closeEasterEggButton').addEventListener('click', () => {
         document.getElementById('easterEggScreen').classList.add('hidden');
-        document.getElementById('faqSection').classList.remove('hidden');
-        resetToMenu(); // Artık doğru çalışan resetToMenu'yü kullanabiliriz.
-    });
-
-    // "Egg" butonuna tıklandığında...
-easterEggButton.addEventListener('click', () => {
-    // 1. Sayfadaki diğer tüm ana bölümleri gizle
-    mainPageElements.forEach(element => {
-        if (element) element.classList.add('hidden');
+        mainPageElements.forEach(el => el && el.classList.remove('hidden'));
+        resetToMenu();
     });
     
-    // 2. Easter Egg ekranını göster
-    easterEggScreen.classList.remove('hidden');
-});
-
-closeEasterEggButton.addEventListener('click', () => {
-    // 1. Easter Egg ekranını gizle
-    easterEggScreen.classList.add('hidden');
-
-    // 2. Ana menünün ana kutusunu tekrar görünür yap (EKSİK OLAN ADIM BUYDU!)
-    document.getElementById('mainContent').classList.remove('hidden');
-
-    // 3. SSS bölümünü de tekrar görünür yap
-    faqSection.classList.remove('hidden');
-
-    // 4. Ana menüdeki kasaları yeniden oluştur
-    
-});
-   
-    
-    
-    // Kullanıcı Profili ve Çıkış Butonları
+    // PROFİL VE ÇIKIŞ BUTONLARI
     const profileBtnContainer = document.getElementById('profileButtonContainer');
-    profileBtnContainer.innerHTML = `<div class="profile-button"><img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg"><span>${username}</span></div>`;
-    profileBtnContainer.querySelector('.profile-button').addEventListener('click', () => { showSection('stats'); displayStats(); });
-    
+    if (profileBtnContainer) {
+        profileBtnContainer.innerHTML = `<div class="profile-button"><img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg" alt="profil"><span>${username}</span></div>`;
+        profileBtnContainer.querySelector('.profile-button').addEventListener('click', () => { 
+            showSection('stats'); 
+            displayStats(); 
+        });
+    }
+
     const logoutBtnContainer = document.getElementById('logoutButtonContainer');
-    logoutBtnContainer.innerHTML = `<button class="logout-btn" id="logoutButton">${translations.logoutButton[currentLanguage]}</button>`;
-    logoutBtnContainer.querySelector('.logout-btn').addEventListener('click', () => { 
-        alert(username + ' hesabından çıkış yapılıyor...'); 
-        sessionStorage.removeItem('active_user'); 
-        window.location.href = 'Geçiş.html'; 
-    });
+    if (logoutBtnContainer) {
+        logoutBtnContainer.innerHTML = `<button class="logout-btn" id="logoutButton">${translations.logoutButton[currentLanguage]}</button>`;
+        logoutBtnContainer.querySelector('.logout-btn').addEventListener('click', () => { 
+            alert(username + ' hesabından çıkış yapılıyor...'); 
+            sessionStorage.removeItem('active_user'); 
+            window.location.href = 'Geçiş.html'; 
+        });
+    }
+    
 
     // --- GÖREV 5: SAYFAYI BAŞLAT ---
-    updateBalanceDisplay(); // Bakiyeyi ekrana yaz
-    connectWebSocket();     // Sunucuyla bağlantı kur
+    updateBalanceDisplay();
+    connectWebSocket(); // Sunucuyla bağlantı kur
 
-    // ===== EN ÖNEMLİ KISIM: İLK ÇİZİM =====
     showSection('selection'); // Ana menü alanını görünür yap
-    createCaseMenu();       // VE KASALARI HEMEN ÇİZ!
+    
 };
 
 // ===== YENİ BAŞLANGIÇ KODUNUN SONU =====

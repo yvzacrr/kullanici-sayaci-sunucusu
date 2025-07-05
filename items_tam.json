@@ -1,0 +1,189 @@
+{
+  "case1": {
+    "name": "Gallery Case",
+    "items": [
+      {
+        "name": "AK-47 | Aquamarine Revenge",
+        "wears": ["field-tested", "minimal-wear", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "M4A1-S | Printstream",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "★ Butterfly Knife | Doppler",
+        "wears": ["factory-new", "minimal-wear"]
+      }
+    ]
+  },
+  "case2": {
+    "name": "Fever Case",
+    "items": [
+      {
+        "name": "FAMAS | Bad Trip",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "AWP | Printstream",
+        "wears": ["minimal-wear", "field-tested", "well-worn"]
+      },
+      {
+        "name": "Glock-18 | Shinobu",
+        "wears": ["factory-new", "minimal-wear", "field-tested"]
+      },
+      {
+        "name": "UMP-45 | K.O. Factory",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      
+      },
+      {
+        "name": "AK-47 | Searing Rage",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "P90 | Wave Breaker",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "Galil AR | Control",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+      {
+        "name": "Nova | Rising Sun",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "Desert Eagle | Serpent Strike",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "Zeus x27 | Tosai",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "XM1014 | Mockingbird",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      }  , 
+            {
+        "name": "SSG 08 | Memorial",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "P2000 | Sure Grip",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "MAG-7 | Resupply",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "M4A4 | Choppa",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "USP-S | PC-GRN",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "MP9 | Nexus",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Damascus Steel",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Doppler",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Marble Fade",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Rust Coat",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Tiger Tooth",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Nomad Knife | Ultraviolet",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Damascus Steel",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Doppler",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Marble Fade",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Rust Coat",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Tiger Tooth",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Paracord Knife | Ultraviolet",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+            {
+        "name": "★ Skeleton Knife | Damascus Steel",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Skeleton Knife | Doppler",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Skeleton Knife | Marble Fade",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Skeleton Knife | Rust Coat",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Skeleton Knife | Tiger Tooth",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Skeleton Knife | Ultraviolet",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Survival Knife | Damascus Steel",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Survival Knife | Doppler",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+               {
+        "name": "★ Survival Knife | Marble Fade",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Survival Knife | Rust Coat",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Survival Knife | Tiger Tooth",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      },
+                  {
+        "name": "★ Survival Knife | Ultraviolet",
+        "wears": ["factory-new", "minimal-wear", "field-tested", "well-worn", "battle-scarred"]
+      }
+    ]
+  }
+}
