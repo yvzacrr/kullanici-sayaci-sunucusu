@@ -1,0 +1,522 @@
+[
+  {
+    "name": "AK-47 | Aquamarine Revenge",
+    "wears": [
+      "field-tested",
+      "minimal-wear",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case1",
+    "caseName": "Gallery Case"
+  },
+  {
+    "name": "M4A1-S | Printstream",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case1",
+    "caseName": "Gallery Case"
+  },
+  {
+    "name": "★ Butterfly Knife | Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear"
+    ],
+    "caseId": "case1",
+    "caseName": "Gallery Case"
+  },
+  {
+    "name": "FAMAS | Bad Trip",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "AWP | Printstream",
+    "wears": [
+      "minimal-wear",
+      "field-tested",
+      "well-worn"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "Glock-18 | Shinobu",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "UMP-45 | K.O. Factory",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "AK-47 | Searing Rage",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "P90 | Wave Breaker",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "Galil AR | Control",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "Nova | Rising Sun",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "Desert Eagle | Serpent Strike",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "Zeus x27 | Tosai",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "XM1014 | Mockingbird",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "SSG 08 | Memorial",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "P2000 | Sure Grip",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "MAG-7 | Resupply",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "M4A4 | Choppa",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "USP-S | PC-GRN",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "MP9 | Nexus",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Damascus Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Marble Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Rust Coat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Tiger Tooth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Nomad Knife | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Damascus Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Marble Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Rust Coat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Tiger Tooth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Paracord Knife | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Damascus Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Marble Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Rust Coat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Tiger Tooth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Skeleton Knife | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Damascus Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Marble Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Rust Coat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Tiger Tooth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  },
+  {
+    "name": "★ Survival Knife | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case2",
+    "caseName": "Fever Case"
+  }
+]
