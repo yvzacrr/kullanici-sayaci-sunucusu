@@ -1,62 +1,302 @@
 {
-  "AK-47 | Redline (Factory New)": {
-    "lowest": null,
-    "median": null
+  "AK-47 | Aquamarine Revenge": {
+    "Field Tested": null,
+    "Minimal Wear": "$113.50",
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AK-47 | Redline (Minimal Wear)": {
-    "lowest": null,
-    "median": "$365.00"
+  "M4A1-S | Printstream": {
+    "Factory New": "$1,150.00",
+    "Minimal Wear": "$582.14",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AK-47 | Redline (Field-Tested)": {
-    "lowest": null,
-    "median": "$49.72"
+  "★ Butterfly Knife | Doppler": {
+    "Factory New": null,
+    "Minimal Wear": null
   },
-  "AK-47 | Redline (Well-Worn)": {
-    "lowest": "$40.04",
-    "median": "$38.20"
+  "FAMAS | Bad Trip": {
+    "Factory New": "$26.17",
+    "Minimal Wear": "$7.28",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AK-47 | Redline (Battle-Scarred)": {
-    "lowest": null,
-    "median": "$38.50"
+  "AWP | Printstream": {
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null
   },
-  "M4A4 | Temukau (Factory New)": {
-    "lowest": "$150.84",
-    "median": "$148.89"
+  "Glock-18 | Shinobu": {
+    "Factory New": "$32.55",
+    "Minimal Wear": null,
+    "Field Tested": null
   },
-  "M4A4 | Temukau (Minimal Wear)": {
-    "lowest": "$52.99",
-    "median": "$53.08"
+  "UMP-45 | K.O. Factory": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "M4A4 | Temukau (Field-Tested)": {
-    "lowest": "$13.52",
-    "median": "$13.48"
+  "AK-47 | Searing Rage": {
+    "Factory New": "$39.00",
+    "Minimal Wear": "$12.23",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "M4A4 | Temukau (Well-Worn)": {
-    "lowest": "$12.25",
-    "median": "$12.52"
+  "P90 | Wave Breaker": {
+    "Factory New": "$4.15",
+    "Minimal Wear": "$1.58",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "M4A4 | Temukau (Battle-Scarred)": {
-    "lowest": "$8.00",
-    "median": "$7.96"
+  "Galil AR | Control": {
+    "Factory New": null,
+    "Minimal Wear": "$1.61",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AWP | Dragon Lore (Factory New)": {
-    "lowest": null,
-    "median": null
+  "Nova | Rising Sun": {
+    "Factory New": "$4.23",
+    "Minimal Wear": "$1.55",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AWP | Dragon Lore (Minimal Wear)": {
-    "lowest": null,
-    "median": null
+  "Desert Eagle | Serpent Strike": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AWP | Dragon Lore (Field-Tested)": {
-    "lowest": null,
-    "median": null
+  "Zeus x27 | Tosai": {
+    "Factory New": "$3.56",
+    "Minimal Wear": "$1.64",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AWP | Dragon Lore (Well-Worn)": {
-    "lowest": null,
-    "median": null
+  "XM1014 | Mockingbird": {
+    "Factory New": "$0.57",
+    "Minimal Wear": "$0.20",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   },
-  "AWP | Dragon Lore (Battle-Scarred)": {
-    "lowest": null,
-    "median": null
+  "SSG 08 | Memorial": {
+    "Factory New": "$0.57",
+    "Minimal Wear": "$0.20",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "P2000 | Sure Grip": {
+    "Factory New": "$0.55",
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "MAG-7 | Resupply": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "M4A4 | Choppa": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "USP-S | PC-GRN": {
+    "Factory New": "$0.97",
+    "Minimal Wear": "$0.25",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "MP9 | Nexus": {
+    "Factory New": "$0.55",
+    "Minimal Wear": "$0.21",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Damascus Steel": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Doppler": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Marble Fade": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Rust Coat": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Tiger Tooth": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Nomad Knife | Ultraviolet": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Damascus Steel": {
+    "Factory New": null,
+    "Minimal Wear": "$195.21",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Doppler": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Marble Fade": {
+    "Factory New": null,
+    "Minimal Wear": "$489.35",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Rust Coat": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Tiger Tooth": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Paracord Knife | Ultraviolet": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Damascus Steel": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Doppler": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Marble Fade": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Rust Coat": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Tiger Tooth": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Skeleton Knife | Ultraviolet": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Damascus Steel": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Doppler": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Marble Fade": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Rust Coat": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Tiger Tooth": {
+    "Factory New": "$287.00",
+    "Minimal Wear": "$350.00",
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
+  },
+  "★ Survival Knife | Ultraviolet": {
+    "Factory New": null,
+    "Minimal Wear": null,
+    "Field Tested": null,
+    "Well Worn": null,
+    "Battle Scarred": null
   }
 }
