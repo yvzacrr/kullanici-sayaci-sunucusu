@@ -7,6 +7,7 @@ function connectWebSocket() {
 const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
 const socket = new WebSocket(socketURL);
 
+
     // Sunucuya başarıyla bağlanıldığında çalışır.
     socket.onopen = () => {
         console.log('WebSocket sunucusuna başarıyla bağlanıldı.');
