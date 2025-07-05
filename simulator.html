@@ -911,6 +911,7 @@ let userBalance = 0;
 let userInventory = [];
 // Kullanıcının istatistiklerini tutacak olan yeni değişkenimiz
 let userStats = {};
+let hasDrawnInitialMenu = false;
 
 if (activeUser && activeUser !== 'guest' && users[activeUser]) {
     userBalance = users[activeUser].balance;
@@ -3573,24 +3574,50 @@ function showSection(sectionName) {
 
         // Function to create the case menu
  // Kasa menüsünü ekrana çizen fonksiyon
-    function createCaseMenu() {
-        caseSelectionMenu.innerHTML = ''; // Menüyü temizle
-        allCases.forEach(caseData => {
-            // Fiyatı, global fiyat listemizden almayı dene
-            const casePriceInfo = tumFiyatlar[caseData.name];
-            let displayPrice = "... $"; // Varsayılan fiyat
-            if (casePriceInfo && casePriceInfo.price && casePriceInfo.price['7_days']) {
-                displayPrice = `${parseFloat(casePriceInfo.price['7_days'].average).toFixed(2)} $`;
-            }
+// YUKARIDAKİ HATALI FONKSİYONUN TAMAMINI SİLİP BUNU YAPIŞTIRIN:
+// --- ESKİ createCaseMenu FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR ---
 
-            const caseDiv = document.createElement('div');
-            caseDiv.className = 'case-item';
-            caseDiv.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}"><p class="case-name">${caseData.name}</p><div class="case-price-overlay">${displayPrice}</div>`;
-            caseDiv.addEventListener('click', () => selectCase(caseData));
-            caseSelectionMenu.appendChild(caseDiv);
-        });
-    }
+function createCaseMenu() {
+    caseSelectionMenu.innerHTML = ''; // Menüyü her seferinde temizle
 
+    allCases.forEach(caseData => {
+        // --- DOĞRU FİYAT ALMA MANTIĞI ---
+        // 1. Kasanın fiyatını, sunucudan gelen listeden kendi adıyla arıyoruz.
+        const dynamicPriceInfo = tumFiyatlar[caseData.name];
+        
+        // 2. Varsayılan olarak, kasaya elle yazdığımız statik fiyatı kullan.
+        let displayPrice = caseData.price; 
+
+        // 3. Eğer sunucudan bu kasa için güncel bir fiyat geldiyse...
+        if (dynamicPriceInfo && dynamicPriceInfo.lowest) {
+            // ...varsayılan fiyatın üzerine güncel fiyatı yaz.
+            displayPrice = dynamicPriceInfo.lowest;
+        }
+        // --- FİYAT ALMA MANTIĞININ SONU ---
+
+        // HTML elementlerini oluştur (bu kısım önceki doğru düzeltmemizdeki gibi)
+        const containerDiv = document.createElement('div');
+        containerDiv.className = 'case-item-container';
+
+        const caseBox = document.createElement('div');
+        caseBox.className = 'case-item';
+        // HTML'in içine, yukarıda belirlediğimiz 'displayPrice' değişkenini koyuyoruz.
+        caseBox.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}"><div class="case-price-overlay">${displayPrice}</div>`;
+
+        const caseName = document.createElement('p');
+        caseName.className = 'case-name';
+        caseName.textContent = caseData.name;
+
+        containerDiv.appendChild(caseBox);
+        containerDiv.appendChild(caseName);
+
+        containerDiv.addEventListener('click', () => selectCase(caseData));
+
+        caseSelectionMenu.appendChild(containerDiv);
+    });
+}
+
+    
         // Function to run when a case is selected
 // ===== ESKİ selectCase FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR =====
 
@@ -3705,19 +3732,15 @@ function selectCase(caseData) {
     }
 
     // ===== ESKİ 'pricesUpdated' DİNLEYİCİSİNİ SİL VE BUNU YAPIŞTIR =====
+// --- YUKARIDAKİ ESKİ addEventListener BLOĞUNU BUNUNLA DEĞİŞTİR ---
 document.addEventListener('pricesUpdated', (event) => {
-    // 1. Gelen fiyatları global "kutu"muza koyuyoruz.
-    gelenFiyatlar = event.detail; 
-    // ===== YENİ HATA AYIKLAMA SATIRI =====
-    console.log("Sunucudan gelen fiyat verisi:", gelenFiyatlar); 
-    // =====================================
+    tumFiyatlar = event.detail;
+    updateLocalCasePrices(tumFiyatlar);
 
-    // 2. Lokal kasa listemizdeki fiyatları yeni fiyatlarla güncelle.
-    updateLocalCasePrices(gelenFiyatlar);
-
-    // 3. Ana menüyü yeni fiyatlarla tekrar oluşturup ekrana çiz.
-    if (!caseSelectionMenu.classList.contains('hidden')) {
-         createCaseMenu();
+    // Eğer menü daha önce hiç çizilmemişse VEYA şu an zaten ekranda görünür durumdaysa, çiz.
+    if (!hasDrawnInitialMenu || document.getElementById('caseSelectionMenu').offsetParent !== null) {
+        createCaseMenu();
+        hasDrawnInitialMenu = true; // Bayrağı kaldır, ilk çizim yapıldı.
     }
 });
 // =======================================================================
@@ -3961,13 +3984,13 @@ function openCase(unlockButtonElement) {
 }
 
 
-// "Tekrar Dene" veya "Home" butonları bu fonksiyonu çağırır
+// --- YUKARIDAKİ resetToMenu FONKSİYONUNU SİL VE BUNU YAPIŞTIR ---
 function resetToMenu() {
     currentlySelectedCase = null;
-    // DOĞRUDAN ANA BÖLÜM GÖSTERME FONKSİYONUNU ÇAĞIR
-    showSection('selection');
+    showSection('selection'); // Ana menü alanını göster
+    filterCases();          // Arama filtresini temizle (önemli!)
+    createCaseMenu();       // Kasaları yeniden çiz
 }
-
         function filterCases() {
 
             const searchTerm = searchBar.value.toLowerCase();
@@ -4397,106 +4420,98 @@ function displayStats() {
 // ==========================================================
 // ===== SAYFA YÜKLENDİĞİNDE ÇALIŞACAK KOD (ONLOAD) =====
 // ==========================================================
-window.onload = () => {
-    // --- DİL AYARLARI ---
-    let currentLanguage = localStorage.getItem('language') || 'en';
-    setLanguage(currentLanguage);
+// ===== SİLDİĞİN TÜM BAŞLANGIÇ KODLARININ YERİNE BUNU YAPIŞTIR =====
 
-    // --- GİRİŞ KONTROLÜ ---
+window.onload = () => {
+    
+createCaseMenu(); 
+
+    // --- GÖREV 1: TEMEL KURULUM ---
+    let currentLanguage = localStorage.getItem('language') || 'en';
     const activeUser = sessionStorage.getItem('active_user');
+    const username = activeUser || 'Kullanıcı';
+
+    // --- GÖREV 2: GİRİŞ KONTROLÜ ---
     if (!activeUser) {
         alert("Bu sayfaya erişim için giriş yapmalısınız.");
         window.location.href = 'Geçiş.html';
         return; 
     }
 
-     // --- PROFİL VE ÇIKIŞ BUTONLARINI OLUŞTUR ---
-    const profileBtnContainer = document.getElementById('profileButtonContainer');
-    const logoutBtnContainer = document.getElementById('logoutButtonContainer');
-    const username = sessionStorage.getItem('active_user') || 'Kullanıcı';
+    // --- GÖREV 3: DİLİ VE STATİK METİNLERİ AYARLA ---
+    setLanguage(currentLanguage);
 
-    if (profileBtnContainer) { 
-        const profileButton = document.createElement('div');
-        profileButton.className = 'profile-button';
-        profileButton.innerHTML = `<img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg"><span>${username}</span>`;
-        profileButton.addEventListener('click', () => { showSection('stats'); displayStats(); });
-        profileBtnContainer.appendChild(profileButton);
-    }
-
-    if (logoutBtnContainer) {
-        const logoutButton = document.createElement('button');
-        logoutButton.className = 'logout-btn';
-        logoutButton.id = 'logoutButton'; 
-        logoutButton.textContent = translations.logoutButton[currentLanguage]; 
-        logoutButton.addEventListener('click', () => { 
-            alert(username + ' hesabından çıkış yapılıyor...'); 
-            sessionStorage.removeItem('active_user'); 
-            window.location.href = 'Geçiş.html'; 
-        });
-        logoutBtnContainer.appendChild(logoutButton);
-    }
-    
-    // --- BUTONLARA TIKLAMA GÖREVLERİNİ ATA (EVENT LISTENERS) ---
-    // Ana menü butonları
-    document.getElementById('homeButton').addEventListener('click', createCaseMenu);
+    // --- GÖREV 4: BUTONLARI VE OLAYLARI AYARLA ---
+    // Butonların ve diğer elementlerin olay dinleyicilerini burada topluyoruz.
+    document.getElementById('homeButton').addEventListener('click', resetToMenu);
     document.getElementById('inventoryButton').addEventListener('click', displayInventory);
-    
-    // Arama Çubuğu
     document.getElementById('searchBar').addEventListener('input', filterCases);
-
-    // Modalların Kapatma Butonları
     document.getElementById('inspectCloseButton').addEventListener('click', () => { 
         document.getElementById('inspectionModal').classList.add('hidden'); 
     });
     
-    document.getElementById('closeEasterEggButton').addEventListener('click', () => {
-        document.getElementById('easterEggScreen').classList.add('hidden');
-        createCaseMenu();
-        document.getElementById('faqSection').classList.remove('hidden');
-    });
-
     document.getElementById('easterEggButton').addEventListener('click', () => {
+        document.getElementById('mainContent').classList.add('hidden');
+        document.getElementById('faqSection').classList.add('hidden');
         document.getElementById('easterEggScreen').classList.remove('hidden');
     });
 
-    // Aktif Kullanıcılar Paneli Butonları
-    document.getElementById('showActiveUsersButton').addEventListener('click', () => {
-        document.getElementById('activeUsersModal').classList.remove('hidden');
+    document.getElementById('closeEasterEggButton').addEventListener('click', () => {
+        document.getElementById('easterEggScreen').classList.add('hidden');
+        document.getElementById('faqSection').classList.remove('hidden');
+        resetToMenu(); // Artık doğru çalışan resetToMenu'yü kullanabiliriz.
     });
-    document.getElementById('closeActiveUsersModal').addEventListener('click', () => {
-        document.getElementById('activeUsersModal').classList.add('hidden');
+
+    // "Egg" butonuna tıklandığında...
+easterEggButton.addEventListener('click', () => {
+    // 1. Sayfadaki diğer tüm ana bölümleri gizle
+    mainPageElements.forEach(element => {
+        if (element) element.classList.add('hidden');
     });
     
-    // Dil Seçim Butonları
-    const languageButton = document.getElementById('languageButton');
-    const languageModal = document.getElementById('languageModal');
-    if (languageButton && languageModal) {
-        languageButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            languageModal.classList.toggle('hidden');
-        });
-        document.querySelectorAll('.lang-option').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const selectedLang = event.target.dataset.lang;
-                localStorage.setItem('language', selectedLang);
-                location.reload();
-            });
-            if (button.dataset.lang === currentLanguage) {
-                button.classList.add('active');
-            }
-        });
-        document.addEventListener('click', () => {
-            if (!languageModal.classList.contains('hidden')) {
-                languageModal.classList.add('hidden');
-            }
-        });
-    }
+    // 2. Easter Egg ekranını göster
+    easterEggScreen.classList.remove('hidden');
+});
 
-    // --- SAYFAYI BAŞLAT ---
-    updateBalanceDisplay();
-    connectWebSocket();
+closeEasterEggButton.addEventListener('click', () => {
+    // 1. Easter Egg ekranını gizle
+    easterEggScreen.classList.add('hidden');
+
+    // 2. Ana menünün ana kutusunu tekrar görünür yap (EKSİK OLAN ADIM BUYDU!)
+    document.getElementById('mainContent').classList.remove('hidden');
+
+    // 3. SSS bölümünü de tekrar görünür yap
+    faqSection.classList.remove('hidden');
+
+    // 4. Ana menüdeki kasaları yeniden oluştur
+    
+});
+   
+    
+    
+    // Kullanıcı Profili ve Çıkış Butonları
+    const profileBtnContainer = document.getElementById('profileButtonContainer');
+    profileBtnContainer.innerHTML = `<div class="profile-button"><img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg"><span>${username}</span></div>`;
+    profileBtnContainer.querySelector('.profile-button').addEventListener('click', () => { showSection('stats'); displayStats(); });
+    
+    const logoutBtnContainer = document.getElementById('logoutButtonContainer');
+    logoutBtnContainer.innerHTML = `<button class="logout-btn" id="logoutButton">${translations.logoutButton[currentLanguage]}</button>`;
+    logoutBtnContainer.querySelector('.logout-btn').addEventListener('click', () => { 
+        alert(username + ' hesabından çıkış yapılıyor...'); 
+        sessionStorage.removeItem('active_user'); 
+        window.location.href = 'Geçiş.html'; 
+    });
+
+    // --- GÖREV 5: SAYFAYI BAŞLAT ---
+    updateBalanceDisplay(); // Bakiyeyi ekrana yaz
+    connectWebSocket();     // Sunucuyla bağlantı kur
+
+    // ===== EN ÖNEMLİ KISIM: İLK ÇİZİM =====
+    showSection('selection'); // Ana menü alanını görünür yap
+    createCaseMenu();       // VE KASALARI HEMEN ÇİZ!
 };
-// ===== BAŞLANGIÇ KODUNUN SONU =====
+
+// ===== YENİ BAŞLANGIÇ KODUNUN SONU =====
 
 
 // Gizlenecek tüm ana elementleri bir diziye toplayalım
@@ -4512,55 +4527,9 @@ const mainPageElements = [
 // ===== BUTON TIKLAMA OLAYLARI (EASTER EGG İÇİN) =====
 // ==========================================================
 
-// "Egg" butonuna tıklandığında...
-easterEggButton.addEventListener('click', () => {
-    // 1. Sayfadaki diğer tüm ana bölümleri gizle
-    mainPageElements.forEach(element => {
-        if (element) element.classList.add('hidden');
-    });
-    
-    // 2. Easter Egg ekranını göster
-    easterEggScreen.classList.remove('hidden');
-});
-
-// "Kapat" butonuna tıklandığında...
-closeEasterEggButton.addEventListener('click', () => {
-    // 1. Easter Egg ekranını gizle
-    easterEggScreen.classList.add('hidden');
-    
-    // 2. Ana menüyü tekrar göstererek siteyi normale döndür
-    // Not: Tüm elementleri göstermek yerine sadece ana menüyü
-    // gösteren fonksiyonu çağırmak daha güvenlidir.
-    createCaseMenu(); // Bu fonksiyon zaten kasa menüsünü gösterip diğerlerini gizliyor.
-    faqSection.classList.remove('hidden'); // SSS bölümünü de tekrar görünür yapalım.
-});
-    
+ 
 // ===== YUKARIDA SİLDİĞİNİZ BÖLÜMÜN YERİNE BU GELECEK =====
 
-// Sunucu adresi. Render.com üzerinde olduğu için bu doğru.
-  const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
-  const socket = new WebSocket(socketURL);
-
-  socket.onopen = () => {
-    console.log("✅ WebSocket bağlantısı kuruldu.");
-  };
-
-  socket.onerror = (err) => {
-    console.error("❌ WebSocket Hatası:", err);
-  };
-
-  socket.onmessage = (event) => {
-    const msg = JSON.parse(event.data);
-    if (msg.type === "priceUpdate") {
-      console.log("🎯 Fiyatlar geldi:", msg.data);
-      // burada fiyatları HTML'ye bastırabilirsin
-    }
-  };
-
-  socket.onclose = () => {
-    console.warn("⚠️ Bağlantı koptu. 3 saniyede yeniden denenecek...");
-    setTimeout(() => window.location.reload(), 3000);
-  };
 
 // Gelen kullanıcı listesiyle modal'ın (açılır pencere) içeriğini güncelleyen fonksiyon.
 // BU FONKSİYON ZATEN DOĞRU, OLDUĞU GİBİ KALIYOR.
@@ -4588,10 +4557,7 @@ function updateActiveUsersModal(users) {
 
 
 
-// Sayfa ilk yüklendiğinde WebSocket bağlantısını başlat.
-window.addEventListener('DOMContentLoaded', () => {
-connectWebSocket();
-});    
+// Sayfa ilk yüklendiğinde WebSocket bağlantısını başlat.   
     
     
     </script>
