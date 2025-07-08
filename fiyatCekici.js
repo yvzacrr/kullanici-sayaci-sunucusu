@@ -41,12 +41,12 @@ async function fetchPrice(itemName, wear) {
   }
 }
 
-async function fetchPriceWithRetry(itemName, wear, retries = 3) {
+async function fetchPriceWithRetry(itemName, wear, retries = 4) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     const price = await fetchPrice(itemName, wear);
     if (price !== null) return price;
     console.warn(`Retry ${attempt} - ${itemName} (${wear}) fiyat alınamadı.`);
-    await new Promise(r => setTimeout(r, 5000)); // 5 saniye bekle retry öncesi
+    await new Promise(r => setTimeout(r, 5500)); // 5 saniye bekle retry öncesi
   }
   return null;
 }
