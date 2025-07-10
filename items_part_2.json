@@ -1,6 +1,6 @@
 [
   {
-    "name": "SCAR-20 | Trail Blazer",
+    "name": "★ Ursus Knife | Case Hardened",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -8,31 +8,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "R8 Revolver | Tango",
-    "wears": [
-      "minimal-wear",
-      "field-tested",
-      "well-worn"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "Desert Eagle | Calligraffiti",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "USP-S | 27",
+    "name": "★ Ursus Knife | Crimson Web",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -40,11 +20,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "MP5-SD | Statics",
+    "name": "★ Ursus Knife | Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -52,11 +32,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "M249 | Hypnosis",
+    "name": "★ Ursus Knife | Forest DDPAT",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -64,11 +44,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "AUG | Luxe Trim",
+    "name": "★ Ursus Knife | Night Stripe",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -76,11 +56,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "SSG 08 | Rapid Transit",
+    "name": "★ Ursus Knife | Safari Mesh",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -88,11 +68,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "MAC-10 | Saibā Oni",
+    "name": "★ Ursus Knife | Scorched",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -100,11 +80,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "P90 | Randy Rush",
+    "name": "★ Ursus Knife | Slaughter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -112,11 +92,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "M4A4 | Turbine",
+    "name": "★ Ursus Knife | Stained",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -124,11 +104,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "Dual Berettas | Hydro Strike",
+    "name": "★ Ursus Knife | Urban Masked",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -136,11 +116,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case15",
+    "caseName": "Danger Zone Case"
   },
   {
-    "name": "UMP-45 | Neo-Noir",
+    "name": "Glock-18 | Warhawk",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -148,235 +128,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "P250 | Epicenter",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "Glock-18 | Gold Toof",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "M4A1-S | Vaporwave",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Blue Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Boreal Forest",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Case Hardened",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Crimson Web",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Forest DDPAT",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Night Stripe",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Safari Mesh",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Scorched",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Slaughter",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Stained",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "★ Kukri Knife | Urban Masked",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case1",
-    "caseName": "Gallery Case"
-  },
-  {
-    "name": "FAMAS | Bad Trip",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "AWP | Printstream",
+    "name": "Tec-9 | Snek-9",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "Glock-18 | Shinobu",
+    "name": "P90 | Traction",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "UMP-45 | K.O. Factory",
+    "name": "R8 Revolver | Survivalist",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -384,11 +160,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "AK-47 | Searing Rage",
+    "name": "AUG | Amber Slipstream",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -396,11 +172,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "P90 | Wave Breaker",
+    "name": "MP9 | Capillary",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -408,11 +184,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "Galil AR | Control",
+    "name": "Dual Berettas | Shred",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -420,11 +196,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "Nova | Rising Sun",
+    "name": "Nova | Toy Soldier",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -432,11 +208,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "Desert Eagle | Serpent Strike",
+    "name": "CZ75-Auto | Eco",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -444,11 +220,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "Zeus x27 | Tosai",
+    "name": "MP7 | Powercore",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -456,11 +232,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "XM1014 | Mockingbird",
+    "name": "AWP | PAW",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -468,11 +244,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "SSG 08 | Memorial",
+    "name": "G3SG1 | High Seas",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -480,11 +256,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "P2000 | Sure Grip",
+    "name": "M4A1-S | Nightmare",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -492,11 +268,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "MAG-7 | Resupply",
+    "name": "FAMAS | Eye of Athena",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -504,11 +280,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "M4A4 | Choppa",
+    "name": "Sawed-Off | Devourer",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -516,11 +292,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "USP-S | PC-GRN",
+    "name": "AK-47 | Neon Rider",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -528,11 +304,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "MP9 | Nexus",
+    "name": "Desert Eagle | Code Red",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -540,11 +316,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case16",
+    "caseName": "Horizon Case"
   },
   {
-    "name": "★ Nomad Knife | Damascus Steel",
+    "name": "Five-SeveN | Flame Test",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -552,319 +328,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "★ Nomad Knife | Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Nomad Knife | Marble Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Nomad Knife | Rust Coat",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Nomad Knife | Tiger Tooth",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Nomad Knife | Ultraviolet",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Damascus Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Marble Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Rust Coat",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Tiger Tooth",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Paracord Knife | Ultraviolet",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Damascus Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Marble Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Rust Coat",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Tiger Tooth",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Ultraviolet",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Damascus Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Marble Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Rust Coat",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Tiger Tooth",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "★ Survival Knife | Ultraviolet",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case2",
-    "caseName": "Fever Case"
-  },
-  {
-    "name": "MAC-10 | Light Box",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
-  },
-  {
-    "name": "UMP-45 | Motorized",
+    "name": "P2000 | Urban Hazard",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Tec-9 | Slag",
+    "name": "PP-Bizon | Night Riot",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "XM1014 | Irezumi",
+    "name": "R8 Revolver | Grip",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -872,11 +360,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Dual Berettas | Hideout",
+    "name": "XM1014 | Oxide Blaze",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -884,11 +372,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Nova | Dark Sigil",
+    "name": "SG 553 | Aloha",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -896,11 +384,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "SSG 08 | Dezastre",
+    "name": "MP9 | Black Sand",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -908,11 +396,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "M4A4 | Etch Lord",
+    "name": "Glock-18 | Moonrise",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -920,11 +408,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Five-SeveN | Hybrid",
+    "name": "Negev | Lionfish",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -932,11 +420,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Glock-18 | Block-18",
+    "name": "Nova | Wild Six",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -944,11 +432,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "MP7 | Just Smile",
+    "name": "UMP-45 | Arctic Wolf",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -956,11 +444,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Sawed-Off | Analog Input",
+    "name": "MAG-7 | SWAG-7",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -968,11 +456,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "M4A1-S | Black Lotus",
+    "name": "USP-S | Cortex",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -980,11 +468,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "USP-S | Jawbreaker",
+    "name": "AUG | Stymphalian",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -992,11 +480,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "Zeus x27 | Olympus",
+    "name": "AWP | Mortis",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1004,11 +492,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "AK-47 | Inheritance",
+    "name": "MP7 | Bloodsport",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1016,11 +504,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "AWP | Chrome Cannon",
+    "name": "M4A4 | Neo-Noir",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1028,11 +516,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case3",
-    "caseName": "Kilowatt Case"
+    "caseId": "case17",
+    "caseName": "Clutch Case"
   },
   {
-    "name": "SCAR-20 | Fragments",
+    "name": "Tec-9 | Cracked Opal",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1040,31 +528,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "MP9 | Featherweight",
+    "name": "SCAR-20 | Jungle Slipstream",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "SG 553 | Cyberforce",
+    "name": "MAC-10 | Oceanic",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "MP5-SD | Liquidation",
+    "name": "Sawed-Off | Morris",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1072,11 +560,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "P250 | Re.built",
+    "name": "AUG | Triqua",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1084,11 +572,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "Tec-9 | Rebel",
+    "name": "G3SG1 | Hunter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1096,11 +584,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "MAG-7 | Insomnia",
+    "name": "Glock-18 | Off World",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1108,11 +596,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "P90 | Neoqueen",
+    "name": "CZ75-Auto | Tacticat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1120,11 +608,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "MAC-10 | Sakkaku",
+    "name": "XM1014 | Ziggy",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1132,11 +620,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "Glock-18 | Umbral Rabbit",
+    "name": "MP9 | Goo",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1144,11 +632,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "M4A1-S | Emphorosaur-S",
+    "name": "SG 553 | Phantom",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1156,11 +644,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "R8 Revolver | Banana Cannon",
+    "name": "UMP-45 | Exposure",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1168,11 +656,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "P2000 | Wicked Sick",
+    "name": "R8 Revolver | Llama Cannon",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1180,11 +668,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "AWP | Duality",
+    "name": "PP-Bizon | High Roller",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1192,11 +680,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "UMP-45 | Wild Child",
+    "name": "M4A1-S | Leaded Glass",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1204,11 +692,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "M4A4 | Temukau",
+    "name": "AK-47 | The Empress",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1216,11 +704,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "AK-47 | Head Shot",
+    "name": "P250 | See Ya Later",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1228,11 +716,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Driver Gloves | Imperial Plaid",
+    "name": "★ Bowie Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1240,11 +728,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Driver Gloves | King Snake",
+    "name": "★ Bowie Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1252,11 +740,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Driver Gloves | Overtake",
+    "name": "★ Bowie Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1264,11 +752,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Driver Gloves | Racing Green",
+    "name": "★ Bowie Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1276,11 +764,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hand Wraps | Arboreal",
+    "name": "★ Bowie Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1288,11 +776,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hand Wraps | Cobalt Skulls",
+    "name": "★ Bowie Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1300,11 +788,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hand Wraps | Duct Tape",
+    "name": "★ Butterfly Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1312,11 +800,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hand Wraps | Overprint",
+    "name": "★ Butterfly Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1324,11 +812,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hydra Gloves | Case Hardened",
+    "name": "★ Butterfly Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1336,11 +824,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hydra Gloves | Emerald",
+    "name": "★ Butterfly Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1348,11 +836,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hydra Gloves | Mangrove",
+    "name": "★ Butterfly Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1360,11 +848,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Hydra Gloves | Rattler",
+    "name": "★ Butterfly Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1372,11 +860,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Moto Gloves | Polygon",
+    "name": "★ Falchion Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1384,11 +872,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Moto Gloves | POW!",
+    "name": "★ Falchion Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1396,11 +884,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Moto Gloves | Transport",
+    "name": "★ Falchion Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1408,11 +896,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Moto Gloves | Turtle",
+    "name": "★ Falchion Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1420,11 +908,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Specialist Gloves | Buckshot",
+    "name": "★ Falchion Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1432,11 +920,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Specialist Gloves | Crimson Web",
+    "name": "★ Falchion Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1444,11 +932,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Specialist Gloves | Fade",
+    "name": "★ Huntsman Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1456,11 +944,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Specialist Gloves | Mogul",
+    "name": "★ Huntsman Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1468,11 +956,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Sport Gloves | Amphibious",
+    "name": "★ Huntsman Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1480,11 +968,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Sport Gloves | Bronze Morph",
+    "name": "★ Huntsman Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1492,11 +980,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Sport Gloves | Omega",
+    "name": "★ Huntsman Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1504,11 +992,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Sport Gloves | Vice",
+    "name": "★ Huntsman Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1516,11 +1004,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case18",
+    "caseName": "Spectrum 2 Case"
   },
   {
-    "name": "★ Moto Gloves | Polygon",
+    "name": "UMP-45 | Metal Flowers",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1528,43 +1016,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case4",
-    "caseName": "Revolution Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "Negev | Drop Me",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
-  },
-  {
-    "name": "FAMAS | Meow 36",
+    "name": "MAC-10 | Aloha",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "Glock-18 | Winterized",
+    "name": "FAMAS | Macabre",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "M4A4 | Poly Mag",
+    "name": "Tec-9 | Cut Out",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1572,11 +1048,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "Galil AR | Destroyer",
+    "name": "M4A1-S | Briefing",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1584,11 +1060,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "MAC-10 | Monkeyflage",
+    "name": "USP-S | Blueprint",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1596,11 +1072,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "UMP-45 | Roadblock",
+    "name": "MAG-7 | Hard Water",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1608,11 +1084,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "M249 | Downtown",
+    "name": "P90 | Death Grip",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1620,11 +1096,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "Dual Berettas | Flora Carnivora",
+    "name": "P250 | Red Rock",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1632,11 +1108,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "SG 553 | Dragon Tech",
+    "name": "AK-47 | Orbit Mk01",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1644,11 +1120,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "R8 Revolver | Crazy 8",
+    "name": "SSG 08 | Death's Head",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1656,11 +1132,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "P90 | Vent Rush",
+    "name": "P2000 | Woodsman",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1668,11 +1144,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "P250 | Visions",
+    "name": "M4A4 | Hellfire",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1680,11 +1156,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "Sawed-Off | Kiss♥Love",
+    "name": "Dual Berettas | Cobra Strike",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1692,11 +1168,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "AK-47 | Ice Coaled",
+    "name": "Galil AR | Sugar Rush",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1704,11 +1180,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "AWP | Chromatic Aberration",
+    "name": "Five-SeveN | Hyper Beast",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1716,11 +1192,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "USP-S | Printstream",
+    "name": "AWP | Oni Taiji",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1728,11 +1204,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Broken Fang Gloves | Jade",
+    "name": "★ Bloodhound Gloves | Bronzed",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1740,11 +1216,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Broken Fang Gloves | Needle Point",
+    "name": "★ Bloodhound Gloves | Charred",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1752,11 +1228,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Broken Fang Gloves | Unhinged",
+    "name": "★ Bloodhound Gloves | Guerrilla",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1764,11 +1240,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Broken Fang Gloves | Yellow-banded",
+    "name": "★ Bloodhound Gloves | Snakebite",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1776,11 +1252,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Driver Gloves | Black Tie",
+    "name": "★ Driver Gloves | Convoy",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1788,11 +1264,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Driver Gloves | Queen Jaguar",
+    "name": "★ Driver Gloves | Crimson Weave",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1800,11 +1276,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Driver Gloves | Rezan the Red",
+    "name": "★ Driver Gloves | Diamondback",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1812,11 +1288,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Driver Gloves | Snow Leopard",
+    "name": "★ Driver Gloves | Lunar Weave",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1824,8 +1300,20 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
+  },
+  {
+    "name": "★ Hand Wraps | Badlands",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
     "name": "★ Hand Wraps | CAUTION!",
@@ -1836,11 +1324,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Hand Wraps | Constrictor",
+    "name": "★ Hand Wraps | Leather",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1848,11 +1336,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Hand Wraps | Desert Shamagh",
+    "name": "★ Hand Wraps | Slaughter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1860,11 +1348,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Hand Wraps | Giraffe",
+    "name": "★ Hand Wraps | Spruce DDPAT",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1872,11 +1360,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Moto Gloves | 3rd Commando Company",
+    "name": "★ Moto Gloves | Boom!",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1884,11 +1372,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Moto Gloves | Blood Pressure",
+    "name": "★ Moto Gloves | Cool Mint",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1896,11 +1384,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Moto Gloves | Finish Line",
+    "name": "★ Moto Gloves | Eclipse",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1908,11 +1396,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Moto Gloves | Smoke Out",
+    "name": "★ Moto Gloves | Spearmint",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1920,11 +1408,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Specialist Gloves | Field Agent",
+    "name": "★ Specialist Gloves | Crimson Kimono",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1932,11 +1420,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Specialist Gloves | Lt. Commander",
+    "name": "★ Specialist Gloves | Emerald Web",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1944,11 +1432,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Specialist Gloves | Marble Fade",
+    "name": "★ Specialist Gloves | Forest DDPAT",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1956,11 +1444,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Specialist Gloves | Tiger Strike",
+    "name": "★ Specialist Gloves | Foundation",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1968,11 +1456,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Sport Gloves | Big Game",
+    "name": "★ Sport Gloves | Arid",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1980,11 +1468,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Sport Gloves | Nocts",
+    "name": "★ Sport Gloves | Hedge Maze",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -1992,11 +1480,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Sport Gloves | Scarlet Shamagh",
+    "name": "★ Sport Gloves | Pandora's Box",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2004,11 +1492,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "★ Sport Gloves | Slingshot",
+    "name": "★ Sport Gloves | Superconductor",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2016,11 +1504,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case5",
-    "caseName": "Recoil Case"
+    "caseId": "case19",
+    "caseName": "Operation Hydra Case"
   },
   {
-    "name": "MP5-SD | Necro Jr.",
+    "name": "SCAR-20 | Blueprint",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2028,591 +1516,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "SCAR-20 | Poultrygeist",
-    "wears": [
-      "minimal-wear",
-      "field-tested",
-      "well-worn"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "Sawed-Off | Spirit Board",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "P2000 | Lifted Spirits",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "MAC-10 | Ensnared",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "MAG-7 | Foresight",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "Five-SeveN | Scrawl",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "PP-Bizon | Space Cat",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "XM1014 | Zombie Offensive",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "G3SG1 | Dream Glade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "M4A1-S | Night Terror",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "USP-S | Ticket to Hell",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "MP7 | Abyssal Apparition",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "Dual Berettas | Melondrama",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "FAMAS | Rapid Eye Movement",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "AK-47 | Nightwish",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "MP9 | Starlight Protector",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Autotronic",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Black Laminate",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Bright Water",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Freehand",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Gamma Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Bowie Knife | Lore",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Autotronic",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Black Laminate",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Bright Water",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Freehand",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Gamma Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Butterfly Knife | Lore",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Autotronic",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Black Laminate",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Bright Water",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Freehand",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Gamma Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Falchion Knife | Lore",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Autotronic",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Black Laminate",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Bright Water",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Freehand",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Gamma Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Huntsman Knife | Lore",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Autotronic",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Black Laminate",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Bright Water",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Freehand",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Gamma Doppler",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "★ Shadow Daggers | Lore",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case6",
-    "caseName": "Dreams & Nightmares Case"
-  },
-  {
-    "name": "PP-Bizon | Lumen",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
-  },
-  {
-    "name": "G3SG1 | Keeping Tabs",
+    "name": "Five-SeveN | Capillary",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "Dual Berettas | Tread",
+    "name": "Sawed-Off | Zander",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "XM1014 | Watchdog",
+    "name": "Desert Eagle | Oxide Blaze",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2620,11 +1548,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "AUG | Plague",
+    "name": "P250 | Ripple",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2632,11 +1560,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "USP-S | Black Lotus",
+    "name": "PP-Bizon | Jungle Slipstream",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2644,11 +1572,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "MP7 | Guerrilla",
+    "name": "MP7 | Akoben",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2656,11 +1584,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "MP9 | Mount Fuji",
+    "name": "Galil AR | Crimson Tsunami",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2668,11 +1596,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "FAMAS | ZX Spectron",
+    "name": "M249 | Emerald Poison Dart",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2680,11 +1608,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "M4A4 | Spider Lily",
+    "name": "UMP-45 | Scaffold",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2692,11 +1620,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "Five-SeveN | Boost Protocol",
+    "name": "XM1014 | Seasons",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2704,11 +1632,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "MAG-7 | BI83 Spectrum",
+    "name": "MAC-10 | Last Dive",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2716,11 +1644,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "SSG 08 | Turbo Peek",
+    "name": "M4A1-S | Decimator",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2728,11 +1656,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "MAC-10 | Toybox",
+    "name": "CZ75-Auto | Xiangliu",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2740,11 +1668,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "Glock-18 | Snack Attack",
+    "name": "AWP | Fever Dream",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2752,11 +1680,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "Desert Eagle | Ocean Drive",
+    "name": "USP-S | Neo-Noir",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2764,11 +1692,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "AK-47 | Leet Museo",
+    "name": "AK-47 | Bloodsport",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2776,11 +1704,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case7",
-    "caseName": "Operation Riptide Case"
+    "caseId": "case20",
+    "caseName": "Spectrum Case"
   },
   {
-    "name": "Nova | Windblown",
+    "name": "Glock-18 | Ironwork",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2788,31 +1716,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "R8 Revolver | Junk Yard",
+    "name": "Galil AR | Black Sand",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "Glock-18 | Clear Polymer",
+    "name": "MP9 | Sand Scale",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "M249 | O.S.I.P.R.",
+    "name": "CZ75-Auto | Polymer",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2820,11 +1748,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "UMP-45 | Oscillator",
+    "name": "MAG-7 | Sonar",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2832,11 +1760,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "CZ75-Auto | Circaetus",
+    "name": "P2000 | Turf",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2844,11 +1772,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "SG 553 | Heavy Metal",
+    "name": "MP7 | Cirrus",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2856,11 +1784,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "P250 | Cyber Shell",
+    "name": "G3SG1 | Stinger",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2868,11 +1796,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "Desert Eagle | Trigger Discipline",
+    "name": "M4A1-S | Flashback",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2880,11 +1808,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "AK-47 | Slate",
+    "name": "Dual Berettas | Royal Consorts",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2892,11 +1820,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "Negev | dev_texture",
+    "name": "USP-S | Cyrex",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2904,11 +1832,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "MAC-10 | Button Masher",
+    "name": "Nova | Gila",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2916,11 +1844,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "Galil AR | Chromatic Aberration",
+    "name": "P90 | Shallow Grave",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2928,11 +1856,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "MP9 | Food Chain",
+    "name": "Sawed-Off | Wasteland Princess",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2940,11 +1868,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "XM1014 | XOXO",
+    "name": "FAMAS | Mecha Industries",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2952,11 +1880,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "USP-S | The Traitor",
+    "name": "M4A4 | Buzz Kill",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2964,11 +1892,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "M4A4 | In Living Color",
+    "name": "SSG 08 | Dragonfire",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2976,11 +1904,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case8",
-    "caseName": "Snakebite Case"
+    "caseId": "case21",
+    "caseName": "Glove Case"
   },
   {
-    "name": "P90 | Cocoa Rampage",
+    "name": "Five-SeveN | Scumbria",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -2988,31 +1916,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "M249 | Deep Relief",
+    "name": "XM1014 | Slipstream",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "CZ75-Auto | Vendetta",
+    "name": "G3SG1 | Ventilator",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "G3SG1 | Digital Mesh",
+    "name": "UMP-45 | Briefing",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3020,11 +1948,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "P250 | Contaminant",
+    "name": "Negev | Dazzle",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3032,11 +1960,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "MP5-SD | Condition Zero",
+    "name": "CZ75-Auto | Imprint",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3044,11 +1972,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Galil AR | Vandal",
+    "name": "P90 | Grim",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3056,11 +1984,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "AWP | Exoskeleton",
+    "name": "Desert Eagle | Directive",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3068,11 +1996,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "SSG 08 | Parallax",
+    "name": "Glock-18 | Weasel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3080,11 +2008,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "UMP-45 | Gold Bismuth",
+    "name": "MAG-7 | Petroglyph",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3092,11 +2020,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Nova | Clear Polymer",
+    "name": "SG 553 | Triarch",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3104,11 +2032,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Dual Berettas | Dezastre",
+    "name": "SCAR-20 | Powercore",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3116,11 +2044,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Five-SeveN | Fairy Tale",
+    "name": "Tec-9 | Fuel Injector",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3128,11 +2056,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "USP-S | Monster Mashup",
+    "name": "AUG | Syd Mead",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3140,11 +2068,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "M4A4 | Cyber Security",
+    "name": "MP9 | Airlock",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3152,11 +2080,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Glock-18 | Neo-Noir",
+    "name": "FAMAS | Roll Cage",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3164,11 +2092,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "M4A1-S | Printstream",
+    "name": "AK-47 | Neon Revolution",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3176,11 +2104,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case9",
-    "caseName": "Operation Broken Fang Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "Negev | Ultralight",
+    "name": "★ Bayonet | Autotronic",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3188,31 +2116,391 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
   },
   {
-    "name": "SSG 08 | Mainframe 001",
+    "name": "★ Bayonet | Black Laminate",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Bayonet | Bright Water",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Bayonet | Freehand",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Bayonet | Gamma Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Bayonet | Lore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Autotronic",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Black Laminate",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Bright Water",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Freehand",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Gamma Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Flip Knife | Lore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Autotronic",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Black Laminate",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Bright Water",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Freehand",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Gamma Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Gut Knife | Lore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Autotronic",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Black Laminate",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Bright Water",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Freehand",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Gamma Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ Karambit | Lore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Autotronic",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Black Laminate",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Bright Water",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Freehand",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Gamma Doppler",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Lore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case22",
+    "caseName": "Gamma 2 Case"
+  },
+  {
+    "name": "MAC-10 | Carnivore",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case23",
+    "caseName": "Gamma Case"
+  },
+  {
+    "name": "PP-Bizon | Harvester",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "P90 | Freight",
+    "name": "P250 | Iron Clad",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "P250 | Cassette",
+    "name": "Tec-9 | Ice Cap",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3220,11 +2508,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "PP-Bizon | Runic",
+    "name": "Nova | Exo",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3232,11 +2520,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "P2000 | Gnarled",
+    "name": "Five-SeveN | Violent Daimyo",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3244,11 +2532,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "SG 553 | Ol' Rusty",
+    "name": "SG 553 | Aerial",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3256,11 +2544,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "MAG-7 | Monster Call",
+    "name": "R8 Revolver | Reboot",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3268,11 +2556,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "MP5-SD | Kitbash",
+    "name": "P90 | Chopper",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3280,11 +2568,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "Tec-9 | Brother",
+    "name": "Sawed-Off | Limelight",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3292,11 +2580,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "Galil AR | Connexion",
+    "name": "AWP | Phobos",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3304,11 +2592,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "MAC-10 | Allure",
+    "name": "AUG | Aristocrat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3316,11 +2604,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "MP7 | Abyssal Apparition",
+    "name": "P2000 | Imperial Dragon",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3328,11 +2616,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "M4A4 | Tooth Fairy",
+    "name": "SCAR-20 | Bloodsport",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3340,11 +2628,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "Glock-18 | Vogue",
+    "name": "M4A4 | Desolate Space",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3352,11 +2640,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "XM1014 | Entombed",
+    "name": "M4A1-S | Mecha Industries",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3364,11 +2652,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "Desert Eagle | Printstream",
+    "name": "Glock-18 | Wasteland Rebel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3376,11 +2664,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case23",
+    "caseName": "Gamma Case"
   },
   {
-    "name": "AK-47 | Legion of Anubis",
+    "name": "P2000 | Oceanic",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -3388,655 +2676,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Nomad Knife",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Blue Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Boreal Forest",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Case Hardened",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Crimson Web",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Forest DDPAT",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Night Stripe",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Safari Mesh",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Scorched",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Stained",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Nomad Knife | Urban Masked",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Blue Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Boreal Forest",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Case Hardened",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Crimson Web",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Forest DDPAT",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Night Stripe",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Safari Mesh",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Scorched",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Slaughter",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Stained",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Paracord Knife | Urban Masked",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Blue Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Boreal Forest",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Case Hardened",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Crimson Web",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Forest DDPAT",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Night Stripe",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Safari Mesh",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Scorched",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Slaughter",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Stained",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Skeleton Knife | Urban Masked",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Blue Steel",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Boreal Forest",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Case Hardened",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Crimson Web",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Fade",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Forest DDPAT",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Night Stripe",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Safari Mesh",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Scorched",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Slaughter",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Stained",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "★ Survival Knife | Urban Masked",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case10",
-    "caseName": "Fracture Case"
-  },
-  {
-    "name": "AWP | Capillary",
-    "wears": [
-      "factory-new",
-      "minimal-wear",
-      "field-tested",
-      "well-worn",
-      "battle-scarred"
-    ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
-  },
-  {
-    "name": "R8 Revolver | Bone Forged",
+    "name": "Dual Berettas | Ventilators",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "AUG | Tom Cat",
+    "name": "MP9 | Bioleak",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "Desert Eagle | Blue Ply",
+    "name": "G3SG1 | Orange Crash",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4044,11 +2708,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "AK-47 | Searing Rage",
+    "name": "Sawed-Off | Fubar",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4056,11 +2720,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "CZ75-Auto | Distressed",
+    "name": "SG 553 | Atlas",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4068,11 +2732,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "Negev | Prototype",
+    "name": "M249 | Spectre",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4080,11 +2744,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "MP5-SD | Desert Strike",
+    "name": "Tec-9 | Re-Entry",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4092,11 +2756,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "SCAR-20 | Enforcer",
+    "name": "SSG 08 | Ghost Crusader",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4104,11 +2768,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "SG 553 | Darkwing",
+    "name": "XM1014 | Black Tie",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4116,11 +2780,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "Sawed-Off | Apocalypto",
+    "name": "Galil AR | Firefight",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4128,11 +2792,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "P2000 | Acid Etched",
+    "name": "CZ75-Auto | Red Astor",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4140,11 +2804,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "SSG 08 | Fever Dream",
+    "name": "P250 | Asiimov",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4152,11 +2816,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "AK-47 | Phantom Disruptor",
+    "name": "AUG | Fleet Flock",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4164,11 +2828,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "MAG-7 | Justice",
+    "name": "UMP-45 | Primal Saber",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4176,11 +2840,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "MAC-10 | Disco Tech",
+    "name": "M4A1-S | Chantico's Fire",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4188,11 +2852,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "Glock-18 | Bullet Queen",
+    "name": "PP-Bizon | Judgement of Anubis",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4200,11 +2864,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "M4A1-S | Player Two",
+    "name": "★ Bayonet | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4212,11 +2876,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Damascus Steel",
+    "name": "★ Bayonet | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4224,11 +2888,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Doppler",
+    "name": "★ Bayonet | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4236,11 +2900,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Marble Fade",
+    "name": "★ Bayonet | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4248,11 +2912,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Rust Coat",
+    "name": "★ Bayonet | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4260,11 +2924,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Tiger Tooth",
+    "name": "★ Bayonet | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4272,11 +2936,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Navaja Knife | Ultraviolet",
+    "name": "★ Flip Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4284,11 +2948,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Damascus Steel",
+    "name": "★ Flip Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4296,11 +2960,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Doppler",
+    "name": "★ Flip Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4308,11 +2972,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Marble Fade",
+    "name": "★ Flip Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4320,11 +2984,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Rust Coat",
+    "name": "★ Flip Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4332,11 +2996,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Tiger Tooth",
+    "name": "★ Flip Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4344,11 +3008,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Stiletto Knife | Ultraviolet",
+    "name": "★ Gut Knife | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4356,11 +3020,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Damascus Steel",
+    "name": "★ Gut Knife | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4368,11 +3032,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Doppler",
+    "name": "★ Gut Knife | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4380,11 +3044,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Marble Fade",
+    "name": "★ Gut Knife | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4392,11 +3056,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Rust Coat",
+    "name": "★ Gut Knife | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4404,11 +3068,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Tiger Tooth",
+    "name": "★ Gut Knife | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4416,11 +3080,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Talon Knife | Ultraviolet",
+    "name": "★ Karambit | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4428,11 +3092,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Damascus Steel",
+    "name": "★ Karambit | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4440,11 +3104,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Doppler",
+    "name": "★ Karambit | Marble Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4452,11 +3116,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Marble Fade",
+    "name": "★ Karambit | Rust Coat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4464,11 +3128,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Rust Coat",
+    "name": "★ Karambit | Tiger Tooth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4476,11 +3140,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Tiger Tooth",
+    "name": "★ Karambit | Ultraviolet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4488,11 +3152,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "★ Ursus Knife | Ultraviolet",
+    "name": "★ M9 Bayonet | Damascus Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4500,11 +3164,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case11",
-    "caseName": "Prisma 2 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "MAG-7 | Popdog",
+    "name": "★ M9 Bayonet | Doppler",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4512,31 +3176,91 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
   },
   {
-    "name": "Dual Berettas | Elite 1.6",
+    "name": "★ M9 Bayonet | Marble Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
+  },
+  {
+    "name": "★M9 Bayonet | Rust Coat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Tiger Tooth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case24",
+    "caseName": "Chroma 3 Case"
+  },
+  {
+    "name": "USP-S | Lead Conduit",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
+  },
+  {
+    "name": "MAC-10 | Lapis Gator",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "FAMAS | Decommissioned",
+    "name": "Dual Berettas | Cartel",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "MAC-10 | Classic Crate",
+    "name": "SSG 08 | Necropos",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4544,11 +3268,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "Glock-18 | Sacrifice",
+    "name": "PP-Bizon | Photic Zone",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4556,11 +3280,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "SCAR-20 | Assault",
+    "name": "Tec-9 | Jambiya",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4568,11 +3292,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "Tec-9 | Flash Out",
+    "name": "FAMAS | Valence",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4580,11 +3304,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "M249 | Aztec",
+    "name": "MAG-7 | Praetorian",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4592,11 +3316,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "Five-SeveN | Buddy",
+    "name": "Five-SeveN | Triumvirate",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4604,11 +3328,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "MP5-SD | Agent",
+    "name": "Glock-18 | Royal Legion",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4616,11 +3340,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "UMP-45 | Plastique",
+    "name": "MP7 | Impire",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4628,11 +3352,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "P250 | Inferno",
+    "name": "Desert Eagle | Kumicho Dragon",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4640,11 +3364,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "P90 | Nostalgia",
+    "name": "Nova | Hyper Beast",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4652,11 +3376,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "AUG | Death by Puppy",
+    "name": "AWP | Elite Build",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4664,11 +3388,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "MP9 | Hydra",
+    "name": "M4A4 | The Battlestar",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4676,11 +3400,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "FAMAS | Commemoration",
+    "name": "AK-47 | Fuel Injector",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4688,11 +3412,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "AWP | Wildfire",
+    "name": "★ Bowie Knife",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4700,11 +3424,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife",
+    "name": "★ Bowie Knife | Blue Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4712,11 +3436,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Blue Steel",
+    "name": "★ Bowie Knife | Boreal Forest",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4724,11 +3448,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Boreal Forest",
+    "name": "★ Bowie Knife | Case Hardened",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4736,11 +3460,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Case Hardened",
+    "name": "★ Bowie Knife | Crimson Web",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4748,11 +3472,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Crimson Web",
+    "name": "★ Bowie Knife | Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4760,11 +3484,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Fade",
+    "name": "★ Bowie Knife | Forest DDPAT",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4772,11 +3496,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Forest DDPAT",
+    "name": "★ Bowie Knife | Night Stripe",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4784,11 +3508,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Night Stripe",
+    "name": "★ Bowie Knife | Safari Mesh",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4796,11 +3520,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Safari Mesh",
+    "name": "★ Bowie Knife | Scorched",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4808,11 +3532,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Scorched",
+    "name": "★ Bowie Knife | Slaughter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4820,11 +3544,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Stained",
+    "name": "★ Bowie Knife | Stained",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4832,11 +3556,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "★ Classic Knife | Urban Masked",
+    "name": "★ Bowie Knife | Urban Masked",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4844,11 +3568,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case12",
-    "caseName": "CS20 Case"
+    "caseId": "case25",
+    "caseName": "Operation Wildfire Case"
   },
   {
-    "name": "MP5-SD | Acid Wash",
+    "name": "R8 Revolver | Crimson Web",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4856,31 +3580,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "R8 Revolver | Memento",
+    "name": "SCAR-20 | Outbreak",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "SCAR-20 | Torn",
+    "name": "Desert Eagle | Corinthian",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "Dual Berettas | Balance",
+    "name": "Sawed-Off | Yorick",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4888,11 +3612,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "M249 | Warbird",
+    "name": "AUG | Ricochet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4900,11 +3624,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "G3SG1 | Black Sand",
+    "name": "PP-Bizon | Fuel Rod",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4912,11 +3636,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "Nova | Plume",
+    "name": "XM1014 | Teclu Burner",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4924,11 +3648,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "AUG | Arctic Wolf",
+    "name": "SG 553 | Tiger Moth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4936,11 +3660,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "P2000 | Obsidian",
+    "name": "Tec-9 | Avalanche",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4948,11 +3672,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "MP7 | Neon Ply",
+    "name": "Negev | Power Loader",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4960,11 +3684,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "PP-Bizon | Embargo",
+    "name": "Five-SeveN | Retrobution",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4972,11 +3696,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "AK-47 | Rat Rod",
+    "name": "AK-47 | Point Disarray",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4984,11 +3708,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "Tec-9 | Decimator",
+    "name": "G3SG1 | The Executioner",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -4996,11 +3720,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "SG 553 | Colony IV",
+    "name": "P90 | Shapewood",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5008,11 +3732,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "SSG 08 | Bloodshot",
+    "name": "R8 Revolver | Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5020,11 +3744,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "MAC-10 | Stalker",
+    "name": "M4A4 | Royal Paladin",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5032,11 +3756,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "AWP | Containment Breach",
+    "name": "★ Bayonet",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5044,11 +3768,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case13",
-    "caseName": "Shattered Web Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "MAC-10 | Whitefish",
+    "name": "★ Bayonet | Blue Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5056,31 +3780,787 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case26",
+    "caseName": "Revolver Case"
   },
   {
-    "name": "MP7 | Mischief",
+    "name": "★ Bayonet | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Bayonet | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Blue Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Slaughter",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Flip Knife | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Blue Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Slaughter",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Gut Knife | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Blue Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Kaarambit | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Slaughter",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ Karambit | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Blue Steel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Slaughter",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "★ M9 Bayonet | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case26",
+    "caseName": "Revolver Case"
+  },
+  {
+    "name": "MAG-7 | Cobalt Core",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "SCAR-20 | Green Marine",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "AK-47 | Uncharted",
+    "name": "Dual Berettas | Dualing Dragons",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "P250 | Verdigris",
+    "name": "MAC-10 | Rangeen",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5088,11 +4568,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "P90 | Off World",
+    "name": "FAMAS | Survivor Z",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5100,11 +4580,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "FAMAS | Crypsis",
+    "name": "Glock-18 | Wraiths",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5112,11 +4592,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Galil AR | Akoben",
+    "name": "XM1014 | Scumbria",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5124,11 +4604,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Desert Eagle | Light Rail",
+    "name": "MP7 | Special Delivery",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5136,11 +4616,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "MP5-SD | Gauss",
+    "name": "Galil AR | Stone Cold",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5148,11 +4628,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "UMP-45 | Moonrise",
+    "name": "P250 | Wingshot",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5160,11 +4640,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Tec-9 | Bamboozle",
+    "name": "M249 | Nebula Crusader",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5172,11 +4652,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "AWP | Atheris",
+    "name": "G3SG1 | Flux",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5184,11 +4664,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "R8 Revolver | Skull Crusher",
+    "name": "AK-47 | Frontside Misty",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5196,11 +4676,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "AUG | Momentum",
+    "name": "SSG 08 | Big Iron",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5208,11 +4688,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "XM1014 | Incinegator",
+    "name": "M4A1-S | Golden Coil",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5220,11 +4700,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "M4A4 | The Emperor",
+    "name": "USP-S | Kill Confirmed",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5232,11 +4712,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Five-SeveN | Angry Mob",
+    "name": "★ Shadow Daggers",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5244,11 +4724,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case14",
-    "caseName": "Prisma Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Glock-18 | Oxide Blaze",
+    "name": "★ Shadow Daggers | Blue Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5256,31 +4736,175 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case27",
+    "caseName": "Shadow Case"
   },
   {
-    "name": "Nova | Wood Fired",
+    "name": "★ Shadow Daggers | Boreal Forest",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Case Hardened",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Fade",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Forest DDPAT",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Night Stripe",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Safari Mesh",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Scorched",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Slaughter",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Stained",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "★ Shadow Daggers | Urban Masked",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case27",
+    "caseName": "Shadow Case"
+  },
+  {
+    "name": "Nova | Ranger",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case28",
+    "caseName": "Falchion Case"
+  },
+  {
+    "name": "P90 | Elite Build",
     "wears": [
       "minimal-wear",
       "field-tested",
       "well-worn"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "MP9 | Modest Threat",
+    "name": "Galil AR | Rocket Pop",
     "wears": [
       "factory-new",
       "minimal-wear",
       "field-tested"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "Tec-9 | Fubar",
+    "name": "USP-S | Torque",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5288,11 +4912,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "M4A4 | Magnesium",
+    "name": "UMP-45 | Riot",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5300,11 +4924,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "Sawed-Off | Black Sand",
+    "name": "Glock-18 | Bunsen Burner",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5312,11 +4936,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "SG 553 | Danger Close",
+    "name": "Negev | Loudmouth",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5324,11 +4948,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "Galil AR | Signal",
+    "name": "FAMAS | Neural Net",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5336,11 +4960,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "MAC-10 | Pipe Down",
+    "name": "P2000 | Handgun",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5348,11 +4972,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "USP-S | Flashback",
+    "name": "M4A4 | Evil Daimyo",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5360,11 +4984,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "G3SG1 | Scavenger",
+    "name": "MP9 | Ruby Poison Dart",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5372,11 +4996,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "P250 | Nevermore",
+    "name": "MP7 | Nemesis",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5384,11 +5008,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "UMP-45 | Momentum",
+    "name": "CZ75-Auto | Yellow Jacket",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5396,11 +5020,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "Desert Eagle | Mecha Industries",
+    "name": "SG 553 | Cyrex",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5408,11 +5032,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "MP5-SD | Phosphor",
+    "name": "AK-47 | Aquamarine Revenge",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5420,11 +5044,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "AK-47 | Asiimov",
+    "name": "AWP | Hyper Beast",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5432,11 +5056,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "AWP | Neo-Noir",
+    "name": "★ Falchion Knife",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5444,11 +5068,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife",
+    "name": "★ Falchion Knife | Blue Steel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5456,11 +5080,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Blue Steel",
+    "name": "★ Falchion Knife | Boreal Forest",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5468,11 +5092,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Boreal Forest",
+    "name": "★ Falchion Knife | Case Hardened",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5480,11 +5104,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Case Hardened",
+    "name": "★ Falchion Knife | Crimson Web",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5492,11 +5116,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Crimson Web",
+    "name": "★ Falchion Knife | Fade",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5504,11 +5128,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Fade",
+    "name": "★ Falchion Knife | Forest DDPAT",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5516,11 +5140,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Forest DDPAT",
+    "name": "★ Falchion Knife | Night Stripe",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5528,11 +5152,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Night Stripe",
+    "name": "★ Falchion Knife | Safari Mesh",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5540,11 +5164,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Safari Mesh",
+    "name": "★ Falchion Knife | Scorched",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5552,11 +5176,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Scorched",
+    "name": "★ Falchion Knife | Slaughter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5564,11 +5188,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Stained",
+    "name": "★ Falchion Knife | Stained",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5576,11 +5200,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Navaja Knife | Urban Masked",
+    "name": "★ Falchion Knife | Urban Masked",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5588,11 +5212,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case28",
+    "caseName": "Falchion Case"
   },
   {
-    "name": "★ Stiletto Knife",
+    "name": "MP7 | Armor Core",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5600,11 +5224,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Blue Steel",
+    "name": "P250 | Valence",
+    "wears": [
+      "minimal-wear",
+      "field-tested",
+      "well-worn"
+    ],
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
+  },
+  {
+    "name": "Sawed-Off | Origami",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested"
+    ],
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
+  },
+  {
+    "name": "Desert Eagle | Bronze Deco",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5612,11 +5256,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Boreal Forest",
+    "name": "AK-47 | Elite Build",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5624,11 +5268,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Case Hardened",
+    "name": "Negev | Man-o'-war",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5636,11 +5280,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Crimson Web",
+    "name": "UMP-45 | Grand Prix",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5648,11 +5292,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Fade",
+    "name": "AWP | Worm God",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5660,11 +5304,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Forest DDPAT",
+    "name": "CZ75-Auto | Pole Position",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5672,11 +5316,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Night Stripe",
+    "name": "MAG-7 | Heat",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5684,11 +5328,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Safari Mesh",
+    "name": "FAMAS | Djinn",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5696,11 +5340,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Scorched",
+    "name": "Galil AR | Eco",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5708,11 +5352,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Slaughter",
+    "name": "Five-SeveN | Monkey Business",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5720,11 +5364,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Stained",
+    "name": "M4A1-S | Hyper Beast",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5732,11 +5376,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Stiletto Knife | Urban Masked",
+    "name": "MAC-10 | Neon Rider",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5744,11 +5388,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case29",
+    "caseName": "Chroma  2 Case"
   },
   {
-    "name": "★ Talon Knife",
+    "name": "XM1014 | Quicksilver",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5756,11 +5400,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Blue Steel",
+    "name": "M249 | System Lock",
+    "wears": [
+      "minimal-wear",
+      "field-tested",
+      "well-worn"
+    ],
+    "caseId": "case30",
+    "caseName": "Chroma Case"
+  },
+  {
+    "name": "SCAR-20 | Grotto",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested"
+    ],
+    "caseId": "case30",
+    "caseName": "Chroma Case"
+  },
+  {
+    "name": "Glock-18 | Catacombs",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5768,11 +5432,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Boreal Forest",
+    "name": "MP9 | Deadly Poison",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5780,11 +5444,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Case Hardened",
+    "name": "Dual Berettas | Urban Shock",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5792,11 +5456,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Crimson Web",
+    "name": "Sawed-Off | Serenity",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5804,11 +5468,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Fade",
+    "name": "MAC-10 | Malachite",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5816,11 +5480,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Forest DDPAT",
+    "name": "Desert Eagle | Naga",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5828,11 +5492,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Night Stripe",
+    "name": "AK-47 | Cartel",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5840,11 +5504,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Safari Mesh",
+    "name": "P250 | Muertos",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5852,11 +5516,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Scorched",
+    "name": "M4A4 | 龍王 (Dragon King)",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5864,11 +5528,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Slaughter",
+    "name": "AWP | Man-o'-war",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5876,11 +5540,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Stained",
+    "name": "Galil AR | Chatterbox",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5888,11 +5552,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case30",
+    "caseName": "Chroma Case"
   },
   {
-    "name": "★ Talon Knife | Urban Masked",
+    "name": "MAG-7 | Firestarter",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5900,11 +5564,31 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
   },
   {
-    "name": "★ Ursus Knife",
+    "name": "G3SG1 | Murky",
+    "wears": [
+      "minimal-wear",
+      "field-tested",
+      "well-worn"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "MP9 | Dart",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "UMP-45 | Delusion",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5912,11 +5596,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
   },
   {
-    "name": "★ Ursus Knife | Blue Steel",
+    "name": "Five-SeveN | Urban Hazard",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5924,11 +5608,11 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
   },
   {
-    "name": "★ Ursus Knife | Boreal Forest",
+    "name": "Sawed-Off | Highwayman",
     "wears": [
       "factory-new",
       "minimal-wear",
@@ -5936,7 +5620,315 @@
       "well-worn",
       "battle-scarred"
     ],
-    "caseId": "case15",
-    "caseName": "Danger Zone Case"
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "M4A1-S | Basilisk",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "Glock-18 | Grinder",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "M4A4 | Griffin",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "P250 | Cartel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "XM1014 | Tranquility",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "SCAR-20 | Cardiac",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "P2000 | Fire Elemental",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "AK-47 | Wasteland Rebel",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case31",
+    "caseName": "Operation Vanguard Weapon Case"
+  },
+  {
+    "name": "Negev | Bratatat",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "SSG 08 | Dark Water",
+    "wears": [
+      "minimal-wear",
+      "field-tested",
+      "well-worn"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "USP-S | Blood Tiger",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "MAC-10 | Ultraviolet",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "CZ75-Auto | Hexane",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "XM1014 | Red Python",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "MP7 | Ocean Foam",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "PP-Bizon | Blue Streak",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "Desert Eagle | Crimson Web",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "P90 | Virus",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "Glock-18 | Steel Disruption",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "AUG | Bengal Tiger",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "AWP | Corticera",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "P2000 | Corticera",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "Nova | Bloomstick",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "AK-47 | Jaguar",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "M4A4 | Bullet Rain",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case32",
+    "caseName": "eSports 2014 Summer Case"
+  },
+  {
+    "name": "UMP-45 | Labyrinth",
+    "wears": [
+      "factory-new",
+      "minimal-wear",
+      "field-tested",
+      "well-worn",
+      "battle-scarred"
+    ],
+    "caseId": "case33",
+    "caseName": "Operation Breakout Weapon Case"
   }
 ]

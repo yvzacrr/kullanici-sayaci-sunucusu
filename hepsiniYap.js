@@ -9,7 +9,7 @@ const partFiles = fs.readdirSync('.').filter(f => f.startsWith('items_part_') &&
 for (const file of partFiles) {
   console.log(`🚀 Başlatılıyor: ${file}`);
   try {
-    execSync(`node fiyatCekici_parca.js ${file}`, { stdio: 'inherit' });
+    execSync(`node fiyatCekici.js ${file}`, { stdio: 'inherit' });
   } catch (err) {
     console.error(`❌ HATA: ${file} işlenemedi:`, err.message);
   }

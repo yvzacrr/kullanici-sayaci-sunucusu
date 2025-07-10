@@ -1,302 +1,33 @@
 {
-  "AK-47 | Aquamarine Revenge": {
-    "Field-Tested": "$52.29",
-    "Minimal Wear": "$113.50",
-    "Well-Worn": "$46.09",
-    "Battle-Scarred": "$41.66"
-  },
-  "M4A1-S | Printstream": {
-    "Factory New": "$1,150.00",
-    "Minimal Wear": "$582.14",
-    "Field-Tested": "$392.18",
-    "Well-Worn": "$338.00",
-    "Battle-Scarred": "$317.52"
-  },
-  "★ Butterfly Knife | Doppler": {
-    "Factory New": null,
-    "Minimal Wear": null
-  },
-  "FAMAS | Bad Trip": {
-    "Factory New": "$26.17",
-    "Minimal Wear": "$7.28",
-    "Field-Tested": "$3.19",
-    "Well-Worn": "$2.54",
-    "Battle-Scarred": "$1.97"
-  },
-  "AWP | Printstream": {
-    "Minimal Wear": "$190.51",
-    "Field-Tested": "$108.94",
-    "Well-Worn": "$69.69"
-  },
-  "Glock-18 | Shinobu": {
-    "Factory New": "$32.55",
-    "Minimal Wear": "$14.39",
-    "Field-Tested": "$7.50"
-  },
-  "UMP-45 | K.O. Factory": {
-    "Factory New": "$29.41",
-    "Minimal Wear": "$12.16",
-    "Field-Tested": "$6.80",
-    "Well-Worn": "$5.43",
-    "Battle-Scarred": "$4.55"
-  },
-  "AK-47 | Searing Rage": {
-    "Factory New": "$39.00",
-    "Minimal Wear": "$12.24",
-    "Field-Tested": null,
-    "Well-Worn": "$5.98",
-    "Battle-Scarred": "$4.40"
-  },
-  "P90 | Wave Breaker": {
-    "Factory New": "$4.15",
-    "Minimal Wear": "$1.58",
-    "Field-Tested": "$0.69",
-    "Well-Worn": "$0.58",
-    "Battle-Scarred": "$0.46"
-  },
-  "Galil AR | Control": {
-    "Factory New": "$3.64",
-    "Minimal Wear": "$1.61",
-    "Field-Tested": "$0.69",
-    "Well-Worn": "$0.63",
-    "Battle-Scarred": "$0.46"
-  },
-  "Nova | Rising Sun": {
-    "Factory New": "$4.23",
-    "Minimal Wear": "$1.56",
-    "Field-Tested": "$0.66",
-    "Well-Worn": "$0.58",
-    "Battle-Scarred": "$0.43"
-  },
-  "Desert Eagle | Serpent Strike": {
-    "Factory New": "$3.53",
-    "Minimal Wear": "$1.64",
-    "Field-Tested": "$0.66",
-    "Well-Worn": "$0.65",
-    "Battle-Scarred": "$0.58"
-  },
-  "Zeus x27 | Tosai": {
-    "Factory New": "$3.56",
-    "Minimal Wear": "$1.64",
-    "Field-Tested": "$0.69",
-    "Well-Worn": "$0.63",
-    "Battle-Scarred": "$0.49"
-  },
-  "XM1014 | Mockingbird": {
-    "Factory New": "$0.57",
-    "Minimal Wear": "$0.20",
-    "Field-Tested": "$0.09",
-    "Well-Worn": "$0.08",
-    "Battle-Scarred": "$0.08"
-  },
-  "SSG 08 | Memorial": {
-    "Factory New": "$0.73",
-    "Minimal Wear": "$0.20",
-    "Field-Tested": "$0.09",
-    "Well-Worn": "$0.07",
-    "Battle-Scarred": "$0.07"
-  },
-  "P2000 | Sure Grip": {
-    "Factory New": "$0.55",
-    "Minimal Wear": null,
-    "Field-Tested": "$0.09",
-    "Well-Worn": "$0.07",
-    "Battle-Scarred": "$0.07"
-  },
-  "MAG-7 | Resupply": {
-    "Factory New": "$0.52",
-    "Minimal Wear": null,
-    "Field-Tested": "$0.09",
-    "Well-Worn": "$0.07",
-    "Battle-Scarred": "$0.07"
-  },
-  "M4A4 | Choppa": {
-    "Factory New": "$0.80",
-    "Minimal Wear": "$0.23",
-    "Field-Tested": "$0.10",
-    "Well-Worn": "$0.08",
-    "Battle-Scarred": "$0.07"
-  },
-  "USP-S | PC-GRN": {
-    "Factory New": "$1.05",
-    "Minimal Wear": "$0.25",
-    "Field-Tested": "$0.11",
-    "Well-Worn": "$0.09",
-    "Battle-Scarred": "$0.08"
-  },
-  "MP9 | Nexus": {
-    "Factory New": "$0.63",
-    "Minimal Wear": "$0.20",
-    "Field-Tested": "$0.10",
-    "Well-Worn": "$0.07",
-    "Battle-Scarred": "$0.07"
-  },
-  "★ Nomad Knife | Damascus Steel": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
+  "SCAR-20 | Trail Blazer": {
+    "Factory New": "$0.69",
+    "Minimal Wear": "$0.39",
+    "Field-Tested": "$0.17",
     "Well-Worn": null,
-    "Battle-Scarred": null
+    "Battle-Scarred": "$0.11"
   },
-  "★ Nomad Knife | Doppler": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
+  "R8 Revolver | Tango": {
+    "Minimal Wear": "$0.38",
+    "Field-Tested": "$0.19",
+    "Well-Worn": "$0.16"
   },
-  "★ Nomad Knife | Marble Fade": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
+  "Desert Eagle | Calligraffiti": {
+    "Factory New": "$1.10",
+    "Minimal Wear": "$0.36",
+    "Field-Tested": "$0.18"
   },
-  "★ Nomad Knife | Rust Coat": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
+  "USP-S | 27": {
+    "Factory New": "$0.77",
+    "Minimal Wear": "$0.29",
+    "Field-Tested": "$0.17",
+    "Well-Worn": "$0.13",
+    "Battle-Scarred": "$0.13"
   },
-  "★ Nomad Knife | Tiger Tooth": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Nomad Knife | Ultraviolet": {
-    "Factory New": null,
-    "Minimal Wear": "$444.45",
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": "$290.55"
-  },
-  "★ Paracord Knife | Damascus Steel": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Paracord Knife | Doppler": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Paracord Knife | Marble Fade": {
-    "Factory New": null,
-    "Minimal Wear": "$489.35",
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Paracord Knife | Rust Coat": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": "$153.47"
-  },
-  "★ Paracord Knife | Tiger Tooth": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Paracord Knife | Ultraviolet": {
-    "Factory New": null,
-    "Minimal Wear": "$246.81",
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": "$184.00"
-  },
-  "★ Skeleton Knife | Damascus Steel": {
-    "Factory New": "$684.11",
-    "Minimal Wear": "$622.07",
-    "Field-Tested": "$604.33",
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Skeleton Knife | Doppler": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Skeleton Knife | Marble Fade": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Skeleton Knife | Rust Coat": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Skeleton Knife | Tiger Tooth": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Skeleton Knife | Ultraviolet": {
-    "Factory New": null,
-    "Minimal Wear": "$719.99",
-    "Field-Tested": null,
-    "Well-Worn": "$554.00",
-    "Battle-Scarred": null
-  },
-  "★ Survival Knife | Damascus Steel": {
-    "Factory New": "$215.00",
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": "$235.20",
-    "Battle-Scarred": null
-  },
-  "★ Survival Knife | Doppler": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Survival Knife | Marble Fade": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Survival Knife | Rust Coat": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": "$189.33",
-    "Battle-Scarred": "$154.67"
-  },
-  "★ Survival Knife | Tiger Tooth": {
-    "Factory New": null,
-    "Minimal Wear": "$350.00",
-    "Field-Tested": null,
-    "Well-Worn": null,
-    "Battle-Scarred": null
-  },
-  "★ Survival Knife | Ultraviolet": {
-    "Factory New": null,
-    "Minimal Wear": null,
-    "Field-Tested": null,
-    "Well-Worn": "$194.47",
-    "Battle-Scarred": null
+  "MP5-SD | Statics": {
+    "Factory New": "$0.75",
+    "Minimal Wear": "$0.34",
+    "Field-Tested": "$0.17",
+    "Well-Worn": "$0.11",
+    "Battle-Scarred": "$0.11"
   }
 }

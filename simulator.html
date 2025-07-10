@@ -696,6 +696,12 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     <div id="inventoryButton">Envanter</div>
 </div>
 
+<div id="inspectModal">
+    <div class="item-image-container">
+        <img src="" alt="" id="inspectItemImage" />
+    </div>
+    <div id="inspectItemPrice" class="item-price"></div>
+</div>
 
 <div id="mainContent" class="main-content-wrapper">
     <div class="relative text-center mb-8" id="title-wrapper">
@@ -3175,7 +3181,7 @@ const rareItemPools = {
                 { name: 'R8 Revolver | Crimson Web', rarity: 'Mil-Spec Grade', image: 'https://www.csgodatabase.com/images/skins/webp/R8_Revolver_Crimson_Web.webp' },
 
             ],
-            'case27': [ // Shadow Case
+             'case27': [ // Shadow Case
                 { name: 'USP-S | Kill Confirmed', rarity: 'Covert', image: 'https://www.csgodatabase.com/images/skins/webp/USP-S_Kill_Confirmed.webp' },
                 { name: 'M4A1-S | Golden Coil', rarity: 'Covert', image: 'https://www.csgodatabase.com/images/skins/webp/M4A1-S_Golden_Coil.webp' },
                 { name: 'AK-47 | Frontside Misty', rarity: 'Classified', image: 'https://www.csgodatabase.com/images/skins/webp/AK-47_Frontside_Misty.webp' },
@@ -4422,6 +4428,18 @@ function displayStats() {
     statsContainer.innerHTML += otherStatsHTML;
 
     statsSection.appendChild(statsContainer);
+}
+
+// Kazanılan item modalını göster
+function showItemModal(itemName, price) {
+    const modal = document.getElementById('inspectModal');
+    const itemImage = document.getElementById('inspectItemImage');
+    const itemPrice = document.getElementById('inspectItemPrice');
+    
+    itemImage.src = `path_to_images/${itemName}.jpg`;  // Kazanılan item’ın görselini göster
+    itemPrice.textContent = `Fiyat: ${price}`;         // Kazanılan item’ın fiyatını göster
+
+    modal.style.display = 'block'; // Modalı göster
 }
 
 // ==========================================================
