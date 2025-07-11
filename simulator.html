@@ -669,7 +669,33 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     box-shadow: 0 0 5px #34d399;
 }    
     
-    
+/* İnceleme Ekranındaki Detaylı Fiyat Listesi Stilleri */
+#detailedPriceList .price-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+/* Tıklanan desenin kendi aşınma seviyesini vurgulamak için */
+#detailedPriceList .price-entry.active {
+    background-color: rgba(163, 230, 53, 0.2); /* Yeşilimsi bir vurgu */
+    border: 1px solid rgba(163, 230, 53, 0.4);
+}
+
+#detailedPriceList .wear-name {
+    font-size: 0.9rem;
+    color: #cbd5e1; /* Soluk gri */
+}
+
+#detailedPriceList .wear-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+} 
+
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -793,21 +819,37 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
         </div>
 
         <div class="inspect-right w-1/3 flex flex-col text-white p-4">
-            <h2 id="inspectItemName" class="text-5xl font-bold mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);"></h2>
-            <div class="bg-black bg-opacity-25 p-4 rounded-md">
-                <p class="mb-2"><span id="inspectWear" class="text-gray-400">Dış Görünüş:</span> <span id="inspectItemWear" class="font-semibold"></span></p>
-                <p><span id="inspectFloat" class="text-gray-400">Float Değeri:</span> <span id="inspectItemFloat" class="font-mono font-semibold"></span></p>
-            </div>
-            <div class="bg-black bg-opacity-25 p-4 rounded-md mt-4">
-                 <p><span id="inspectOrigin" class="text-gray-400">Kaynak:</span> <span id="inspectCaseOrigin" class="font-semibold"></span></p>
-            </div>
-
-            <div class="mt-auto text-right">
-                <div id="inspectItemPrice" class="inline-block bg-black bg-opacity-40 p-4 rounded-md text-2xl">
-                    <span id="inspectPrice">Fiyat Bilgisi Yok</span>
-                </div>
-            </div>
+    <div>
+        <h2 id="inspectItemName" class="text-5xl font-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);"></h2>
+        <div class="flex items-center gap-2 mt-2">
+            <img id="inspectCaseImage" src="" class="w-8 h-8">
+            <p id="inspectCaseOrigin" class="text-gray-300 font-semibold"></p>
         </div>
+    </div>
+
+    <div class="mt-6 bg-black bg-opacity-25 p-4 rounded-md">
+        <p class="text-gray-400 text-sm">Aşınma Durumu</p>
+        <p id="inspectItemWear" class="text-lg font-bold"></p>
+        
+        <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3 relative">
+            <div class="bg-gradient-to-r from-green-400 via-yellow-400 to-red-500 h-2.5 rounded-full"></div>
+            <div id="floatMarker" class="absolute top-[-4px] w-1 h-5 bg-white rounded-full border-2 border-black" style="left: 50%;"></div>
+        </div>
+        <p class="text-right font-mono text-sm mt-1">Float: <span id="inspectItemFloat"></span></p>
+    </div>
+
+    <div id="detailedPriceListContainer" class="mt-4 bg-black bg-opacity-25 p-4 rounded-md flex-grow">
+        <p class="text-gray-400 text-sm mb-2">Piyasa Fiyatları</p>
+        <div id="detailedPriceList" class="space-y-1">
+            </div>
+    </div>
+
+    <div class="mt-auto text-right hidden"> 
+        <div id="inspectItemPrice" class="inline-block bg-black bg-opacity-40 p-2 rounded-md text-xl">
+            <span id="inspectPrice"></span>
+        </div>
+    </div>
+</div>
     </div>
 </div>
         
@@ -4184,49 +4226,79 @@ function saveUserData() {
 function inspectItem(itemObject) {
     let currentLanguage = localStorage.getItem('language') || 'en';
     const inspectModal = document.getElementById('inspectionModal');
-    const priceElement = document.getElementById('inspectPrice');
 
-    // --- FİYAT BULMA MANTIĞI ---
-    // 1. Ana fiyat listesinden desenin kendi objesini bulalım.
-    const priceDataForSkin = tumFiyatlar[itemObject.name];
-    let specificPrice = translations.inspectPrice[currentLanguage]; // Varsayılan "Fiyat Bilgisi Yok" metni
-
-    // 2. Eğer desenin fiyat bilgisi varsa...
-    if (priceDataForSkin) {
-        // ...ve bu desenin bizim tıkladığımız aşınma durumuna ait bir fiyatı varsa...
-        if (priceDataForSkin[itemObject.wear.name]) {
-            // ...o fiyatı al.
-            specificPrice = priceDataForSkin[itemObject.wear.name];
-        }
-    }
-    // --- FİYAT MANTIĞI SONU ---
+    // --- Gerekli HTML Elementlerini Seçelim ---
+    const itemNameEl = document.getElementById('inspectItemName');
+    const caseImageEl = document.getElementById('inspectCaseImage');
+    const caseOriginEl = document.getElementById('inspectCaseOrigin');
+    const itemWearEl = document.getElementById('inspectItemWear');
+    const floatMarkerEl = document.getElementById('floatMarker');
+    const itemFloatEl = document.getElementById('inspectItemFloat');
+    const priceListEl = document.getElementById('detailedPriceList');
     
-    // Modal'daki elementleri dolduruyoruz.
-    document.getElementById('inspectItemName').textContent = ''; // Terzi efekti için önce temizle
+    // --- 1. Temel Bilgileri Doldur ---
+    itemNameEl.textContent = ''; // Terzi efekti için önce temizle
     document.getElementById('inspectImage').src = itemObject.image;
-    document.getElementById('inspectItemWear').textContent = `${itemObject.wear.name} (${itemObject.wear.abbr})`;
-    document.getElementById('inspectItemFloat').textContent = itemObject.float.toFixed(8);
-    document.getElementById('inspectCaseOrigin').textContent = itemObject.caseOrigin;
-    
-    // Fiyat elementine bulduğumuz doğru fiyatı yazdırıyoruz.
-    priceElement.textContent = specificPrice;
+    itemWearEl.textContent = `${itemObject.wear.name} (${itemObject.wear.abbr})`;
+    itemFloatEl.textContent = itemObject.float.toFixed(8);
 
-    // Modal'ı görünür yap.
+    // Kasa resmini ve adını bulup ekle
+    const caseData = allCases.find(c => c.name === itemObject.caseOrigin);
+    if (caseData) {
+        caseImageEl.src = caseData.image;
+        caseOriginEl.textContent = caseData.name;
+    } else {
+        caseImageEl.src = ''; // Bulunamazsa boş bırak
+        caseOriginEl.textContent = itemObject.caseOrigin || 'Bilinmiyor';
+    }
+
+    // --- 2. Float Göstergesini Ayarla ---
+    // Float değerini % olarak hesapla (0.00 -> %0, 1.00 -> %100)
+    const floatPercentage = itemObject.float * 100;
+    floatMarkerEl.style.left = `calc(${floatPercentage}% - 2px)`; // -2px, işaretçiyi ortalamak için
+    
+    // --- 3. Detaylı Fiyat Listesini Doldur ---
+    priceListEl.innerHTML = ''; // Önceki listeyi temizle
+    const priceDataForSkin = tumFiyatlar[itemObject.name];
+    
+    if (priceDataForSkin) {
+        const wearOrder = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
+        wearOrder.forEach(wear => {
+            const price = priceDataForSkin[wear];
+            if (price) { // Sadece fiyatı olanları listele
+                const priceEntryDiv = document.createElement('div');
+                priceEntryDiv.className = 'price-entry';
+                
+                // Eğer bu, bizim sahip olduğumuz desenin aşınması ise, 'active' sınıfını ekle
+                if (wear === itemObject.wear.name) {
+                    priceEntryDiv.classList.add('active');
+                }
+                
+                priceEntryDiv.innerHTML = `
+                    <span class="wear-name">${wear}</span>
+                    <span class="wear-price">${price}</span>
+                `;
+                priceListEl.appendChild(priceEntryDiv);
+            }
+        });
+    } else {
+        priceListEl.innerHTML = `<p class="text-gray-500">Bu desen için fiyat bilgisi bulunamadı.</p>`;
+    }
+
+    // --- 4. Modal'ı ve Terzi Efektini Çalıştır ---
     inspectModal.classList.remove('hidden');
 
-    // Terzi efekti (yazıyı sığdırma) için olan kod.
     requestAnimationFrame(() => {
-        const itemNameElement = document.getElementById('inspectItemName');
-        itemNameElement.className = `font-bold mb-4 ${itemObject.color || 'text-white'} font-inspect-title`;
-        itemNameElement.style.whiteSpace = 'nowrap';
-        itemNameElement.textContent = itemObject.name;
+        itemNameEl.className = `font-bold ${itemObject.color || 'text-white'} font-inspect-title`;
+        itemNameEl.style.whiteSpace = 'nowrap';
+        itemNameEl.textContent = itemObject.name;
         
         let currentFontSize = 60; 
-        itemNameElement.style.fontSize = currentFontSize + 'px';
+        itemNameEl.style.fontSize = currentFontSize + 'px';
 
-        while (itemNameElement.scrollWidth > itemNameElement.clientWidth && currentFontSize > 24) {
+        while (itemNameEl.scrollWidth > itemNameEl.clientWidth && currentFontSize > 24) {
             currentFontSize--; 
-            itemNameElement.style.fontSize = currentFontSize + 'px';
+            itemNameEl.style.fontSize = currentFontSize + 'px';
         }
     });
 }
