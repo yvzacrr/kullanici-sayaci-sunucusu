@@ -19,28 +19,23 @@ console.log("Sunucu başlatılıyor...");
 
 // --- YARDIMCI FONKSİYONLAR ---
 
+// Herkese mesaj gönderen ana fonksiyon
 function broadcastToAll(message) {
     wss.clients.forEach(client => {
-        if (client.readyState === 1) {
+        if (client.readyState === 1) { // 1 = OPEN
             client.send(message);
         }
     });
 }
 
-// Hem kullanıcı sayısını hem de listesini tek pakette gönderen YENİ fonksiyon
-function broadcastUpdates() {
+// SADECE kullanıcı sayısını alıp herkese yollayan fonksiyon
+function broadcastUserCount() {
     const count = wss.clients.size;
-    const users = Array.from(wss.clients)
-        .filter(client => client.username) // Sadece adı olanları listeye al
-        .map(client => client.username);
-
     const message = JSON.stringify({
-        type: 'update', // Mesaj tipi artık hep 'update'
-        count: count,
-        users: users
+        type: 'userCount',
+        count: count
     });
-
-    console.log(`[GÜNCELLEME] ${count} kullanıcı, Liste: [${users.join(', ')}]`);
+    console.log(`[Broadcast] Aktif kullanıcı sayısı: ${count}`);
     broadcastToAll(message);
 }
 
@@ -61,36 +56,22 @@ function fetchSkinPrices() {
 
 // ===== ESKİ wss.on('connection') BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
 
+// ===== ESKİ wss.on('connection') BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
+// ===== MEVCUT wss.on('connection') BLOĞUNU BUNUNLA DEĞİŞTİR =====
 wss.on('connection', (ws) => {
-    console.log(`[Bağlantı] Yeni bir kullanıcı bağlandı. Toplam: ${wss.clients.size}`);
-    broadcastUpdates(); // Yeni kullanıcı geldi, herkese haber ver!
+    console.log(`[Bağlantı] Yeni kullanıcı bağlandı. Toplam: ${wss.clients.size}`);
+    broadcastUserCount(); // Yeni kullanıcı gelince sayıyı herkese duyur
 
-    // Sunucuya yeni bağlanan kullanıcıya güncel fiyatları gönder
     if (Object.keys(cachedPrices).length > 0) {
         ws.send(JSON.stringify({ type: 'priceUpdate', data: cachedPrices }));
     }
 
-    // Kullanıcıdan bir mesaj geldiğinde...
-    ws.on('message', (message) => {
-        try {
-            const data = JSON.parse(message);
-
-            // Eğer gelen mesajın tipi 'username' ise...
-            if (data.type === 'username') {
-                ws.username = data.username; // Kullanıcının adını kaydet
-                console.log(`[Kullanıcı Adı] "${ws.username}" olarak ayarlandı.`);
-                broadcastUpdates(); // Adını belirledi, herkese haber ver!
-            }
-        } catch (error) {
-            console.error('[Hata] Gelen mesaj işlenemedi:', error);
-        }
-    });
-
-    // Kullanıcı bağlantıyı kapattığında...
     ws.on('close', () => {
-        console.log(`[Bağlantı] "${ws.username || 'Bilinmeyen kullanıcı'}" ayrıldı.`);
-        broadcastUpdates(); // Kullanıcı gitti, herkese haber ver!
+        console.log(`[Bağlantı] Bir kullanıcı ayrıldı.`);
+        broadcastUserCount(); // Kullanıcı ayrılınca sayıyı herkese tekrar duyur
     });
+
+    ws.on('error', (error) => console.error('[HATA] WebSocket hatası:', error));
 });
 
 // --- Static Dosya Ayarları ---

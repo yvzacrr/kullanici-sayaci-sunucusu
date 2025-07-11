@@ -753,9 +753,6 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     <div> 
         <span id="activeUserText">Aktif Kullanıcı</span>: <span id="active-user-count">...</span>
     </div>
-    <button id="showActiveUsersButton" class="text-sm text-cyan-400 hover:text-cyan-300 underline transition-colors">
-        Aktif Kullanıcıları Gör
-    </button>
 </div>
         
         
@@ -4568,44 +4565,37 @@ function showItemModal(itemName, price) {
 
 // ===== SAYFA YÜKLENDİĞİNDE ÇALIŞACAK TÜM KODLARIN TOPLANDIĞI ANA BLOK =====
 
+// ===== ESKİ, DAĞINIK window.onload BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
+
 window.onload = () => {
-    createCaseMenu();       // Kasaları hemen çiz
+    createCaseMenu();
+    
     // --- GÖREV 1: TEMEL DEĞİŞKENLER VE KURULUM ---
     let currentLanguage = localStorage.getItem('language') || 'tr';
     const activeUser = sessionStorage.getItem('active_user');
-    const username = activeUser || 'Kullanıcı';
-
-    // Easter Egg için gizlenecek ana elementler
-    const mainPageElements = [
-        document.getElementById('topPanel'),
-        document.getElementById('mainContent'),
-        document.getElementById('inventorySection'),
-        document.getElementById('statsSection'),
-        document.getElementById('faqSection')
-    ];
+    const username = activeUser === 'guest' ? 'Misafir' : activeUser;
 
     // --- GÖREV 2: GİRİŞ KONTROLÜ ---
     if (!activeUser) {
         alert("Bu sayfaya erişim için giriş yapmalısınız.");
         window.location.href = 'Geçiş.html';
-        return; // Kodun devamının çalışmasını engelle
+        return;
     }
 
-    // --- GÖREV 3: DİLİ VE STATİK METİNLERİ AYARLA ---
-    setLanguage(currentLanguage);
+    // --- GÖREV 3: STATİK METİNLERİ VE BAKİYEYİ AYARLA ---
+    generateSkinImages();
+    updateBalanceDisplay();
+    setLanguage(currentLanguage); // Dil ayarlarını yükle
 
-    // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ (EVENT LISTENER) EKLEME ---
-    
-    // Üst Panel Butonları
-    // Üst Panel Butonları
-document.getElementById('homeButton').addEventListener('click', resetToMenu);
+    // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ EKLEME ---
 
-// Envanter butonuna tıklandığında ARTIK DOĞRU ÇALIŞIYOR:
-document.getElementById('inventoryButton').addEventListener('click', () => {
-    showSection('inventory'); // Önce akıllı paneli çağırıp diğer odaların ışığını kapat ve sayfayı üste taşı
-    displayInventory();       // Sonra envanterin içeriğini doldur
-});
-    
+    // Üst Panel Butonları
+    document.getElementById('homeButton').addEventListener('click', resetToMenu);
+    document.getElementById('inventoryButton').addEventListener('click', () => {
+        showSection('inventory');
+        displayInventory();
+    });
+
     // Arama Çubuğu
     document.getElementById('searchBar').addEventListener('input', filterCases);
 
@@ -4614,59 +4604,47 @@ document.getElementById('inventoryButton').addEventListener('click', () => {
         document.getElementById('inspectionModal').classList.add('hidden'); 
     });
 
-    // Aktif Kullanıcıları Gösterme Butonları
-    document.getElementById('showActiveUsersButton').addEventListener('click', () => {
-        document.getElementById('activeUsersModal').classList.remove('hidden');
-    });
-    document.getElementById('closeActiveUsersModal').addEventListener('click', () => {
-        document.getElementById('activeUsersModal').classList.add('hidden');
-    });
-
-    // DİL SEÇİMİ BUTONLARI (DOĞRU YER BURASI!)
+    // Dil Seçimi Butonları
     const languageButton = document.getElementById('languageButton');
     const languageModal = document.getElementById('languageModal');
     const langOptions = document.querySelectorAll('.lang-option');
 
-    languageButton.addEventListener('click', (event) => {
-        event.stopPropagation(); // Diğer tıklama olaylarının tetiklenmesini engelle
-        languageModal.classList.toggle('hidden');
-    });
-
+    if(languageButton) {
+        languageButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            languageModal.classList.toggle('hidden');
+        });
+    }
     langOptions.forEach(option => {
         option.addEventListener('click', () => {
             const selectedLang = option.dataset.lang;
             localStorage.setItem('language', selectedLang);
             setLanguage(selectedLang);
-            
             langOptions.forEach(btn => btn.classList.remove('active'));
             option.classList.add('active');
-            
             languageModal.classList.add('hidden');
         });
     });
-    
-    // Dil menüsü dışına tıklayınca kapatma
     document.addEventListener('click', (event) => {
-        if (!languageModal.contains(event.target) && !languageButton.contains(event.target)) {
+        if (languageModal && !languageModal.contains(event.target) && !languageButton.contains(event.target)) {
             languageModal.classList.add('hidden');
         }
     });
 
-    // EASTER EGG BUTONLARI
+    // Easter Egg Butonları
+    const mainPageElements = [document.getElementById('topPanel'), document.getElementById('mainContent'), document.getElementById('inventorySection'), document.getElementById('statsSection'), document.getElementById('faqSection')];
     document.getElementById('easterEggButton').addEventListener('click', () => {
         mainPageElements.forEach(el => el && el.classList.add('hidden'));
         document.getElementById('easterEggScreen').classList.remove('hidden');
     });
-
     document.getElementById('closeEasterEggButton').addEventListener('click', () => {
         document.getElementById('easterEggScreen').classList.add('hidden');
-        mainPageElements.forEach(el => el && el.classList.remove('hidden'));
         resetToMenu();
     });
-    
-    // PROFİL VE ÇIKIŞ BUTONLARI
+
+    // PROFİL VE ÇIKIŞ BUTONLARI (KAYIP OLANLAR)
     const profileBtnContainer = document.getElementById('profileButtonContainer');
-    if (profileBtnContainer) {
+    if (profileBtnContainer && activeUser !== 'guest') {
         profileBtnContainer.innerHTML = `<div class="profile-button"><img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg" alt="profil"><span>${username}</span></div>`;
         profileBtnContainer.querySelector('.profile-button').addEventListener('click', () => { 
             showSection('stats'); 
@@ -4675,22 +4653,18 @@ document.getElementById('inventoryButton').addEventListener('click', () => {
     }
 
     const logoutBtnContainer = document.getElementById('logoutButtonContainer');
-    if (logoutBtnContainer) {
+    if (logoutBtnContainer && activeUser !== 'guest') {
         logoutBtnContainer.innerHTML = `<button class="logout-btn" id="logoutButton">${translations.logoutButton[currentLanguage]}</button>`;
         logoutBtnContainer.querySelector('.logout-btn').addEventListener('click', () => { 
+            saveUserData(); // Çıkış yapmadan önce son veriyi kaydet
             alert(username + ' hesabından çıkış yapılıyor...'); 
             sessionStorage.removeItem('active_user'); 
             window.location.href = 'Geçiş.html'; 
         });
     }
-    
 
     // --- GÖREV 5: SAYFAYI BAŞLAT ---
-    updateBalanceDisplay();
-    connectWebSocket(); // Sunucuyla bağlantı kur
-
     showSection('selection'); // Ana menü alanını görünür yap
-    
 };
 
 // ===== YENİ BAŞLANGIÇ KODUNUN SONU =====
@@ -4755,18 +4729,6 @@ function updateActiveUsersModal(users) {
     <div id="languageModal" class="hidden absolute bottom-full mb-2 w-40 bg-slate-800/80 backdrop-blur-md border border-slate-600 rounded-lg p-2 shadow-lg">
         <button data-lang="tr" class="lang-option w-full text-left p-2 rounded hover:bg-slate-700">Türkçe</button>
         <button data-lang="en" class="lang-option w-full text-left p-2 rounded hover:bg-slate-700">English</button>
-    </div>
-</div>
-
-<div id="activeUsersModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[4000]" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-    <div class="bg-slate-800/80 border border-slate-600 rounded-2xl shadow-xl w-full max-w-md p-6">
-        <div class="flex justify-between items-center mb-4">
-            <h2 id="activeUsersModalTitle" class="text-2xl font-bold text-white">Aktif Kullanıcılar:</h2>
-            <button id="closeActiveUsersModal" class="text-gray-400 hover:text-white text-3xl">&times;</button>
-        </div>
-        <div id="activeUsersList" class="max-h-80 overflow-y-auto space-y-2 pr-2">
-            <p class="text-gray-400">Aktif kullanıcı bulunamadı.</p>
-        </div>
     </div>
 </div>
 

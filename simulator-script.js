@@ -4,40 +4,29 @@ const userCountElement = document.getElementById('active-user-count');
 const socket = new WebSocket('ws://localhost:8080'); // WebSocket bağlantısı, sunucu adresine göre değişecek
 
 // WebSocket bağlantısı açıldığında
+// ===== ESKİ socket.onopen BLOĞUNU BUNUNLA DEĞİŞTİR =====
 socket.onopen = () => {
-    console.log('WebSocket sunucusuna bağlanıldı.');
+    console.log('WebSocket sunucusuna başarıyla bağlanıldı.');
+    const userCountElement = document.getElementById('active-user-count');
+    if(userCountElement) userCountElement.textContent = '...';
 };
 
 // ===== ESKİ socket.onmessage BLOĞUNU SİLİP BUNU YAPIŞTIR =====
 // ===== ESKİ socket.onmessage BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
 
+// ===== ESKİ socket.onmessage BLOĞUNU SİLİP BUNU YAPIŞTIR =====
 socket.onmessage = (event) => {
     try {
         const data = JSON.parse(event.data);
 
-        // Gelen mesajın tipine göre işlem yap
-        switch (data.type) {
-            // Sunucudan 'update' paketi geldiyse...
-            case 'update':
-                // Paketin içindeki 'count' ile kullanıcı sayısını güncelle
-                if (data.count !== undefined) {
-                    userCountElement.textContent = data.count;
-                }
-                // Paketin içindeki 'users' listesi ile modal'ı güncelle
-                // (window.updateActiveUsersModal fonksiyonu simulator.html içinde tanımlı)
-                if (data.users && window.updateActiveUsersModal) {
-                    window.updateActiveUsersModal(data.users);
-                }
-                break;
-
-            // Fiyat güncelleme mesajı eskisi gibi çalışmaya devam ediyor
-            case 'priceUpdate':
-                const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
-                document.dispatchEvent(priceEvent);
-                break;
-
-            default:
-                console.log("Sunucudan bilinmeyen mesaj tipi alındı:", data.type);
+        if (data.type === 'userCount') {
+            const userCountElement = document.getElementById('active-user-count');
+            if (userCountElement) {
+                userCountElement.textContent = data.count;
+            }
+        } else if (data.type === 'priceUpdate') {
+            const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
+            document.dispatchEvent(priceEvent);
         }
     } catch (error) {
         console.error('Sunucudan gelen mesaj işlenirken hata oluştu:', error);
@@ -132,24 +121,27 @@ const socket = new WebSocket(socketURL);
         userCountElement.textContent = '...'; // Bağlantı kuruldu, sayı bekleniyor.
     };
 
-    // Sunucudan bir mesaj geldiğinde çalışır.
-    socket.onmessage = (event) => {
+// ===== ESKİ socket.onmessage BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
+socket.onmessage = (event) => {
+    try {
         const data = JSON.parse(event.data);
 
-        // Gelen verinin tipi 'userCount' ise içindeki sayıyı ekrana yazdırıyoruz.
+        // Gelen mesajın tipi 'userCount' ise...
         if (data.type === 'userCount') {
-            userCountElement.textContent = data.count;
-        }
-
-        // YENİ: Gelen verinin tipi 'priceUpdate' ise...
-        if (data.type === 'priceUpdate') {
-            console.log('Fiyat güncelleme mesajı alındı, ana sayfaya etkinlik gönderiliyor...');
-            // Ana HTML sayfasının dinleyebileceği özel bir etkinlik oluştur ve fırlat.
-            // Bu, farklı script dosyalarının birbiriyle konuşmasının en temiz yoludur.
+            const userCountElement = document.getElementById('active-user-count');
+            if (userCountElement) {
+                userCountElement.textContent = data.count;
+            }
+        
+        // Gelen mesajın tipi 'priceUpdate' ise...
+        } else if (data.type === 'priceUpdate') {
             const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
             document.dispatchEvent(priceEvent);
         }
-    };
+    } catch (error) {
+        console.error('Sunucudan gelen mesaj işlenirken hata oluştu:', error);
+    }
+};
 
     // Bağlantı koptuğunda çalışır.
     socket.onclose = () => {
