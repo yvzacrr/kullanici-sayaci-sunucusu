@@ -696,7 +696,21 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     color: #fff;
 } 
 
-    </style>
+/* --- Fotoğrafın İçinde Durduğu Kutunun Stilleri --- */
+/* İncelenen fotoğrafın bozulmasını engelleyen ve görünümünü düzelten KESİN ÇÖZÜM */
+.inspect-left img {
+    /* Fotoğrafın, içinde bulunduğu kutudan taşmasını engeller */
+    max-width: 100%;
+    max-height: 100%;
+
+    /* BU EN ÖNEMLİSİ: Fotoğrafın en-boy oranını korur, ezilip büzülmesini engeller */
+    object-fit: contain;
+
+    /* İsteğe bağlı: Fotoğrafın etrafında bir gölge oluşturarak daha şık durmasını sağlar */
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5));
+} 
+   
+   </style>
 </head>
 <body class="bg-gray-900 text-white">
     
@@ -815,41 +829,43 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
 
     <div class="w-full max-w-6xl h-full max-h-[80vh] flex p-8 gap-8 inspect-info-box">
         <div class="inspect-left flex-1 flex justify-center items-center bg-black bg-opacity-20 rounded-lg p-4">
-            <img id="inspectImage" src="" alt="İncelenen Eşya">
+            
+            <img id="inspectImage" src="" alt="İncelenen Eşya" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));">
+
         </div>
 
         <div class="inspect-right w-1/3 flex flex-col text-white p-4">
-    <div>
-        <h2 id="inspectItemName" class="text-5xl font-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);"></h2>
-        <div class="flex items-center gap-2 mt-2">
-            <img id="inspectCaseImage" src="" class="w-8 h-8">
-            <p id="inspectCaseOrigin" class="text-gray-300 font-semibold"></p>
-        </div>
-    </div>
-
-    <div class="mt-6 bg-black bg-opacity-25 p-4 rounded-md">
-        <p class="text-gray-400 text-sm">Aşınma Durumu</p>
-        <p id="inspectItemWear" class="text-lg font-bold"></p>
-        
-        <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3 relative">
-            <div class="bg-gradient-to-r from-green-400 via-yellow-400 to-red-500 h-2.5 rounded-full"></div>
-            <div id="floatMarker" class="absolute top-[-4px] w-1 h-5 bg-white rounded-full border-2 border-black" style="left: 50%;"></div>
-        </div>
-        <p class="text-right font-mono text-sm mt-1">Float: <span id="inspectItemFloat"></span></p>
-    </div>
-
-    <div id="detailedPriceListContainer" class="mt-4 bg-black bg-opacity-25 p-4 rounded-md flex-grow">
-        <p class="text-gray-400 text-sm mb-2">Piyasa Fiyatları</p>
-        <div id="detailedPriceList" class="space-y-1">
+            <div>
+                <h2 id="inspectItemName" class="text-5xl font-bold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);"></h2>
+                <div class="flex items-center gap-2 mt-2">
+                    <img id="inspectCaseImage" src="" class="w-8 h-8">
+                    <p id="inspectCaseOrigin" class="text-gray-300 font-semibold"></p>
+                </div>
             </div>
-    </div>
 
-    <div class="mt-auto text-right hidden"> 
-        <div id="inspectItemPrice" class="inline-block bg-black bg-opacity-40 p-2 rounded-md text-xl">
-            <span id="inspectPrice"></span>
+            <div class="mt-6 bg-black bg-opacity-25 p-4 rounded-md">
+                <p class="text-gray-400 text-sm">Aşınma Durumu</p>
+                <p id="inspectItemWear" class="text-lg font-bold"></p>
+                
+                <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3 relative">
+                    <div class="bg-gradient-to-r from-green-400 via-yellow-400 to-red-500 h-2.5 rounded-full"></div>
+                    <div id="floatMarker" class="absolute top-[-4px] w-1 h-5 bg-white rounded-full border-2 border-black" style="left: 50%;"></div>
+                </div>
+                <p class="text-right font-mono text-sm mt-1">Float: <span id="inspectItemFloat"></span></p>
+            </div>
+
+            <div id="detailedPriceListContainer" class="mt-4 bg-black bg-opacity-25 p-4 rounded-md flex-grow">
+                <p class="text-gray-400 text-sm mb-2">Piyasa Fiyatları</p>
+                <div id="detailedPriceList" class="space-y-1">
+                    </div>
+            </div>
+
+            <div class="mt-auto text-right hidden"> 
+                <div id="inspectItemPrice" class="inline-block bg-black bg-opacity-40 p-2 rounded-md text-xl">
+                    <span id="inspectPrice"></span>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
         
@@ -3547,12 +3563,14 @@ const rareItemPools = {
 // ===== ESKİ ve DAĞINIK TÜM showSection, onload ve addEventListener KODLARINI SİLİP BUNU YAPIŞTIR =====
 
 function showSection(sectionName) {
-    // Önce TÜM ana bölümleri gizleyerek temiz bir başlangıç yapalım.
+    // YENİ EKLENEN SİHİRLİ SATIR:
+    window.scrollTo(0, 0);
+
+    // ESKİ KODUN OLDUĞU GİBİ DEVAM EDİYOR:
     mainContent.classList.add('hidden');
     inventorySection.classList.add('hidden');
     statsSection.classList.add('hidden');
 
-    // Şimdi sadece istenen bölümü gösterelim
     if (sectionName === 'selection' || sectionName === 'opening') {
         mainContent.classList.remove('hidden');
         if (sectionName === 'selection') {
@@ -4071,12 +4089,12 @@ function resetToMenu() {
 function displayInventory() {
 // Bir eşya objesi alıp, bu objenin bilgileriyle inceleme modalını doldurur ve gösterir.
 
-    // 1. Adım: Diğer ana bölümleri gizle
-    mainContent.classList.add('hidden'); // Kasa menüsünü içeren ana kutuyu gizle
-    faqSection.classList.add('hidden');    // SSS bölümünü gizle
+    // 1. Adım: Diğer ana bölümleri gizle  <-- BU SATIRLARA ARTIK GEREK YOK
+    mainContent.classList.add('hidden'); 
+    faqSection.classList.add('hidden');  
 
-    // 2. Adım: Envanter bölümünü görünür yap
-    inventorySection.classList.remove('hidden'); // Envanter kutusundaki 'hidden' sınıfını kaldırarak onu göster
+    // 2. Adım: Envanter bölümünü görünür yap <-- BU SATIRA DA ARTIK GEREK YOK
+    inventorySection.classList.remove('hidden'); 
 
     // 3. Adım: Envanter kutusunun içindeki ızgarayı (grid) seç
     const inventoryGrid = document.getElementById('inventoryGrid');
@@ -4126,7 +4144,7 @@ itemDiv.addEventListener('click', () => {
             inventoryGrid.appendChild(itemDiv);
         });
     }
-}
+} 
 // Float değerine göre dış görünüş adını ve kısaltmasını döndürür
 function getWearInfo(floatValue) {
     if (floatValue >= 0.00 && floatValue < 0.07) {
@@ -4579,8 +4597,14 @@ window.onload = () => {
     // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ (EVENT LISTENER) EKLEME ---
     
     // Üst Panel Butonları
-    document.getElementById('homeButton').addEventListener('click', resetToMenu);
-    document.getElementById('inventoryButton').addEventListener('click', displayInventory);
+    // Üst Panel Butonları
+document.getElementById('homeButton').addEventListener('click', resetToMenu);
+
+// Envanter butonuna tıklandığında ARTIK DOĞRU ÇALIŞIYOR:
+document.getElementById('inventoryButton').addEventListener('click', () => {
+    showSection('inventory'); // Önce akıllı paneli çağırıp diğer odaların ışığını kapat ve sayfayı üste taşı
+    displayInventory();       // Sonra envanterin içeriğini doldur
+});
     
     // Arama Çubuğu
     document.getElementById('searchBar').addEventListener('input', filterCases);
