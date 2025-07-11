@@ -42,6 +42,16 @@ function broadcastActiveUserList() {
     broadcastToAll(message);
 }
 
+function broadcastUserCount() {
+    const count = wss.clients.size; // Bağlı olan tüm kullanıcıların sayısını al
+    const message = JSON.stringify({
+        type: 'userCount', // Mesajın tipi 'userCount' olsun
+        count: count       // İçine de sayıyı koy
+    });
+    console.log(`[Broadcast] Aktif kullanıcı sayısı gönderiliyor: ${count}`);
+    broadcastToAll(message); // Herkese bu mesajı yolla
+}
+
 function fetchSkinPrices() {
     console.log("[Fiyatlar] Lokal dosyadan (prices.json) okunuyor...");
     try {
@@ -59,6 +69,7 @@ function fetchSkinPrices() {
 
 wss.on('connection', (ws) => {
     console.log(`[Bağlantı] Yeni bir kullanıcı bağlandı. Toplam: ${wss.clients.size}`);
+    broadcastUserCount();
 
     if (Object.keys(cachedPrices).length > 0) {
         ws.send(JSON.stringify({ type: 'priceUpdate', data: cachedPrices }));
@@ -80,6 +91,7 @@ wss.on('connection', (ws) => {
     ws.on('close', () => {
         console.log(`[Bağlantı] ${ws.username || 'Bilinmeyen kullanıcı'} ayrıldı.`);
         broadcastActiveUserList();
+        broadcastUserCount();
     });
 
     ws.on('error', (error) => console.error('[HATA] WebSocket hatası:', error));

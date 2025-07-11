@@ -8,13 +8,39 @@ socket.onopen = () => {
     console.log('WebSocket sunucusuna bağlanıldı.');
 };
 
+// ===== ESKİ socket.onmessage BLOĞUNU SİLİP BUNU YAPIŞTIR =====
 socket.onmessage = (event) => {
-    const data = JSON.parse(event.data); // Gelen veri
-    if (data.type === 'priceUpdate') {
-        console.log('Fiyat Güncellemesi:', data.data); // Burada fiyatları kontrol et
-        updatePrices(data.data);  // Bu fonksiyon fiyatları sayfada güncelleyecek
+    const data = JSON.parse(event.data);
+
+    // Gelen mesajın tipine göre işlem yap
+    switch (data.type) {
+        // Aktif kullanıcı sayısı mesajı geldiyse...
+        case 'userCount':
+            userCountElement.textContent = data.count;
+            break;
+
+        // Fiyat güncelleme mesajı geldiyse...
+        case 'priceUpdate':
+            console.log('Fiyat güncelleme mesajı alındı, ana sayfaya etkinlik gönderiliyor...');
+            const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
+            document.dispatchEvent(priceEvent);
+            break;
+
+        // Aktif kullanıcı listesi mesajı geldiyse... (Bu senin diğer özelliğin için)
+        case 'activeUserList':
+            // Bu mesajı ana HTML dosyasındaki `updateActiveUsersModal` fonksiyonuna yolluyoruz.
+            // Eğer o fonksiyon `simulator.html` içindeyse bu kod çalışacaktır.
+            if (window.updateActiveUsersModal) {
+                window.updateActiveUsersModal(data.users);
+            }
+            break;
+
+        // Bilinmeyen bir mesaj tipi gelirse konsola yazdır
+        default:
+            console.log("Bilinmeyen mesaj tipi alındı:", data.type);
     }
 };
+// =============================================================
 
 function updatePrices(prices) {
     const priceElements = document.querySelectorAll('.item-price');
