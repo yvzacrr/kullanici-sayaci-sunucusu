@@ -4183,34 +4183,50 @@ function saveUserData() {
 
 function inspectItem(itemObject) {
     let currentLanguage = localStorage.getItem('language') || 'en';
+    const inspectModal = document.getElementById('inspectionModal');
+    const priceElement = document.getElementById('inspectPrice');
+
+    // --- FİYAT BULMA MANTIĞI ---
+    // 1. Ana fiyat listesinden desenin kendi objesini bulalım.
+    const priceDataForSkin = tumFiyatlar[itemObject.name];
+    let specificPrice = translations.inspectPrice[currentLanguage]; // Varsayılan "Fiyat Bilgisi Yok" metni
+
+    // 2. Eğer desenin fiyat bilgisi varsa...
+    if (priceDataForSkin) {
+        // ...ve bu desenin bizim tıkladığımız aşınma durumuna ait bir fiyatı varsa...
+        if (priceDataForSkin[itemObject.wear.name]) {
+            // ...o fiyatı al.
+            specificPrice = priceDataForSkin[itemObject.wear.name];
+        }
+    }
+    // --- FİYAT MANTIĞI SONU ---
     
-    // 1. Modal'ı gösteriyoruz ama içindeki başlığı şimdilik boş bırakıyoruz.
-    inspectItemName.textContent = ''; 
-    inspectionModal.classList.remove('hidden');
-
-    // 2. Diğer basit bilgileri dolduruyoruz.
-    inspectItemWear.textContent = `${itemObject.wear.name} (${itemObject.wear.abbr})`;
-    inspectItemFloat.textContent = itemObject.float.toFixed(8);
-    inspectCaseOrigin.textContent = itemObject.caseOrigin;
+    // Modal'daki elementleri dolduruyoruz.
+    document.getElementById('inspectItemName').textContent = ''; // Terzi efekti için önce temizle
+    document.getElementById('inspectImage').src = itemObject.image;
+    document.getElementById('inspectItemWear').textContent = `${itemObject.wear.name} (${itemObject.wear.abbr})`;
+    document.getElementById('inspectItemFloat').textContent = itemObject.float.toFixed(8);
+    document.getElementById('inspectCaseOrigin').textContent = itemObject.caseOrigin;
     
-    // Fiyatı da çeviri sözlüğünden alıyoruz
-    document.getElementById('inspectPrice').textContent = translations.inspectPrice[currentLanguage];
+    // Fiyat elementine bulduğumuz doğru fiyatı yazdırıyoruz.
+    priceElement.textContent = specificPrice;
 
-    inspectImage.src = itemObject.image;
+    // Modal'ı görünür yap.
+    inspectModal.classList.remove('hidden');
 
-    // 3. TERZİYE "BEKLE" KOMUTUNU VERİYORUZ
+    // Terzi efekti (yazıyı sığdırma) için olan kod.
     requestAnimationFrame(() => {
-        // --- TERZİ KODU ARTIK BURADA GÜVENLE ÇALIŞACAK ---
-        inspectItemName.className = `font-bold mb-4 ${itemObject.color} font-inspect-title`;
-        inspectItemName.style.whiteSpace = 'nowrap';
-        inspectItemName.textContent = itemObject.name;
+        const itemNameElement = document.getElementById('inspectItemName');
+        itemNameElement.className = `font-bold mb-4 ${itemObject.color || 'text-white'} font-inspect-title`;
+        itemNameElement.style.whiteSpace = 'nowrap';
+        itemNameElement.textContent = itemObject.name;
         
         let currentFontSize = 60; 
-        inspectItemName.style.fontSize = currentFontSize + 'px';
+        itemNameElement.style.fontSize = currentFontSize + 'px';
 
-        while (inspectItemName.scrollWidth > inspectItemName.clientWidth && currentFontSize > 24) {
+        while (itemNameElement.scrollWidth > itemNameElement.clientWidth && currentFontSize > 24) {
             currentFontSize--; 
-            inspectItemName.style.fontSize = currentFontSize + 'px';
+            itemNameElement.style.fontSize = currentFontSize + 'px';
         }
     });
 }
