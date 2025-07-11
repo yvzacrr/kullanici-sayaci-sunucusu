@@ -1,33 +1,33 @@
 {
   "SCAR-20 | Trail Blazer": {
     "Factory New": "$0.69",
-    "Minimal Wear": "$0.39",
+    "Minimal Wear": "$0.38",
     "Field-Tested": "$0.17",
     "Well-Worn": null,
     "Battle-Scarred": "$0.11"
   },
   "R8 Revolver | Tango": {
-    "Minimal Wear": "$0.38",
-    "Field-Tested": "$0.19",
-    "Well-Worn": "$0.16"
+    "Minimal Wear": "$0.34",
+    "Field-Tested": "$0.17",
+    "Well-Worn": "$0.15"
   },
   "Desert Eagle | Calligraffiti": {
-    "Factory New": "$1.10",
+    "Factory New": "$1.12",
     "Minimal Wear": "$0.36",
     "Field-Tested": "$0.18"
   },
   "USP-S | 27": {
-    "Factory New": "$0.77",
-    "Minimal Wear": "$0.29",
-    "Field-Tested": "$0.17",
-    "Well-Worn": "$0.13",
-    "Battle-Scarred": "$0.13"
-  },
-  "MP5-SD | Statics": {
-    "Factory New": "$0.75",
-    "Minimal Wear": "$0.34",
+    "Factory New": "$0.93",
+    "Minimal Wear": "$0.35",
     "Field-Tested": "$0.17",
     "Well-Worn": "$0.11",
     "Battle-Scarred": "$0.11"
+  },
+  "MP5-SD | Statics": {
+    "Factory New": "$0.74",
+    "Minimal Wear": "$0.34",
+    "Field-Tested": "$0.16",
+    "Well-Worn": "$0.12",
+    "Battle-Scarred": "$0.12"
   }
 }

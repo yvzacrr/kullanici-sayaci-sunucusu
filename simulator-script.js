@@ -8,36 +8,28 @@ socket.onopen = () => {
     console.log('WebSocket sunucusuna bağlanıldı.');
 };
 
-// WebSocket'ten gelen fiyat güncellemesini dinle
 socket.onmessage = (event) => {
-    const data = JSON.parse(event.data); // Sunucudan gelen veriyi alıyoruz
-
-    // Fiyat güncelleme geldiğinde, fiyatları güncelle
+    const data = JSON.parse(event.data); // Gelen veri
     if (data.type === 'priceUpdate') {
-        updatePrices(data.data);  // Fiyatları güncellemeye başlıyoruz
+        console.log('Fiyat Güncellemesi:', data.data); // Burada fiyatları kontrol et
+        updatePrices(data.data);  // Bu fonksiyon fiyatları sayfada güncelleyecek
     }
 };
 
-// Fiyatları sayfada güncelleyen fonksiyon
 function updatePrices(prices) {
-    // Sayfadaki her item için fiyatı güncelleme
-    const priceElements = document.querySelectorAll('.item-price');  // Fiyatları göstereceğimiz elemanları seçiyoruz
+    const priceElements = document.querySelectorAll('.item-price');
     priceElements.forEach(el => {
-        const itemName = el.dataset.itemName; // Her item'a benzersiz bir isim verdik
+        const itemName = el.dataset.itemName; // Her item'a benzersiz bir isim verilmiş
         
-        // Fiyat verisini kontrol et
         if (prices[itemName]) {
-            // Fiyat varsa, en düşük fiyatı göster
-            const price = prices[itemName].lowest;
+            const price = prices[itemName].lowest; // Fiyat burada alınıyor
             if (price) {
-                el.textContent = price;
+                el.textContent = price;  // Fiyat yerleştiriliyor
             } else {
-                // Eğer fiyat bulunamazsa, 'Fiyat Bulunamadı' mesajını göster
-                el.textContent = 'Fiyat Bulunamadı';
+                el.textContent = 'Fiyat Bulunamadı'; // Fiyat yoksa mesaj
             }
         } else {
-            // Eğer item fiyatı henüz alınmamışsa, 'Fiyat Bekleniyor...' mesajını göster
-            el.textContent = 'Fiyat Bekleniyor...';
+            el.textContent = 'Fiyat Bekleniyor...'; // Fiyat henüz yoksa mesaj
         }
     });
 }
