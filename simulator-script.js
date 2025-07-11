@@ -9,35 +9,38 @@ socket.onopen = () => {
 };
 
 // ===== ESKİ socket.onmessage BLOĞUNU SİLİP BUNU YAPIŞTIR =====
+// ===== ESKİ socket.onmessage BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
+
 socket.onmessage = (event) => {
-    const data = JSON.parse(event.data);
+    try {
+        const data = JSON.parse(event.data);
 
-    // Gelen mesajın tipine göre işlem yap
-    switch (data.type) {
-        // Aktif kullanıcı sayısı mesajı geldiyse...
-        case 'userCount':
-            userCountElement.textContent = data.count;
-            break;
+        // Gelen mesajın tipine göre işlem yap
+        switch (data.type) {
+            // Sunucudan 'update' paketi geldiyse...
+            case 'update':
+                // Paketin içindeki 'count' ile kullanıcı sayısını güncelle
+                if (data.count !== undefined) {
+                    userCountElement.textContent = data.count;
+                }
+                // Paketin içindeki 'users' listesi ile modal'ı güncelle
+                // (window.updateActiveUsersModal fonksiyonu simulator.html içinde tanımlı)
+                if (data.users && window.updateActiveUsersModal) {
+                    window.updateActiveUsersModal(data.users);
+                }
+                break;
 
-        // Fiyat güncelleme mesajı geldiyse...
-        case 'priceUpdate':
-            console.log('Fiyat güncelleme mesajı alındı, ana sayfaya etkinlik gönderiliyor...');
-            const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
-            document.dispatchEvent(priceEvent);
-            break;
+            // Fiyat güncelleme mesajı eskisi gibi çalışmaya devam ediyor
+            case 'priceUpdate':
+                const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
+                document.dispatchEvent(priceEvent);
+                break;
 
-        // Aktif kullanıcı listesi mesajı geldiyse... (Bu senin diğer özelliğin için)
-        case 'activeUserList':
-            // Bu mesajı ana HTML dosyasındaki `updateActiveUsersModal` fonksiyonuna yolluyoruz.
-            // Eğer o fonksiyon `simulator.html` içindeyse bu kod çalışacaktır.
-            if (window.updateActiveUsersModal) {
-                window.updateActiveUsersModal(data.users);
-            }
-            break;
-
-        // Bilinmeyen bir mesaj tipi gelirse konsola yazdır
-        default:
-            console.log("Bilinmeyen mesaj tipi alındı:", data.type);
+            default:
+                console.log("Sunucudan bilinmeyen mesaj tipi alındı:", data.type);
+        }
+    } catch (error) {
+        console.error('Sunucudan gelen mesaj işlenirken hata oluştu:', error);
     }
 };
 // =============================================================

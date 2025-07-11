@@ -27,29 +27,21 @@ function broadcastToAll(message) {
     });
 }
 
-function broadcastActiveUserList() {
-    const usernames = [];
-    wss.clients.forEach(client => {
-        if (client.username) {
-            usernames.push(client.username);
-        }
-    });
-    const message = JSON.stringify({
-        type: 'activeUserList',
-        users: usernames
-    });
-    console.log(`[Broadcast] Aktif kullanıcı listesi gönderiliyor: [${usernames.join(', ')}]`);
-    broadcastToAll(message);
-}
+// Hem kullanıcı sayısını hem de listesini tek pakette gönderen YENİ fonksiyon
+function broadcastUpdates() {
+    const count = wss.clients.size;
+    const users = Array.from(wss.clients)
+        .filter(client => client.username) // Sadece adı olanları listeye al
+        .map(client => client.username);
 
-function broadcastUserCount() {
-    const count = wss.clients.size; // Bağlı olan tüm kullanıcıların sayısını al
     const message = JSON.stringify({
-        type: 'userCount', // Mesajın tipi 'userCount' olsun
-        count: count       // İçine de sayıyı koy
+        type: 'update', // Mesaj tipi artık hep 'update'
+        count: count,
+        users: users
     });
-    console.log(`[Broadcast] Aktif kullanıcı sayısı gönderiliyor: ${count}`);
-    broadcastToAll(message); // Herkese bu mesajı yolla
+
+    console.log(`[GÜNCELLEME] ${count} kullanıcı, Liste: [${users.join(', ')}]`);
+    broadcastToAll(message);
 }
 
 function fetchSkinPrices() {
@@ -67,34 +59,38 @@ function fetchSkinPrices() {
 
 // --- WebSocket Olayları ---
 
+// ===== ESKİ wss.on('connection') BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
+
 wss.on('connection', (ws) => {
     console.log(`[Bağlantı] Yeni bir kullanıcı bağlandı. Toplam: ${wss.clients.size}`);
-    broadcastUserCount();
+    broadcastUpdates(); // Yeni kullanıcı geldi, herkese haber ver!
 
+    // Sunucuya yeni bağlanan kullanıcıya güncel fiyatları gönder
     if (Object.keys(cachedPrices).length > 0) {
         ws.send(JSON.stringify({ type: 'priceUpdate', data: cachedPrices }));
     }
 
+    // Kullanıcıdan bir mesaj geldiğinde...
     ws.on('message', (message) => {
         try {
             const data = JSON.parse(message);
-            if (data.type === 'register' && data.username) {
-                ws.username = data.username;
-                console.log(`[Kayıt] ${ws.username} kullanıcısı kayıt oldu.`);
-                broadcastActiveUserList();
+
+            // Eğer gelen mesajın tipi 'username' ise...
+            if (data.type === 'username') {
+                ws.username = data.username; // Kullanıcının adını kaydet
+                console.log(`[Kullanıcı Adı] "${ws.username}" olarak ayarlandı.`);
+                broadcastUpdates(); // Adını belirledi, herkese haber ver!
             }
-        } catch (e) {
-            console.error('[HATA] Gelen mesaj işlenemedi:', e);
+        } catch (error) {
+            console.error('[Hata] Gelen mesaj işlenemedi:', error);
         }
     });
 
+    // Kullanıcı bağlantıyı kapattığında...
     ws.on('close', () => {
-        console.log(`[Bağlantı] ${ws.username || 'Bilinmeyen kullanıcı'} ayrıldı.`);
-        broadcastActiveUserList();
-        broadcastUserCount();
+        console.log(`[Bağlantı] "${ws.username || 'Bilinmeyen kullanıcı'}" ayrıldı.`);
+        broadcastUpdates(); // Kullanıcı gitti, herkese haber ver!
     });
-
-    ws.on('error', (error) => console.error('[HATA] WebSocket hatası:', error));
 });
 
 // --- Static Dosya Ayarları ---
