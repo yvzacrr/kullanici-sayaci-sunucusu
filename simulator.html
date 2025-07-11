@@ -3839,32 +3839,62 @@ function getRandomSkin(caseId) {
 function displayPossibleDrops(caseId) {
     let currentLanguage = localStorage.getItem('language') || 'en';
     const dropsContainer = document.getElementById('possibleDropsContainer');
-    dropsContainer.innerHTML = ''; 
+    dropsContainer.innerHTML = ''; // Önce içini temizle
 
-    const normalSkins = (caseDrops[caseId] || []);
+    const caseSkins = (caseDrops[caseId] || []);
+    const rareSkins = (rareItemPools[caseId] || []);
 
-    if (normalSkins.length > 0) {
+    // --- YARDIMCI FONKSİYON: Fiyatları bulup HTML olarak döndürür ---
+    function getPriceHTML(itemName) {
+        // Doğru kutuya bakıyoruz: `tumFiyatlar`
+        const priceDataForSkin = tumFiyatlar[itemName] || {};
+
+        // Mümkün olan en iyi ve en kötü durumu bulalım
+        const wearOrder = ["Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"];
+        
+        let bestWearPrice = '---';
+        let worstWearPrice = '---';
+
+        // En iyi fiyatı bul (Factory New'den başlayarak)
+        for (const wear of wearOrder) {
+            if (priceDataForSkin[wear]) {
+                bestWearPrice = priceDataForSkin[wear];
+                break; // İlk bulduğumuzda döngüden çık
+            }
+        }
+
+        // En kötü fiyatı bul (Battle-Scarred'dan başlayarak)
+        for (let i = wearOrder.length - 1; i >= 0; i--) {
+            const wear = wearOrder[i];
+            if (priceDataForSkin[wear]) {
+                worstWearPrice = priceDataForSkin[wear];
+                break; // İlk bulduğumuzda döngüden çık
+            }
+        }
+        
+        return `
+            <div class="skin-price-container">
+                <span class="price-bs">${worstWearPrice}</span>
+                <span class="price-separator">-</span>
+                <span class="price-fn">${bestWearPrice}</span>
+            </div>
+        `;
+    }
+
+    // --- Normal Desenleri Ekrana Çiz ---
+    if (caseSkins.length > 0) {
         const normalTitle = document.createElement('h3');
         normalTitle.className = 'col-span-full text-xl font-bold text-white-400 mb-4 text-center';
         normalTitle.id = 'possibleDropsTitle';
-        normalTitle.textContent = translations.possibleDropsTitle[currentLanguage]; // ÇEVİRİDEN ALIYOR
+        normalTitle.textContent = translations.possibleDropsTitle[currentLanguage];
         dropsContainer.appendChild(normalTitle);
 
         const normalItemsGrid = document.createElement('div');
         normalItemsGrid.className = 'grid grid-cols-7 gap-3 mb-8';
 
-        normalSkins.forEach(skin => {
+        caseSkins.forEach(skin => {
             const skinDiv = document.createElement('div');
             skinDiv.className = 'skin-item-preview';
-
-            const fn_name = `${skin.name} (Factory New)`;
-            const bs_name = `${skin.name} (Battle-Scarred)`;
-
-            const fn_price_raw = gelenFiyatlar[fn_name] || null;
-            const bs_price_raw = gelenFiyatlar[bs_name] || null;
-
-            const fn_price_display = fn_price_raw ? `${parseFloat(fn_price_raw).toFixed(2)} $` : '---';
-            const bs_price_display = bs_price_raw ? `${parseFloat(bs_price_raw).toFixed(2)} $` : '---';
             
             skinDiv.innerHTML = `
                 <div class="skin-item-box">
@@ -3872,23 +3902,19 @@ function displayPossibleDrops(caseId) {
                     <div class="rarity-bar ${skinRarities[skin.rarity].barColor}"></div>
                 </div>
                 <p class="skin-item-name text-white">${skin.name}</p>
-                <div class="skin-price-container">
-                    <span class="price-bs">${bs_price_display}</span>
-                    <span class="price-separator">-</span>
-                    <span class="price-fn">${fn_price_display}</span>
-                </div>
+                ${getPriceHTML(skin.name)} 
             `;
             normalItemsGrid.appendChild(skinDiv);
         });
         dropsContainer.appendChild(normalItemsGrid);
     }
     
-    const rareSkins = rareItemPools[caseId] || [];
+    // --- Nadir (Sarı) Desenleri Ekrana Çiz ---
     if (rareSkins.length > 0) {
         const rareTitle = document.createElement('h3');
         rareTitle.className = 'col-span-full text-2xl font-bold text-yellow-300 mb-4 text-center';
         rareTitle.id = 'rareDropsTitle';
-        rareTitle.textContent = translations.rareDropsTitle[currentLanguage]; // ÇEVİRİDEN ALIYOR
+        rareTitle.textContent = translations.rareDropsTitle[currentLanguage];
         dropsContainer.appendChild(rareTitle);
 
         const rareItemsGrid = document.createElement('div');
@@ -3898,26 +3924,13 @@ function displayPossibleDrops(caseId) {
             const skinDiv = document.createElement('div');
             skinDiv.className = 'skin-item-preview';
 
-            const fn_name = `${rareItem.name} (Factory New)`;
-            const bs_name = `${rareItem.name} (Battle-Scarred)`;
-
-            const fn_price_raw = gelenFiyatlar[fn_name] || null;
-            const bs_price_raw = gelenFiyatlar[bs_name] || null;
-            
-            const fn_price_display = fn_price_raw ? `${parseFloat(fn_price_raw).toFixed(2)} $` : '---';
-            const bs_price_display = bs_price_raw ? `${parseFloat(bs_price_raw).toFixed(2)} $` : '---';
-
             skinDiv.innerHTML = `
                 <div class="skin-item-box border border-yellow-500 bg-yellow-500/10">
                     <img src="${rareItem.image}" alt="${rareItem.name}" onerror="this.onerror=null; this.src='https://placehold.co/100x100/555555/ffffff?text=Hata';">
                     <div class="rarity-bar bg-yellow-400"></div>
                 </div>
                 <p class="skin-item-name text-yellow-200">${rareItem.name}</p>
-                <div class="skin-price-container">
-                    <span class="price-bs">${bs_price_display}</span>
-                    <span class="price-separator">-</span>
-                    <span class="price-fn">${fn_price_display}</span>
-                </div>
+                ${getPriceHTML(rareItem.name)}
             `;
             rareItemsGrid.appendChild(skinDiv);
         });
