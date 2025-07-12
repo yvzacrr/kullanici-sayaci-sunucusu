@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,10" rel="stylesheet">
+    <link rel="stylesheet" href="case_opening_animation.css">
     <style>   
 
 /* İnceleme ekranındaki sütunlar için */
@@ -712,8 +713,25 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
    
    </style>
 </head>
+
+
+
 <body class="bg-gray-900 text-white">
-    
+ 
+    <div id="fullScreenAnimationOverlay" class="hidden">
+        <div class="reel-container">
+            <div class="reel-mask"></div>
+            
+            <div class="reel-marker"></div>
+
+            <div id="reelsWrapper" class="reels-wrapper-new">
+                </div>
+        </div>
+        
+        <div id="animationResultPlaque" class="result-plaque hidden">
+            </div>
+    </div>    
+
 <button id="easterEggButton" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg">
 </button>
 
@@ -753,6 +771,9 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     <div> 
         <span id="activeUserText">Aktif Kullanıcı</span>: <span id="active-user-count">...</span>
     </div>
+    <button id="showActiveUsersButton" class="text-sm text-cyan-400 hover:text-cyan-300 underline transition-colors">
+        Aktif Kullanıcıları Gör
+    </button>
 </div>
         
         
@@ -765,7 +786,12 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     <div id="caseSelectionMenu" class="grid grid-cols-7 gap-4 justify-items-center">
         </div>
 
-    <div id="caseOpeningSection" class="hidden flex flex-col items-center justify-center p-4">
+    <div id="caseOpeningSection" class="hidden flex flex-col items-center justify-center p-4">    
+    </div>
+</div>
+
+<div id="animationContainer" class="hidden w-full my-4">
+    <div id="reelsWrapper" class="flex flex-col items-center gap-4">
         </div>
 </div>
 
@@ -866,7 +892,9 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     </div>
 </div>
         
-    
+<script src="simulator-script.js?v=2" defer></script>
+<script src="case_opening_animation.js"></script>    
+
     <script>
         // Tarayıcının oturum hafızasına bak, "active_user" diye bir not var mı?
     // Senin kodun sessionStorage kullandığı için biz de onu kullanıyoruz.
@@ -3692,6 +3720,15 @@ function createCaseMenu() {
 
 // ===== ESKİ selectCase FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR =====
 
+// MEVCUT selectCase FONKSİYONUNUZU SİLİP AŞAĞIDAKİ GÜNCEL HALİNİ YAPIŞTIRIN
+// MEVCUT selectCase FONKSİYONUNUZU SİLİP, BU GÜNCELLENMİŞ VERSİYONU YAPIŞTIRIN
+
+// MEVCUT selectCase FONKSİYONUNU SİLİP, BU YENİ VE TAM VERSİYONU YAPIŞTIR
+
+// simulator.html İÇİNDEKİ ESKİ selectCase ve openCase FONKSİYONLARINI SİLİP,
+// BU İKİ YENİ FONKSİYONU YAPIŞTIR
+// simulator.html dosyasının içine, sildiğiniz eski fonksiyonun yerine bunu yapıştırın.
+
 function selectCase(caseData) {
     let currentLanguage = localStorage.getItem('language') || 'en';
     caseOpeningSection.innerHTML = '';
@@ -3774,6 +3811,94 @@ function selectCase(caseData) {
     showSection('opening');
     displayPossibleDrops(caseData.id);
 }
+
+
+// --- YENİ VE NİHAİ openCase FONKSİYONU ---
+    // ESKİ openCase FONKSİYONUNU SİLİP BUNU YAPIŞTIRIN
+    async function openCase() {
+        if (!currentlySelectedCase) return;
+
+        // Kasa ve animasyon için gerekli bilgileri al
+        const caseId = currentlySelectedCase.id;
+        const caseCount = numberOfCasesToOpen;
+        const dynamicPriceInfo = tumFiyatlar[currentlySelectedCase.name];
+        const basePriceString = (dynamicPriceInfo ? dynamicPriceInfo.lowest : currentlySelectedCase.price) || '0';
+        const casePrice = parseFloat(basePriceString.replace(/[^0-9.]/g, ''));
+        const totalCost = casePrice * caseCount;
+
+        // Bakiye düşürme ve kullanıcı verilerini güncelleme
+        userBalance -= totalCost;
+        if (userStats.openedCases) {
+            userStats.openedCases[currentlySelectedCase.name] = (userStats.openedCases[currentlySelectedCase.name] || 0) + caseCount;
+        }
+        updateBalanceDisplay();
+        
+        // Arayüzü animasyona hazırla
+        const overlay = document.getElementById('fullScreenAnimationOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const faqSection = document.getElementById('faqSection');
+        const resultPlaque = document.getElementById('animationResultPlaque');
+        const topPanel = document.getElementById('topPanel');
+
+        // Her şeyi gizle, animasyon sahnesini göster
+        topPanel.style.display = 'none';
+        mainContent.style.display = 'none';
+        faqSection.style.display = 'none';
+        resultPlaque.classList.add('hidden'); // Önceki sonuçları gizle
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.style.opacity = '1', 10); // CSS geçişi için
+
+        // YENİ animasyon fonksiyonunu çağır ve bitmesini bekle (await)
+        // Bu satır, case_opening_animation.js'deki fonksiyonun işini bitirip
+        // `resolve(results)` demesini bekleyecek.
+        const openedItems = await runNewFullScreenAnimation(caseCount, caseId);
+
+        // Animasyon bitince (Promise çözülünce) bu kodlar çalışacak
+        if (openedItems && openedItems.length > 0) {
+            // Envantere ekle, verileri kaydet
+            openedItems.forEach(skin => {
+                addToInventory(skin); // Bu fonksiyon zaten vardı
+                
+                // İstatistikleri güncelle
+                if(userStats.rarityCounts) {
+                    userStats.rarityCounts[skin.rarity] = (userStats.rarityCounts[skin.rarity] || 0) + 1;
+                }
+            });
+            saveUserData();
+            
+            // Animasyon bittikten sonra çıkan sonuç modalını göster
+            showMultiItemModal(openedItems); // Bu fonksiyon da zaten vardı
+
+            // Sonuç modalı kapandığında her şeyi eski haline getireceğiz
+            const closeModalButton = document.getElementById('closeModalButton');
+            closeModalButton.onclick = () => {
+                // Önce sonuç modalını gizle
+                document.getElementById('itemWonModal').classList.add('hidden');
+                
+                // Animasyon ekranını yavaşça kaybettir
+                overlay.style.opacity = '0';
+                
+                // Animasyon ekranının kaybolma animasyonu bittiğinde...
+                overlay.addEventListener('transitionend', () => {
+                    overlay.classList.add('hidden'); // display: none yap
+                    
+                    // Ana arayüzü geri getir
+                    topPanel.style.display = 'flex';
+                    mainContent.style.display = 'block';
+                    faqSection.style.display = 'flex';
+                    
+                    // En son seçilen kasanın ekranına dön
+                    selectCase(currentlySelectedCase);
+
+                }, { once: true }); // Bu olayın sadece bir kere çalışmasını sağla
+            };
+        } else {
+             // Eğer animasyon bir hata nedeniyle sonuç döndürmezse, arayüzü başa sar
+            console.error("Animasyon bir sonuç döndürmedi.");
+            resetToMenu();
+        }
+    }
+
 
 // YENİ: Kasa listemizdeki fiyatları, sunucudan gelen verilerle güncelleyen fonksiyon.
     function updateLocalCasePrices(priceData) {
@@ -4002,62 +4127,83 @@ function displayPossibleDrops(caseId) {
 // ===== ESKİ openCase FONKSİYONUNU SİL VE BUNU YAPIŞTIR =====
 
 // ESKİ openCase FONKSİYONUNU TAMAMEN SİLİP BUNU YAPIŞTIR
-function openCase(unlockButtonElement) {
-    // --- TEST KONTROLÜ ---
-    // Burayı `true` yaparsan, her zaman aşağıdaki test desenini açar.
-    // Burayı `false` yaparsan, normal rastgele kasa açar.
-    const isTestMode = false; 
-    // ---------------------
+// LÜTFEN MEVCUT openCase FONKSİYONUNUZU BU KODLA TAMAMEN DEĞİŞTİRİN
 
-    console.log(`[Kasa Açılıyor] Test modu aktif mi? ${isTestMode}`);
+// ===== ADIM 2: BU YENİ FONKSİYONU OLDUĞU GİBİ EKLEYİN =====
+// ESKİ openCase FONKSİYONUNU TAMAMEN SİLİP, BU YENİ VE NİHAİ VERSİYONU YAPIŞTIRIN
 
-    // Eğer test modu aktifse, diğer işlemleri atlayıp doğrudan test desenini gösterelim
-    if (isTestMode) {
-        console.log("[Test Modu] Aktif. Manuel test deseni oluşturuluyor...");
-        const testSkin = {
-            name: 'AK-47 | Redline',
-            rarity: 'Classified',
-            image: 'https://www.csgodatabase.com/images/skins/webp/AK-47_Redline.webpv',
-            color: 'text-pink-400',
-            caseOrigin: 'Test Kasası',
-            wear: { name: 'Field-Tested', abbr: 'FT' },
-            float: 0.25123456
-        };
-        // Test desenini göstermek için modal fonksiyonunu çağır
-        showMultiItemModal([testSkin]); // Fonksiyon bir dizi beklediği için köşeli parantez içinde yolluyoruz
-        return; // Fonksiyonun geri kalanını çalıştırmasını engelle.
-    }
+// MEVCUT openCase FONKSİYONUNU TAMAMEN SİL VE BU YENİ VERSİYONU YAPIŞTIR
 
+// MEVCUT openCase FONKSİYONUNU SİL VE BU NİHAİ VERSİYONU YAPIŞTIR
 
-    // ***** AŞAĞIDAKİ KOD SADECE isTestMode = false İSE ÇALIŞIR *****
-    
+// --- YENİ VE NİHAİ openCase FONKSİYONU ---
+async function openCase() {
+    // Gerekli değişkenleri al
     if (!currentlySelectedCase) return;
+    const caseId = currentlySelectedCase.id;
+    const caseCount = numberOfCasesToOpen;
 
-    unlockButtonElement.disabled = true;
-    unlockButtonElement.textContent = 'Açılıyor...';
+    // Arayüzü animasyona hazırla
+    const overlay = document.getElementById('fullScreenAnimationOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const faqSection = document.getElementById('faqSection');
+    const resultPlaque = document.getElementById('animationResultPlaque');
 
-    // Bakiye ve istatistik işlemleri...
-    const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
-    const totalCost = casePrice * numberOfCasesToOpen;
-    userBalance -= totalCost;
-    updateBalanceDisplay();
-    //... (diğer istatistik kodların)
+    // Her şeyi gizle, animasyon sahnesini göster
+    mainContent.style.display = 'none';
+    faqSection.style.display = 'none';
+    overlay.classList.remove('hidden');
+    setTimeout(() => overlay.style.opacity = '1', 10); // CSS geçişi için küçük gecikme
 
-    setTimeout(() => {
-        let droppedSkins = [];
-        for (let i = 0; i < numberOfCasesToOpen; i++) {
-            const droppedSkin = getRandomSkin(currentlySelectedCase.id);
-            droppedSkin.caseOrigin = currentlySelectedCase.name;
-            droppedSkins.push(droppedSkin);
-        }
-        userInventory.push(...droppedSkins);
+    // YENİ animasyon fonksiyonunu çağır ve bitmesini bekle
+    const openedItems = await runNewFullScreenAnimation(caseCount, caseId);
+
+    // Animasyon bitince, sonuçları işle
+    if (openedItems && openedItems.length > 0) {
+        // Envantere ekle, verileri kaydet
+        openedItems.forEach(skin => addToInventory(skin));
         saveUserData();
-        showMultiItemModal(droppedSkins);
+        updateInventoryUI();
+
+        // Sonuç plakasını doldur
+        const lastItem = openedItems[openedItems.length - 1];
+        const rarityInfo = skinRarities[lastItem.rarity] || {};
+        const priceInfo = tumFiyatlar[lastItem.name] || {};
+        const wearPrice = priceInfo[lastItem.wear.name] || 'N/A';
         
-        unlockButtonElement.disabled = false;
-        unlockButtonElement.textContent = 'Kasayı Aç';
-    }, 1500);
+        resultPlaque.innerHTML = `
+            <h3 class="text-2xl font-bold ${rarityInfo.color}">${lastItem.name}</h3>
+            <p class="text-lg text-gray-300">${lastItem.wear.name}</p>
+            <p class="text-xl text-green-400 font-bold mt-2">${wearPrice}</p>
+            <div class="mt-4">
+                <button id="closeAnimationButton" class="btn back-btn">Kapat</button>
+            </div>
+        `;
+        
+        // Sonuç plakasını görünür yap
+        resultPlaque.classList.remove('hidden');
+        setTimeout(() => resultPlaque.classList.add('visible'), 10);
+
+        // Kapat butonuna tıklama olayı ekle
+document.getElementById('closeAnimationButton').onclick = () => {
+    overlay.style.opacity = '0';
+    // Animasyon sahnesi tamamen kaybolduktan sonra...
+    overlay.addEventListener('transitionend', () => {
+        // ...sahneyi ve sonuç plakasını tamamen gizle...
+        overlay.classList.add('hidden');
+        resultPlaque.classList.add('hidden');
+        resultPlaque.classList.remove('visible');
+        
+        // ...ve en önemlisi, ana içerik bölümlerini tekrar göster.
+        // Bu, seni ana menüye değil, en son baktığın kasanın ekranına döndürür.
+        mainContent.style.display = '';
+        faqSection.style.display = '';
+
+    }, { once: true });
+};
+    }
 }
+// ===== YENİ FONKSİYONUN SONU =====
 
 
 // --- YUKARIDAKİ resetToMenu FONKSİYONUNU SİL VE BUNU YAPIŞTIR ---
@@ -4565,37 +4711,44 @@ function showItemModal(itemName, price) {
 
 // ===== SAYFA YÜKLENDİĞİNDE ÇALIŞACAK TÜM KODLARIN TOPLANDIĞI ANA BLOK =====
 
-// ===== ESKİ, DAĞINIK window.onload BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
-
 window.onload = () => {
-    createCaseMenu();
-    
+    createCaseMenu();       // Kasaları hemen çiz
     // --- GÖREV 1: TEMEL DEĞİŞKENLER VE KURULUM ---
     let currentLanguage = localStorage.getItem('language') || 'tr';
     const activeUser = sessionStorage.getItem('active_user');
-    const username = activeUser === 'guest' ? 'Misafir' : activeUser;
+    const username = activeUser || 'Kullanıcı';
+
+    // Easter Egg için gizlenecek ana elementler
+    const mainPageElements = [
+        document.getElementById('topPanel'),
+        document.getElementById('mainContent'),
+        document.getElementById('inventorySection'),
+        document.getElementById('statsSection'),
+        document.getElementById('faqSection')
+    ];
 
     // --- GÖREV 2: GİRİŞ KONTROLÜ ---
     if (!activeUser) {
         alert("Bu sayfaya erişim için giriş yapmalısınız.");
         window.location.href = 'Geçiş.html';
-        return;
+        return; // Kodun devamının çalışmasını engelle
     }
 
-    // --- GÖREV 3: STATİK METİNLERİ VE BAKİYEYİ AYARLA ---
-    generateSkinImages();
-    updateBalanceDisplay();
-    setLanguage(currentLanguage); // Dil ayarlarını yükle
+    // --- GÖREV 3: DİLİ VE STATİK METİNLERİ AYARLA ---
+    setLanguage(currentLanguage);
 
-    // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ EKLEME ---
-
+    // --- GÖREV 4: TÜM BUTONLARA TIKLAMA ÖZELLİĞİ (EVENT LISTENER) EKLEME ---
+    
     // Üst Panel Butonları
-    document.getElementById('homeButton').addEventListener('click', resetToMenu);
-    document.getElementById('inventoryButton').addEventListener('click', () => {
-        showSection('inventory');
-        displayInventory();
-    });
+    // Üst Panel Butonları
+document.getElementById('homeButton').addEventListener('click', resetToMenu);
 
+// Envanter butonuna tıklandığında ARTIK DOĞRU ÇALIŞIYOR:
+document.getElementById('inventoryButton').addEventListener('click', () => {
+    showSection('inventory'); // Önce akıllı paneli çağırıp diğer odaların ışığını kapat ve sayfayı üste taşı
+    displayInventory();       // Sonra envanterin içeriğini doldur
+});
+    
     // Arama Çubuğu
     document.getElementById('searchBar').addEventListener('input', filterCases);
 
@@ -4604,47 +4757,59 @@ window.onload = () => {
         document.getElementById('inspectionModal').classList.add('hidden'); 
     });
 
-    // Dil Seçimi Butonları
+    // Aktif Kullanıcıları Gösterme Butonları
+    document.getElementById('showActiveUsersButton').addEventListener('click', () => {
+        document.getElementById('activeUsersModal').classList.remove('hidden');
+    });
+    document.getElementById('closeActiveUsersModal').addEventListener('click', () => {
+        document.getElementById('activeUsersModal').classList.add('hidden');
+    });
+
+    // DİL SEÇİMİ BUTONLARI (DOĞRU YER BURASI!)
     const languageButton = document.getElementById('languageButton');
     const languageModal = document.getElementById('languageModal');
     const langOptions = document.querySelectorAll('.lang-option');
 
-    if(languageButton) {
-        languageButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            languageModal.classList.toggle('hidden');
-        });
-    }
+    languageButton.addEventListener('click', (event) => {
+        event.stopPropagation(); // Diğer tıklama olaylarının tetiklenmesini engelle
+        languageModal.classList.toggle('hidden');
+    });
+
     langOptions.forEach(option => {
         option.addEventListener('click', () => {
             const selectedLang = option.dataset.lang;
             localStorage.setItem('language', selectedLang);
             setLanguage(selectedLang);
+            
             langOptions.forEach(btn => btn.classList.remove('active'));
             option.classList.add('active');
+            
             languageModal.classList.add('hidden');
         });
     });
+    
+    // Dil menüsü dışına tıklayınca kapatma
     document.addEventListener('click', (event) => {
-        if (languageModal && !languageModal.contains(event.target) && !languageButton.contains(event.target)) {
+        if (!languageModal.contains(event.target) && !languageButton.contains(event.target)) {
             languageModal.classList.add('hidden');
         }
     });
 
-    // Easter Egg Butonları
-    const mainPageElements = [document.getElementById('topPanel'), document.getElementById('mainContent'), document.getElementById('inventorySection'), document.getElementById('statsSection'), document.getElementById('faqSection')];
+    // EASTER EGG BUTONLARI
     document.getElementById('easterEggButton').addEventListener('click', () => {
         mainPageElements.forEach(el => el && el.classList.add('hidden'));
         document.getElementById('easterEggScreen').classList.remove('hidden');
     });
+
     document.getElementById('closeEasterEggButton').addEventListener('click', () => {
         document.getElementById('easterEggScreen').classList.add('hidden');
+        mainPageElements.forEach(el => el && el.classList.remove('hidden'));
         resetToMenu();
     });
-
-    // PROFİL VE ÇIKIŞ BUTONLARI (KAYIP OLANLAR)
+    
+    // PROFİL VE ÇIKIŞ BUTONLARI
     const profileBtnContainer = document.getElementById('profileButtonContainer');
-    if (profileBtnContainer && activeUser !== 'guest') {
+    if (profileBtnContainer) {
         profileBtnContainer.innerHTML = `<div class="profile-button"><img class="profile-icon" src="https://i.pinimg.com/1200x/8d/ff/49/8dff49985d0d8afa53751d9ba8907aed.jpg" alt="profil"><span>${username}</span></div>`;
         profileBtnContainer.querySelector('.profile-button').addEventListener('click', () => { 
             showSection('stats'); 
@@ -4653,18 +4818,22 @@ window.onload = () => {
     }
 
     const logoutBtnContainer = document.getElementById('logoutButtonContainer');
-    if (logoutBtnContainer && activeUser !== 'guest') {
+    if (logoutBtnContainer) {
         logoutBtnContainer.innerHTML = `<button class="logout-btn" id="logoutButton">${translations.logoutButton[currentLanguage]}</button>`;
         logoutBtnContainer.querySelector('.logout-btn').addEventListener('click', () => { 
-            saveUserData(); // Çıkış yapmadan önce son veriyi kaydet
             alert(username + ' hesabından çıkış yapılıyor...'); 
             sessionStorage.removeItem('active_user'); 
             window.location.href = 'Geçiş.html'; 
         });
     }
+    
 
     // --- GÖREV 5: SAYFAYI BAŞLAT ---
+    updateBalanceDisplay();
+    connectWebSocket(); // Sunucuyla bağlantı kur
+
     showSection('selection'); // Ana menü alanını görünür yap
+    
 };
 
 // ===== YENİ BAŞLANGIÇ KODUNUN SONU =====
@@ -4718,7 +4887,8 @@ function updateActiveUsersModal(users) {
     
     </script>
 
-<script src="simulator-script.js?v=2" defer></script>
+
+
 
 
 <div id="languageSelectorContainer" class="fixed bottom-5 left-5 z-[5000]">
@@ -4732,7 +4902,20 @@ function updateActiveUsersModal(users) {
     </div>
 </div>
 
+<div id="activeUsersModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[4000]" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+    <div class="bg-slate-800/80 border border-slate-600 rounded-2xl shadow-xl w-full max-w-md p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 id="activeUsersModalTitle" class="text-2xl font-bold text-white">Aktif Kullanıcılar:</h2>
+            <button id="closeActiveUsersModal" class="text-gray-400 hover:text-white text-3xl">&times;</button>
+        </div>
+        <div id="activeUsersList" class="max-h-80 overflow-y-auto space-y-2 pr-2">
+            <p class="text-gray-400">Aktif kullanıcı bulunamadı.</p>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
+
 

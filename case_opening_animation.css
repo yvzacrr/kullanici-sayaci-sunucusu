@@ -1,0 +1,146 @@
+/* case_opening_animation.css - YENİ VE TAM KODLAR */
+
+/* 1. Tüm ekranı kaplayan ana sahne */
+#fullScreenAnimationOverlay {
+    position: fixed; /* Sayfada sabit kalır */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ekranın tüm genişliği */
+    height: 100vh; /* Ekranın tüm yüksekliği */
+    background-color: rgba(15, 23, 42, 0.8); /* Yarı saydam koyu mavi */
+    backdrop-filter: blur(10px); /* Arkadaki her şeyi bulanıklaştır */
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 5000; /* Her şeyin üzerinde kalması için */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.3s ease-in-out; /* Yavaşça belirip kaybolması için */
+}
+
+/* YENİ EKLENECEK KURAL */
+#fullScreenAnimationOverlay:not(.hidden) {
+    display: flex;
+}
+
+/* 2. Şeridin içinde durduğu ana konteyner */
+.reel-container {
+    position: relative;
+    width: 100%; /* Ekran genişliğinin tamamını kapla */
+    height: 300px; /* Şeridin yüksekliği, büyük desenler için */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3. ODAKLANMA EFEKTİNİN KALBİ: CSS MASKESİ */
+.reel-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Şeritlerin üzerinde ama marker'ın altında */
+    
+    /* Bu gradyan, ortası delik bir maske oluşturur. Ortası net, kenarları bulanık ve karanlık. */
+    -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 55%);
+    mask-image: radial-gradient(circle at center, black 25%, transparent 55%);
+    
+    /* Kenarların karanlık görünmesini sağlayan gölge */
+    box-shadow: inset 0 0 150px 80px rgba(15, 23, 42, 1);
+}
+
+/* 4. Ortadaki dikey çizgi (marker) */
+.reel-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px #fff;
+    z-index: 10;
+    border-radius: 3px;
+}
+
+/* 5. Dönen tüm şeritlerin sarmalayıcısı */
+.reels-wrapper-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 6. Her bir şeridin içindeki desenlerin kaydığı bölüm */
+.reel-items {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Animasyonun pürüzsüzlüğü için */
+    transition: transform 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* 7. Şeridin içindeki BÜYÜK desen kutuları */
+.reel-item {
+    width: 280px;  /* Genişlik */
+    height: 280px; /* Yükseklik */
+    flex-shrink: 0; 
+    margin: 0 10px; /* Desenler arası boşluk */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.reel-item img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+
+/* Nadirlik çizgisi */
+.reel-item::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    height: 6px;
+    border-radius: 4px;
+}
+
+/* Nadirlik renkleri (değişiklik yok) */
+.reel-item.rarity-milspec::after { background-color: #4b69ff; }
+.reel-item.rarity-restricted::after { background-color: #8847ff; }
+.reel-item.rarity-classified::after { background-color: #d32ce6; }
+.reel-item.rarity-covert::after { background-color: #eb4b4b; }
+.reel-item.rarity-rare::after { background-color: #ffd700; }
+
+/* 8. Sonuç Plakası (Videodaki gibi altta çıkan kutu) */
+.result-plaque {
+    background-color: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.result-plaque.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
