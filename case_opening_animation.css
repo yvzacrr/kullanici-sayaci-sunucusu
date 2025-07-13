@@ -1,146 +1,248 @@
-/* case_opening_animation.css - YENİ VE TAM KODLAR */
+/* case_opening_animation.css - YENİ VE TAM KOD (oki.gg Stili) */
 
-/* 1. Tüm ekranı kaplayan ana sahne */
+/* 1. ANA ANİMASYON EKRANI */
 #fullScreenAnimationOverlay {
-    position: fixed; /* Sayfada sabit kalır */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Ekranın tüm genişliği */
-    height: 100vh; /* Ekranın tüm yüksekliği */
-    background-color: rgba(15, 23, 42, 0.8); /* Yarı saydam koyu mavi */
-    backdrop-filter: blur(10px); /* Arkadaki her şeyi bulanıklaştır */
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 5000; /* Her şeyin üzerinde kalması için */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; /* Başlangıçta görünmez */
-    transition: opacity 0.3s ease-in-out; /* Yavaşça belirip kaybolması için */
-}
-
-/* YENİ EKLENECEK KURAL */
-#fullScreenAnimationOverlay:not(.hidden) {
-    display: flex;
-}
-
-/* 2. Şeridin içinde durduğu ana konteyner */
-.reel-container {
-    position: relative;
-    width: 100%; /* Ekran genişliğinin tamamını kapla */
-    height: 300px; /* Şeridin yüksekliği, büyük desenler için */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 3. ODAKLANMA EFEKTİNİN KALBİ: CSS MASKESİ */
-.reel-mask {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5; /* Şeritlerin üzerinde ama marker'ın altında */
-    
-    /* Bu gradyan, ortası delik bir maske oluşturur. Ortası net, kenarları bulanık ve karanlık. */
-    -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 55%);
-    mask-image: radial-gradient(circle at center, black 25%, transparent 55%);
-    
-    /* Kenarların karanlık görünmesini sağlayan gölge */
-    box-shadow: inset 0 0 150px 80px rgba(15, 23, 42, 1);
+    background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.7) 100%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 5000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow: hidden; /* Taşmaları engelle */
 }
 
-/* 4. Ortadaki dikey çizgi (marker) */
-.reel-marker {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 15px #fff;
-    z-index: 10;
-    border-radius: 3px;
+/* 2. 3D SAHNE */
+/* Burası 3D efektinin kalbidir. 'perspective' özelliği derinlik hissi verir. */
+.scene {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Desenlerin yüksekliği */
+    perspective: 1200px; /* Perspektif ne kadar düşükse, 3D etkisi o kadar abartılı olur */
+    margin-top: 50px;
 }
 
-/* 5. Dönen tüm şeritlerin sarmalayıcısı */
+/* 3. TÜM ŞERİTLERİN SARMALAYICISI */
 .reels-wrapper-new {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
 }
 
-/* 6. Her bir şeridin içindeki desenlerin kaydığı bölüm */
+/* 4. HER BİR ŞERİT (KAYAN DESENLER) */
 .reel-items {
-    position: relative;
-    height: 100%;
     display: flex;
     align-items: center;
-    /* Animasyonun pürüzsüzlüğü için */
-    transition: transform 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform-style: preserve-3d;
+    /* Animasyonun başlangıç pozisyonu. Geriye doğru yatık duruyor. */
+    transform: translateZ(-250px) rotateX(-5deg);
+    /* Geçiş efekti: Akıcı ve yavaşlayarak duran bir animasyon için özel bezier eğrisi. */
+    transition: transform 7s cubic-bezier(.25, .1, .2, 1);
 }
-/* 7. Şeridin içindeki BÜYÜK desen kutuları */
+
+/* 5. ŞERİTTEKİ HER BİR DESEN */
 .reel-item {
-    width: 280px;  /* Genişlik */
-    height: 280px; /* Yükseklik */
-    flex-shrink: 0; 
-    margin: 0 10px; /* Desenler arası boşluk */
+    width: 160px; /* oki.gg'deki gibi daha küçük kutular */
+    height: 160px;
+    flex-shrink: 0;
+    margin: 0 10px;
+    position: relative;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
 }
 
 .reel-item img {
-    max-width: 90%;
-    max-height: 90%;
+    width: 85%;
+    height: 85%;
     object-fit: contain;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
 }
 
-/* Nadirlik çizgisi */
-.reel-item::after {
-    content: '';
+/* 6. ORTADAKİ İŞARETLEYİCİ */
+.reel-marker {
     position: absolute;
-    bottom: 10px;
-    left: 15px;
-    right: 15px;
-    height: 6px;
-    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 220px;
+    background: linear-gradient(to bottom, transparent, #a3e635, transparent);
+    box-shadow: 0 0 15px #a3e635, 0 0 25px #a3e635;
+    z-index: 20;
+    border-radius: 3px;
 }
 
-/* Nadirlik renkleri (değişiklik yok) */
-.reel-item.rarity-milspec::after { background-color: #4b69ff; }
-.reel-item.rarity-restricted::after { background-color: #8847ff; }
-.reel-item.rarity-classified::after { background-color: #d32ce6; }
-.reel-item.rarity-covert::after { background-color: #eb4b4b; }
-.reel-item.rarity-rare::after { background-color: #ffd700; }
-
-/* 8. Sonuç Plakası (Videodaki gibi altta çıkan kutu) */
+/* 7. SONUÇ KARTI */
 .result-plaque {
-    background-color: rgba(30, 41, 59, 0.6);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(30, 41, 59, 0.5);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
-    opacity: 0;
-    transform: translateY(20px);
+    z-index: 30;
+    opacity: 0; /* Başta görünmez */
+    transform: scale(0.4); /* Başta küçük */
+    pointer-events: none; /* Başta tıklanamaz */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
+/* Sonuç kartını görünür yapan sınıf */
 .result-plaque.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+    pointer-events: auto; /* Tıklanabilir yap */
+    animation: fadeScaleUp 0.2s ease-out forwards;
+}
+
+/* Sonuç Kartı İçindeki Resim ve Yazılar */
+#resultImage {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+}
+#resultTextContainer {
+    text-align: center;
+}
+#resultItemName {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px black;
+}
+#resultItemWear {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+/* Devam Et Butonu */
+#continueButton {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#continueButton:hover {
+    background-color: #15803d;
+}
+
+/* 8. KULLANICIDAN GELEN KEYFRAMES ANİMASYONU */
+@keyframes fadeScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);          
+    }
+}
+
+/* ============================================= */
+/* === KASA SAYISINA GÖRE DİNAMİK BOYUTLANDIRMA === */
+/* ============================================= */
+
+/* Animasyon sahnesinin yüksekliğini ekranın %80'i yapalım ki daha fazla yerimiz olsun */
+.scene {
+    height: 80vh; /* Yüksekliği 200px'den 80vh'ye değiştiriyoruz */
+}
+
+/* Tüm şeritlerin arasındaki dikey boşluk */
+.reels-wrapper-new {
+    gap: 0.5rem; /* 8px */
+}
+
+/* --- 1 KASA AÇILIRSA (En Büyük Boyut) --- */
+.reels-wrapper-new.count-1 .reel-items { height: 250px; }
+.reels-wrapper-new.count-1 .reel-item { width: 220px; height: 220px; }
+
+/* --- 2 KASA AÇILIRSA (Biraz Daha Küçük) --- */
+.reels-wrapper-new.count-2 .reel-items { height: 200px; }
+.reels-wrapper-new.count-2 .reel-item { width: 180px; height: 180px; }
+
+/* --- 3 KASA AÇILIRSA (Orta Boyut) --- */
+.reels-wrapper-new.count-3 .reel-items { height: 180px; }
+.reels-wrapper-new.count-3 .reel-item { width: 160px; height: 160px; } /* Bu zaten varsayılan boyutundu */
+
+/* ============================================= */
+/* === YENİ: ODAKLANMIŞ ANİMASYON SAHNESİ VE BULANIKLAŞTIRMA === */
+/* ============================================= */
+
+/* 1. SAHNENİN KENDİSİ ARTIK SABİT GENİŞLİKTE */
+/* Eskiden .scene sadece 3D için vardı, şimdi ana sahnemiz olacak. */
+.scene {
+    width: 100%;
+    max-width: 980px; /* Genişliği ana içerikle aynı yapıyoruz! */
+    height: 80vh; 
+    perspective: 1200px;
+    margin: 0 auto; /* Yatayda ortalamak için */
+    position: relative; /* Bulanıklaştırma katmanları için referans noktası */
+    /* YENİ: KENARLARI YUMUŞAKÇA SİLEN MASKE */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+/* 2. SOL ve SAĞ BULANIKLAŞTIRMA KATMANLARI (EN ÖNEMLİ KISIM) */
+/* Bu sözde-elementler (pseudo-elements), şeritlerin ÜZERİNDE durarak arkalarını bulanıklaştırır. */
+
+.scene::before,
+.scene::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25%; /* Sahnenin %25'lik kısmını kaplasınlar */
+    z-index: 5; /* Şeritlerin üstünde, ama işaretçinin (marker) altında */
+    pointer-events: none; /* Üzerlerindeki tıklamaları engellemesinler */
+    
+    /* İŞTE SİHİR BURADA: Arkasındaki her şeyi 4px bulanıklaştırır. */
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+/* Sol katman */
+.scene::before {
+    left: 0;
+    /* Bulanıklıktan net alana yumuşak bir geçiş için hafif bir gölge */
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent);
+}
+
+/* Sağ katman */
+.scene::after {
+    right: 0;
+    /* Bulanıklıktan net alana yumuşak bir geçiş için hafif bir gölge */
+    background: linear-gradient(to left, rgba(15, 23, 42, 0.4), transparent);
+}
+
+/* 3. ORTADAKİ İŞARETÇİNİN GÖRÜNÜRLÜĞÜ */
+/* İşaretçinin, yeni bulanıklaştırma katmanlarının da üstünde olmasını sağlıyoruz. */
+.reel-marker {
+    z-index: 10; /* Değerini 10'a yükseltiyoruz. */
 }
