@@ -108,53 +108,64 @@ async function populateItems() {
 // Sayfa yüklendiğinde item'ları ekliyoruz
 populateItems();
 
-// Sunucuya bağlanmayı ve bağlantı koptuğunda tekrar denemeyi sağlayan fonksiyon.
+// WebSocket sunucusuna bağlanmayı ve bağlantı koptuğunda tekrar denemeyi sağlayan ana fonksiyon.
 function connectWebSocket() {
-    // ÖNEMLİ: Bu adres, son adımda canlı sunucu adresinizle değiştirilecek.
-const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
-const socket = new WebSocket(socketURL);
-
+    // Sunucu adresini otomatik olarak alır (localhost veya canlı sunucu fark etmez)
+    const socketURL = (location.protocol === "https:" ? "wss://" : "ws://") + location.host;
+    const socket = new WebSocket(socketURL);
 
     // Sunucuya başarıyla bağlanıldığında çalışır.
     socket.onopen = () => {
         console.log('WebSocket sunucusuna başarıyla bağlanıldı.');
-        userCountElement.textContent = '...'; // Bağlantı kuruldu, sayı bekleniyor.
+        const userCountElement = document.getElementById('active-user-count');
+        if (userCountElement) {
+            userCountElement.textContent = '...'; // Bağlantı kuruldu, sayı bekleniyor.
+        }
     };
 
-// ===== ESKİ socket.onmessage BLOĞUNU KOMPLE SİLİP BUNU YAPIŞTIR =====
-socket.onmessage = (event) => {
-    try {
-        const data = JSON.parse(event.data);
+    // Sunucudan bir mesaj geldiğinde çalışır.
+    socket.onmessage = (event) => {
+        try {
+            const data = JSON.parse(event.data);
 
-        // Gelen mesajın tipi 'userCount' ise...
-        if (data.type === 'userCount') {
-            const userCountElement = document.getElementById('active-user-count');
-            if (userCountElement) {
-                userCountElement.textContent = data.count;
+            // Gelen mesajın tipi 'userCount' ise, aktif kullanıcı sayısını günceller.
+            if (data.type === 'userCount') {
+                const userCountElement = document.getElementById('active-user-count');
+                if (userCountElement) {
+                    userCountElement.textContent = data.count;
+                }
+                 // Aktif kullanıcı listesini günceller (yeni eklendi).
+                if (data.activeUsers) {
+                    const activeUsersEvent = new CustomEvent('activeUsersUpdated', { detail: data.activeUsers });
+                    document.dispatchEvent(activeUsersEvent);
+                }
+            
+            // Gelen mesajın tipi 'priceUpdate' ise, tüm fiyatları günceller.
+            } else if (data.type === 'priceUpdate') {
+                // Bu özel olay, simulator.html içindeki ana script tarafından dinlenecek.
+                const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
+                document.dispatchEvent(priceEvent);
             }
-        
-        // Gelen mesajın tipi 'priceUpdate' ise...
-        } else if (data.type === 'priceUpdate') {
-            const priceEvent = new CustomEvent('pricesUpdated', { detail: data.data });
-            document.dispatchEvent(priceEvent);
+        } catch (error) {
+            console.error('Sunucudan gelen JSON mesajı işlenirken hata oluştu:', error);
         }
-    } catch (error) {
-        console.error('Sunucudan gelen mesaj işlenirken hata oluştu:', error);
-    }
-};
+    };
 
     // Bağlantı koptuğunda çalışır.
     socket.onclose = () => {
-        console.log('Bağlantı koptu. 3 saniye içinde tekrar denenecek...');
-        userCountElement.textContent = 'X'; // Bağlantının koptuğunu belirtir.
-        
+        console.log('WebSocket bağlantısı koptu. 3 saniye içinde yeniden bağlanmaya çalışılacak...');
+        const userCountElement = document.getElementById('active-user-count');
+        if (userCountElement) {
+            userCountElement.textContent = 'X'; // Bağlantının koptuğunu belirtir.
+        }
         // 3 saniye sonra yeniden bağlanmayı dener.
         setTimeout(connectWebSocket, 3000);
     };
 
     // Bir hata oluştuğunda çalışır.
     socket.onerror = (error) => {
-        console.error('WebSocket hatası:', error);
+        console.error('WebSocket hatası:', error.message);
+        // Hata durumunda da yeniden bağlanmayı denemesi için socket.onclose tetiklenir.
     };
 }
 
