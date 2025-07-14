@@ -50,7 +50,7 @@
     /* Animasyonun başlangıç pozisyonu. Geriye doğru yatık duruyor. */
     transform: translateZ(-250px) rotateX(-5deg);
     /* Geçiş efekti: Akıcı ve yavaşlayarak duran bir animasyon için özel bezier eğrisi. */
-    transition: transform 7s cubic-bezier(.25, .1, .2, 1);
+    transition: transform 7s cubic-bezier(0.25, .1, .2, 1);
 }
 
 /* 5. ŞERİTTEKİ HER BİR DESEN */

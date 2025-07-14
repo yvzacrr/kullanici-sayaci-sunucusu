@@ -921,7 +921,8 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
 <script src="case_opening_animation.js"></script>    
 
     <script>
-        // Tarayıcının oturum hafızasına bak, "active_user" diye bir not var mı?
+
+    // Tarayıcının oturum hafızasına bak, "active_user" diye bir not var mı?
     // Senin kodun sessionStorage kullandığı için biz de onu kullanıyoruz.
     const aktifKullanici = sessionStorage.getItem('active_user');
 
@@ -932,7 +933,9 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
         // ...ve onu kayıt/giriş sayfasına geri yolla.
         window.location.href = 'Geçiş.html';
     }
-       
+     
+        let animationResultQueue = []; // Kazanılan ama henüz gösterilmemiş desenlerin sırası
+
         // --- 1. GENEL DEĞİŞKENLER ---
     let tumFiyatlar = {};
     const caseSelectionMenu = document.getElementById('caseSelectionMenu');
@@ -3756,97 +3759,88 @@ function createCaseMenu() {
 
 // --- ESKİ selectCase FONKSİYONUNU SİLİP BUNU YAPIŞTIRIN ---
 function selectCase(caseData) {
-    let currentLanguage = localStorage.getItem('language') || 'en';
-    caseOpeningSection.innerHTML = '';
+    let currentLanguage = localStorage.getItem('language') || 'tr';
     currentlySelectedCase = caseData;
+    
+    const caseOpeningSection = document.getElementById('caseOpeningSection');
+    caseOpeningSection.innerHTML = '';
     caseOpeningSection.className = 'flex flex-col items-start justify-start p-4';
 
+    const dynamicPriceInfo = tumFiyatlar[caseData.name];
+    const baseCasePrice = (dynamicPriceInfo && dynamicPriceInfo.lowest_float) ? dynamicPriceInfo.lowest_float : parseFloat(caseData.price.replace(/[^0-9.]/g, ''));
+
+    // --- Üst Kontrol Paneli ---
     const controlsContainer = document.createElement('div');
     controlsContainer.className = 'case-open-header flex flex-col items-start gap-4 w-full mb-8';
 
     const infoSide = document.createElement('div');
     infoSide.className = 'case-open-header-info';
-    infoSide.innerHTML = `
-        <img src="${caseData.image}" alt="${caseData.name}">
-        <h2 class="case-open-header-title">${caseData.name}</h2>
-    `;
+    infoSide.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}"><h2 class="case-open-header-title">${caseData.name}</h2>`;
 
-        // Butonların ana konteyneri
-     const actionsAndControls = document.createElement('div');
-    // Bu sınıfı artık 1. adımda düzelttiğimiz için doğru çalışacak
+    const actionsAndControls = document.createElement('div');
     actionsAndControls.className = 'case-open-header-actions';
 
-    // Sol Grup (Geri Butonu ve Adet Seçici)
+    // Sol Sütun (Geri ve Adet Butonları)
     const leftColumn = document.createElement('div');
-    leftColumn.className = 'flex flex-col items-start gap-3'; // Tailwind sınıflarıyla dikey hizalama
-
+    leftColumn.className = 'flex flex-col items-start gap-3';
+    
     const backButton = document.createElement('button');
     backButton.className = 'btn back-btn';
+    backButton.id = 'backButton'; // ID ekleyerek çeviri fonksiyonunun bulmasını sağlıyoruz
     backButton.textContent = translations.backButton[currentLanguage];
     backButton.onclick = resetToMenu;
     
     const caseCountSelector = document.createElement('div');
-    caseCountSelector.id = 'caseCountSelector';
     caseCountSelector.className = 'flex items-center justify-start gap-2';
-    caseCountSelector.innerHTML = `
-        <span id="openCountText" class="text-sm text-slate-400">${translations.openCountText[currentLanguage]}</span>
-        <button data-count="1" class="case-count-button active">1</button>
-        <button data-count="2" class="case-count-button">2</button>
-        <button data-count="3" class="case-count-button">3</button>
-    `;
+    caseCountSelector.innerHTML = `<span id="openCountText" class="text-sm text-slate-400">${translations.openCountText[currentLanguage]}</span>`;
     
-        const newCountButtons = caseCountSelector.querySelectorAll('.case-count-button');
-    newCountButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            newCountButtons.forEach(btn => btn.classList.remove('active'));
+    const priceText = document.createElement('span'); // Fiyat span'ını önce tanımla
+    priceText.className = 'price-text';
+
+    [1, 2, 3].forEach(count => {
+        const button = document.createElement('button');
+        button.dataset.count = count;
+        button.textContent = count;
+        button.className = 'case-count-button' + (count === 1 ? ' active' : '');
+        button.onclick = () => {
+            caseCountSelector.querySelectorAll('.case-count-button').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            numberOfCasesToOpen = parseInt(button.dataset.count);
-            const totalDynamicPrice = baseCasePrice * numberOfCasesToOpen;
-            priceText.textContent = `${totalDynamicPrice.toFixed(2)} $`;
-        });
+            numberOfCasesToOpen = count;
+            // Fiyatı burada güncelle
+            priceText.textContent = `${(baseCasePrice * numberOfCasesToOpen).toFixed(2)} $`;
+        };
+        caseCountSelector.appendChild(button);
     });
-    numberOfCasesToOpen = 1;
     
-    leftColumn.appendChild(backButton);
-    leftColumn.appendChild(caseCountSelector);
+    leftColumn.append(backButton, caseCountSelector);
 
-    // Sağ Grup (Sadece Kasayı Aç ve Fiyat)
- // --- YENİ MANUEL KONTROL SİSTEMİ ---
-
-    // 1. "Kasayı Aç" ve Fiyatı bir arada tutacak olan manuel kontrol kutusu
+    // Sağ Sütun (Açma Butonu ve Fiyat)
     const manualControlWrapper = document.createElement('div');
-    manualControlWrapper.id = 'manuel-kontrol-kutusu'; // CSS ile kontrol etmek için özel ID
-    manualControlWrapper.className = 'flex flex-row items-center gap-3'; // İçindekiler yan yana dursun
-
-    // 2. Buton ve Fiyatı oluştur (bu kısım aynı)
+    manualControlWrapper.id = 'manuel-kontrol-kutusu';
+    manualControlWrapper.className = 'flex flex-row items-center gap-3';
+    
     const unlockButton = document.createElement('button');
     unlockButton.className = 'btn unlock-btn';
+    unlockButton.id = 'unlockCaseButton'; // ID ekleyerek çeviri fonksiyonunun bulmasını sağlıyoruz
     unlockButton.textContent = translations.unlockCaseButton[currentLanguage];
-    unlockButton.onclick = () => openCase(unlockButton);
+    unlockButton.onclick = () => openCase(unlockButton); // Doğru openCase çağrılıyor
 
-    const priceText = document.createElement('span');
-    priceText.className = 'price-text';
-    const baseCasePrice = parseFloat(caseData.price.replace(/[^0-9.]/g, ''));
-    priceText.textContent = `${baseCasePrice.toFixed(2)} $`;
+    priceText.textContent = `${baseCasePrice.toFixed(2)} $`; // Başlangıç fiyatını ayarla
 
-    // 3. Buton ve fiyatı manuel kontrol kutusuna ekle
     manualControlWrapper.append(unlockButton, priceText);
-
-    // 4. Ana kapsayıcıya sol grubu ve yeni manuel kutumuzu ekle
-    actionsAndControls.appendChild(leftColumn);
-    actionsAndControls.appendChild(manualControlWrapper);
-
-    
+    actionsAndControls.append(leftColumn, manualControlWrapper);
     controlsContainer.append(infoSide, actionsAndControls);
 
+    // --- İçerik (Düşebilecek Desenler) ---
     const dropsContainer = document.createElement('div');
     dropsContainer.id = 'possibleDropsContainer';
     dropsContainer.className = 'p-4 bg-gray-800 bg-opacity-50 rounded-lg w-full';
 
     caseOpeningSection.append(controlsContainer, dropsContainer);
-
+    
     showSection('opening');
     displayPossibleDrops(caseData.id);
+    numberOfCasesToOpen = 1; // Her kasa seçildiğinde adeti 1'e sıfırla
 }
 
 
@@ -3859,78 +3853,89 @@ function selectCase(caseData) {
 
 // ===== YAPIŞTIRILACAK YENİ VE DOĞRU openCase FONKSİYONU =====
 
-async function openCase(unlockButtonElement) {
+// YENİ MİMARİ İÇİN openCase FONKSİYONU
+function openCase(unlockButtonElement) {
     if (!currentlySelectedCase) return;
 
-    let currentLanguage = localStorage.getItem('language') || 'en';
+    let currentLanguage = localStorage.getItem('language') || 'tr';
 
-    // 1. Arayüzü Kilitle
+    // 1. Arayüzü Kilitle (Bu kısım aynı kalıyor)
     unlockButtonElement.disabled = true;
     unlockButtonElement.textContent = translations.unlockingButton[currentLanguage];
     document.getElementById('homeButton').style.pointerEvents = 'none';
     document.getElementById('inventoryButton').style.pointerEvents = 'none';
 
-    // 2. Gerekli Bilgileri ve Maliyeti Hesapla
+    // 2. Maliyeti Hesapla (Bu kısım aynı kalıyor)
     const caseId = currentlySelectedCase.id;
     const caseCount = numberOfCasesToOpen;
-    const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
+    const dynamicPriceInfo = tumFiyatlar[currentlySelectedCase.name];
+    const casePrice = (dynamicPriceInfo && dynamicPriceInfo.lowest_float) ? dynamicPriceInfo.lowest_float : parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
+    
     userBalance -= casePrice * caseCount;
     userStats.openedCases[currentlySelectedCase.name] = (userStats.openedCases[currentlySelectedCase.name] || 0) + caseCount;
     updateBalanceDisplay();
 
-    // 3. KAZANAN DESENLERİ ÖNCEDEN BELİRLE
+    // 3. KAZANAN DESENLERİ BELİRLE (Bu kısım aynı kalıyor)
     const winningSkins = [];
     for (let i = 0; i < caseCount; i++) {
         winningSkins.push(getRandomSkin(caseId));
     }
+    
+    // 4. YENİ MANTIK: Kazananları kuyruğa ekle
+    // YENİ: Kazananı JSON formatında metne çevirip HTML'e kilitliyoruz.
+    fullScreenAnimationOverlay.dataset.winner = JSON.stringify(winningSkins);
+    console.log("Kazananlar kuyruğa eklendi:", winningSkins);
 
-    // 4. Animasyonu, kazanan desenleri vererek başlat ve bitmesini bekle
-    const openedItems = await runNewFullScreenAnimation(caseCount, caseId, winningSkins);
+    // 5. Animasyonu BAŞLAT ve kenara çekil. Artık bekleme yok!
+    runNewFullScreenAnimation(caseCount, caseId, winningSkins);
+}
 
-    // 5. Animasyondan sonuç döndükten sonra çalışacak kodlar
-    if (openedItems && openedItems.length > 0) {
-        // BAŞARILI DURUM:
+// YENİ: Animasyon bittiğinde çağrılacak olan ana fonksiyon
+function handleAnimationFinish() {
+    console.log("Animasyon bitti sinyali alındı. Kuyruk kontrol ediliyor...");
+    
+    // 1. Kuyrukta gösterilecek bir sonuç var mı diye kontrol et
+    if (animationResultQueue.length === 0) {
+        console.error("Animasyon bitti ancak sonuç kuyruğu boş!");
+        return; // Hata varsa işlemi durdur
+    }
 
-        // a. Kazanılanları envantere ekle ve veriyi kaydet
-        openedItems.forEach(skin => {
+    // 2. Kuyruktan ilk sıradaki kazananları al (FIFO: İlk giren ilk çıkar)
+    // YENİ: Sonucu göstermek için biz de HTML'deki aynı zarfı okuyoruz.
+    const itemsToShow = JSON.parse(fullScreenAnimationOverlay.dataset.winner);
+    console.log("Kuyruktan alınan sonuçlar:", itemsToShow);
+
+    // 3. Arayüzü Temizle ve Butonları Aktif Et
+    const overlay = document.getElementById('fullScreenAnimationOverlay');
+    const unlockButtonElement = document.querySelector('.btn.unlock-btn');
+    const currentLanguage = localStorage.getItem('language') || 'tr';
+
+    overlay.style.opacity = '0';
+    
+    // Ekran tamamen karardıktan sonra işlemleri yap
+    overlay.addEventListener('transitionend', () => {
+        overlay.style.display = 'none';
+
+        if (unlockButtonElement) {
+            unlockButtonElement.disabled = false;
+            unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
+        }
+        document.getElementById('homeButton').style.pointerEvents = 'auto';
+        document.getElementById('inventoryButton').style.pointerEvents = 'auto';
+
+        // 4. Kazanılanları envantere ekle ve veriyi kaydet (Bu mantık openCase'den buraya taşındı)
+        itemsToShow.forEach(skin => {
             userInventory.push(skin);
             userStats.rarityCounts[skin.rarity] = (userStats.rarityCounts[skin.rarity] || 0) + 1;
             skin.caseOrigin = currentlySelectedCase.name;
         });
         saveUserData();
 
-        // b. Animasyon ekranını yavaşça gizle
-        const overlay = document.getElementById('fullScreenAnimationOverlay');
-        overlay.style.opacity = '0';
-        
-        // c. Ekran tamamen karardıktan sonra işlemleri yap
-        overlay.addEventListener('transitionend', () => {
-            overlay.style.display = 'none'; // Animasyon ekranını kaldır
+        // 5. ANA OLAY: Sonuç modalını göster!
+        showMultiItemModal(itemsToShow);
 
-            // d. Butonları tekrar kullanılabilir yap
-            unlockButtonElement.disabled = false;
-            unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
-            document.getElementById('homeButton').style.pointerEvents = 'auto';
-            document.getElementById('inventoryButton').style.pointerEvents = 'auto';
-
-            // e. ANA OLAY: Detaylı sonuç modalını göster!
-            showMultiItemModal(openedItems);
-
-        }, { once: true }); // Olayın sadece bir kere çalışmasını sağla
-
-    } else {
-        // BAŞARISIZ DURUM (Animasyondan sonuç gelmezse):
-        console.error("Animasyon bir sonuç döndürmedi, arayüz sıfırlanıyor.");
-        
-        unlockButtonElement.disabled = false;
-        unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
-        document.getElementById('homeButton').style.pointerEvents = 'auto';
-        document.getElementById('inventoryButton').style.pointerEvents = 'auto';
-        
-        resetToMenu();
-    }
+    }, { once: true });
 }
-
 
 // YENİ: Kasa listemizdeki fiyatları, sunucudan gelen verilerle güncelleyen fonksiyon.
     function updateLocalCasePrices(priceData) {
@@ -4169,79 +4174,6 @@ function displayPossibleDrops(caseId) {
 // MEVCUT openCase FONKSİYONUNU SİL VE BU NİHAİ VERSİYONU YAPIŞTIR
 
 // ===== YAPIŞTIRILACAK TEK VE DOĞRU openCase FONKSİYONU =====
-
-async function openCase(unlockButtonElement) {
-    if (!currentlySelectedCase) return;
-
-    let currentLanguage = localStorage.getItem('language') || 'en';
-
-    // 1. Arayüzü Kilitle
-    unlockButtonElement.disabled = true;
-    unlockButtonElement.textContent = translations.unlockingButton[currentLanguage];
-    document.getElementById('homeButton').style.pointerEvents = 'none';
-    document.getElementById('inventoryButton').style.pointerEvents = 'none';
-
-    // 2. Gerekli Bilgileri ve Maliyeti Hesapla
-    const caseId = currentlySelectedCase.id;
-    const caseCount = numberOfCasesToOpen;
-    const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
-    userBalance -= casePrice * caseCount;
-    userStats.openedCases[currentlySelectedCase.name] = (userStats.openedCases[currentlySelectedCase.name] || 0) + caseCount;
-    updateBalanceDisplay();
-
-    // 3. KAZANAN DESENLERİ ÖNCEDEN BELİRLE
-    const winningSkins = [];
-    for (let i = 0; i < caseCount; i++) {
-        winningSkins.push(getRandomSkin(caseId));
-    }
-
-    // 4. Animasyonu, kazanan desenleri vererek başlat ve bitmesini bekle
-    const openedItems = await runNewFullScreenAnimation(caseCount, caseId, winningSkins);
-
-    // 5. Animasyondan sonuç döndükten sonra çalışacak kodlar
-    if (openedItems && openedItems.length > 0) {
-        // BAŞARILI DURUM:
-
-        // a. Kazanılanları envantere ekle ve veriyi kaydet
-        openedItems.forEach(skin => {
-            userInventory.push(skin);
-            userStats.rarityCounts[skin.rarity] = (userStats.rarityCounts[skin.rarity] || 0) + 1;
-            skin.caseOrigin = currentlySelectedCase.name;
-        });
-        saveUserData();
-
-        // b. Animasyon ekranını yavaşça gizle
-        const overlay = document.getElementById('fullScreenAnimationOverlay');
-        overlay.style.opacity = '0';
-        
-        // c. Ekran tamamen karardıktan sonra işlemleri yap
-        overlay.addEventListener('transitionend', () => {
-            overlay.style.display = 'none'; // Animasyon ekranını kaldır
-
-            // d. Butonları tekrar kullanılabilir yap
-            unlockButtonElement.disabled = false;
-            unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
-            document.getElementById('homeButton').style.pointerEvents = 'auto';
-            document.getElementById('inventoryButton').style.pointerEvents = 'auto';
-
-            // e. ANA OLAY: Detaylı sonuç modalını göster!
-            showMultiItemModal(openedItems);
-
-        }, { once: true }); // Olayın sadece bir kere çalışmasını sağla
-
-    } else {
-        // BAŞARISIZ DURUM (Animasyondan sonuç gelmezse):
-        console.error("Animasyon bir sonuç döndürmedi, arayüz sıfırlanıyor.");
-        
-        unlockButtonElement.disabled = false;
-        unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
-        document.getElementById('homeButton').style.pointerEvents = 'auto';
-        document.getElementById('inventoryButton').style.pointerEvents = 'auto';
-        
-        resetToMenu();
-    }
-}
-// ===== YENİ FONKSİYONUN SONU =====
 
 
 // --- YUKARIDAKİ resetToMenu FONKSİYONUNU SİL VE BUNU YAPIŞTIR ---
@@ -4506,75 +4438,15 @@ function inspectItem(itemObject) {
 
 // ESKİ createItemElementForModal FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR
 
-function createItemElementForModal(skin, totalItems) {
-    const rarityInfo = skinRarities[skin.rarity];
-    
-    // Her bir eşya için kendi kutusunu oluştur
-    const itemWrapper = document.createElement('div');
-    itemWrapper.className = 'text-center p-2';
-    
-    // Eşya sayısına göre küçülecek resim
-    const itemImage = document.createElement('img');
-    itemImage.src = skin.image;
-    itemImage.alt = skin.name;
-    
-    // Görsel ayarları (bu kısım aynı kalıyor)
-    let imageSize = '400px';
-    if (totalItems > 1) {
-        if (totalItems === 5) { imageSize = '280px'; } 
-        else if (totalItems > 3) { imageSize = '250px'; } 
-        else { imageSize = '300px'; }
-    }
-    if (totalItems === 5 && itemWrapper.classList.contains('center-item')) {
-        imageSize = '350px'; 
-    }
-    itemImage.style.maxWidth = imageSize;
-    itemImage.style.maxHeight = imageSize;
-    itemImage.className = 'mx-auto mb-3 item-image';
+// =======================================================================
+// ===== ESKİ MODAL FONKSİYONLARINI (HER İKİSİNİ DE) SİLİP BUNU YAPIŞTIR =====
+// =======================================================================
 
-    // ===== YENİ FİYAT BULMA MANTIĞI BURADA BAŞLIYOR =====
-
-    // 1. Kazanılan desenin tam adını oluştur (Örn: "AK-47 | Redline (Field-Tested)")
-    const fullItemName = `${skin.name} (${skin.wear.name})`;
-    
-    // 2. Dev fiyat listemizden bu tam isme ait fiyatı bul
-    let specificPrice = "Fiyat Yok"; // Varsayılan değer
-    // tumFiyatlar objesinin dolu olduğundan ve içinde aradığımız anahtarın olduğundan emin ol
-    if (tumFiyatlar && tumFiyatlar[fullItemName] && tumFiyatlar[fullItemName].price) {
-        // API'den gelen fiyat genellikle 7 günlük ortalama oluyor
-        const priceData = tumFiyatlar[fullItemName].price['7_days'];
-        if (priceData && priceData.average) {
-            specificPrice = `${parseFloat(priceData.average).toFixed(2)} $`;
-        }
-    }
-    // ===== FİYAT BULMA MANTIĞI BİTTİ =====
-
-
-    // Eşyanın bilgi kutusu
-    const infoPlaque = document.createElement('div');
-    infoPlaque.className = 'info-plaque bg-gray-800 bg-opacity-70 border border-gray-600 rounded-lg p-3 inline-block';
-    
-    // Font boyutları (bu kısım aynı kalıyor)
-    const nameSize = totalItems > 2 ? 'text-xl' : 'text-2xl';
-    const wearSize = totalItems > 2 ? 'text-md' : 'text-lg';
-    const floatSize = totalItems > 2 ? 'text-xs' : 'text-sm';
-
-    // HTML'i, yeni bulduğumuz fiyatı da içerecek şekilde güncelliyoruz.
-    infoPlaque.innerHTML = `
-        <h3 class="${nameSize} font-bold ${rarityInfo.color}">${skin.name}</h3>
-        <p class="${wearSize} text-gray-300">${skin.wear.name} (${skin.wear.abbr})</p>
-        <p class="text-xl text-green-400 font-bold mt-2">${specificPrice}</p> <p class="${floatSize} text-gray-400 font-mono mt-1">Float: ${skin.float.toFixed(8)}</p>
-    `;
-
-    itemWrapper.appendChild(itemImage);
-    itemWrapper.appendChild(infoPlaque);
-    
-    return itemWrapper;
-}
-
-
-// ===== ESKİ showMultiItemModal FONKSİYONUNU KOMPLE SİL VE BUNU YAPIŞTIR =====
-
+/**
+ * Kazanılan desen(ler) için çoklu sonuç modalını oluşturur ve gösterir.
+ * Bu fonksiyon, 5 kasa açılışı için özel bir yerleşim düzeni içerir.
+ * @param {Array<object>} skins Kazanılan desenlerin listesi.
+ */
 function showMultiItemModal(skins) {
     const modalContent = itemWonModal.querySelector('.modal-content');
     modalContent.innerHTML = ''; // Modalın içini her seferinde temizle!
@@ -4582,90 +4454,114 @@ function showMultiItemModal(skins) {
     const itemsContainer = document.createElement('div');
     const continueButton = document.createElement('button');
     continueButton.id = 'closeModalButton';
-    let currentLanguage = localStorage.getItem('language') || 'en';
+    let currentLanguage = localStorage.getItem('language') || 'tr';
     continueButton.textContent = translations.continueButton[currentLanguage];
     continueButton.className = 'custom-button bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl shadow-lg';
     continueButton.onclick = () => {
         itemWonModal.classList.add('hidden');
     };
 
+    // EĞER AÇILAN KASA SAYISI TAM OLARAK 5 İSE ÖZEL YERLEŞİMİ UYGULA
     if (skins.length === 5) {
         itemsContainer.className = 'flex flex-row justify-between items-center w-full';
 
+        // Üç sütun için ayrı div'ler oluştur
         const leftColumn = document.createElement('div');
-        leftColumn.className = 'flex flex-col gap-2'; // Boşluğu (gap) azalttık
+        leftColumn.className = 'flex flex-col gap-2';
 
         const centerItemContainer = document.createElement('div');
-        centerItemContainer.className = 'flex flex-col items-center gap-2 mx-4'; // Boşlukları (gap ve mx) azalttık
+        centerItemContainer.className = 'flex flex-col items-center gap-2 mx-4';
 
         const rightColumn = document.createElement('div');
-        rightColumn.className = 'flex flex-col gap-2'; // Boşluğu (gap) azalttık
+        rightColumn.className = 'flex flex-col gap-2';
 
         skins.forEach((skin, index) => {
-            // Önce standart item'ı oluşturalım
-            const itemWrapper = createItemElementForModal(skin, skins.length);
+            // Yardımcı fonksiyonu kullanarak her bir desen için HTML elementini oluştur
+            const itemWrapper = createItemElementForModal(skin, skins.length, index === 2);
 
-            // --- YENİ KÜÇÜLTME KODLARI BURADA ---
-            const image = itemWrapper.querySelector('.item-image');
-            const plaque = itemWrapper.querySelector('.info-plaque');
-            const nameText = plaque.querySelector('h3');
-            const wearText = plaque.querySelector('p:nth-of-type(1)'); // Aşınma durumu
-            const priceText = plaque.querySelector('p:nth-of-type(2)'); // Fiyat
-            const floatText = plaque.querySelector('p:nth-of-type(3)'); // Float
-
-            // 1. Resim Boyutunu Ayarla (Ortadaki dahil hepsi küçülecek)
-            image.style.maxWidth = '220px';
-            image.style.maxHeight = '220px';
-
-            // 2. Bilgi Paneli Boşluklarını Azalt
-            plaque.classList.remove('p-3');
-            plaque.classList.add('p-2'); // Daha az iç boşluk
-
-            // 3. Yazı Boyutlarını Küçült
-            nameText.classList.remove('text-xl', 'text-2xl');
-            nameText.classList.add('text-lg'); // İsim
-
-            wearText.classList.remove('text-lg', 'text-md');
-            wearText.classList.add('text-sm'); // Aşınma
-
-            priceText.classList.remove('text-xl');
-            priceText.classList.add('text-lg'); // Fiyat
-            
-            floatText.classList.remove('text-sm', 'text-xs');
-            floatText.classList.add('text-xs'); // Float (en küçük)
-            // --- KÜÇÜLTME KODLARI BİTTİ ---
-
-            // Öğeyi doğru sütuna yerleştir
+            // Deseni index'ine göre doğru sütuna yerleştir
             if (index < 2) {
-                leftColumn.appendChild(itemWrapper);
+                leftColumn.appendChild(itemWrapper); // İlk ikisi sola
             } else if (index === 2) {
-                // Ortadaki eleman için olan özel büyütme kodunu kaldırdık.
-                centerItemContainer.appendChild(itemWrapper);
+                centerItemContainer.appendChild(itemWrapper); // Üçüncü (ortadaki) merkeze
             } else {
-                rightColumn.appendChild(itemWrapper);
+                rightColumn.appendChild(itemWrapper); // Son ikisi sağa
             }
         });
 
-        // Butonu ortadaki sütuna ekle
+        // "Devam Et" butonunu ortadaki sütunun altına ekle
         centerItemContainer.appendChild(continueButton);
         itemsContainer.append(leftColumn, centerItemContainer, rightColumn);
         modalContent.appendChild(itemsContainer);
 
     } else {
-        // 1-4 arası eşya için eski mantık devam ediyor
+        // EĞER KASA SAYISI 1, 2, 3 VEYA 4 İSE STANDART YERLEŞİMİ KULLAN
         itemsContainer.className = 'flex flex-row flex-wrap justify-center items-center gap-6';
         skins.forEach(skin => {
-            const itemWrapper = createItemElementForModal(skin, skins.length);
+            const itemWrapper = createItemElementForModal(skin, skins.length, false);
             itemsContainer.appendChild(itemWrapper);
         });
         
-        continueButton.classList.add('mt-6');
+        continueButton.classList.add('mt-6'); // Butonun üstüne boşluk ekle
         modalContent.appendChild(itemsContainer);
         modalContent.appendChild(continueButton);
     }
 
     itemWonModal.classList.remove('hidden');
-}   
+}
+
+/**
+ * Sonuç modalı için tek bir eşya elementi oluşturur.
+ * Boyutları, toplam eşya sayısına ve merkezde olup olmamasına göre ayarlar.
+ * @param {object} skin Desen objesi.
+ * @param {number} totalItems Toplam kazanılan eşya sayısı.
+ * @param {boolean} isCenterItem Bu eşyanın 5'li düzende merkezdeki eşya olup olmadığını belirtir.
+ * @returns {HTMLElement} Oluşturulan HTML elementi.
+ */
+function createItemElementForModal(skin, totalItems, isCenterItem) {
+    const rarityInfo = skinRarities[skin.rarity];
+    const itemWrapper = document.createElement('div');
+    itemWrapper.className = 'text-center p-2';
+
+    // Fiyatı doğru yerden al (Bu mantık korunuyor)
+    let priceString = '???';
+    if (tumFiyatlar[skin.name] && tumFiyatlar[skin.name][skin.wear.name]) {
+        priceString = tumFiyatlar[skin.name][skin.wear.name];
+    }
+    
+    // Kazanılan eşya sayısına göre dinamik olarak boyutları belirle (Sizin istediğiniz detaylı mantık)
+    let imageSize, nameSize, wearSize, floatSize;
+    
+    if (totalItems <= 2) {
+        imageSize = '400px'; nameSize = 'text-2xl'; wearSize = 'text-lg'; floatSize = 'text-sm';
+    } else if (totalItems <= 4) {
+        imageSize = '300px'; nameSize = 'text-xl'; wearSize = 'text-md'; floatSize = 'text-sm';
+    } else { // 5 kasa durumu
+        if (isCenterItem) {
+            imageSize = '350px'; // Ortadaki biraz daha büyük
+        } else {
+            imageSize = '220px'; // Yanlardakiler daha küçük
+        }
+        nameSize = 'text-lg'; wearSize = 'text-sm'; floatSize = 'text-xs';
+    }
+
+    // HTML içeriğini oluştur
+    itemWrapper.innerHTML = `
+        <img src="${skin.image}" alt="${skin.name}" class="mx-auto mb-3" style="max-height: ${imageSize}; max-width: ${imageSize}; transition: transform 0.2s ease;">
+        <div class="info-plaque bg-gray-800 bg-opacity-70 border border-gray-600 rounded-lg p-3 inline-block">
+            <h3 class="${nameSize} font-bold ${rarityInfo.color}">${skin.name}</h3>
+            <p class="${wearSize} text-gray-300">${skin.wear.name} (${skin.wear.abbr})</p>
+            <p class="text-xl text-green-400 font-bold mt-2">${priceString}</p>
+            <p class="${floatSize} text-gray-400 font-mono mt-1">Float: ${skin.float.toFixed(8)}</p>
+        </div>
+    `;
+    
+    // Ufak bir hover efekti ekleyelim
+    itemWrapper.querySelector('img').onmouseover = (e) => e.target.style.transform = 'scale(1.05)';
+    itemWrapper.querySelector('img').onmouseout = (e) => e.target.style.transform = 'scale(1)';
+
+    return itemWrapper;
+}
     
 // YENİ İSTATİSTİK GÖSTERME FONKSİYONU
 function displayStats() {
