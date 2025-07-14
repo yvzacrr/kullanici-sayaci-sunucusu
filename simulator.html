@@ -60,10 +60,11 @@
             font-family: 'Inter', sans-serif; /* Inter yazı tipini kullan */
             /* Arka plan resmi - BURAYI KENDİ DİREKT ARKA PLAN RESİM URL'İNLE DEĞİŞTİR! */
             /* URL'nin .jpg, .png gibi bir uzantıyla bittiğinden emin ol! */
-            background-image: url('https://i.imgur.com/f4SkInb.jpeg'); /* Lütfen bu URL'nin doğru ve doğrudan bir resim URL'si olduğundan emin olun */
+            position: relative; /* YENİ EKLENEN SATIR */
             background-size: cover; /* Resmi tüm ekranı kaplayacak şekilde ayarla */
             background-position: center; /* Resmi ortala */
             background-attachment: fixed; /* Arka planı sabit tut, kaydırma yaparken hareket etmez */
+            transition: background-image 0.7s ease-in-out; /* YUMUŞAK GEÇİŞ İÇİN BUNU EKLEDİK */
             display: flex;
             flex-direction: column; /* İçeriği dikey olarak sırala */
             align-items: center; /* İçeriği yatayda ortala */
@@ -73,6 +74,42 @@
             padding: 0; /* body'den padding'i kaldır, içerik divleri kendi padding'ini yönetecek */
             box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağla */
         }
+
+        /* ============================================= */
+/* === YENİ: BULANIK ARKA PLAN KATMANI === */
+/* ============================================= */
+body::before {
+    content: ''; /* Bu satır, sanal katmanı oluşturmak için zorunludur */
+    position: absolute; /* body'e göre konumlanacak */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* İçeriğin (yazıların, butonların) arkasına gönderir */
+
+    /* JavaScript'ten gelen resmi bu katmanın arkaplanı yap */
+    background-image: var(--bg-image);
+
+    /* Resmin ekrana tam oturmasını sağlayan diğer ayarlar */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /*
+    * =======================================================
+    * === İSTEDİĞİNİZ AYARI BURADAN YAPACAKSINIZ ===
+    * =======================================================
+    * 'blur()' içindeki değeri değiştirerek bulanıklığı ayarlayabilirsiniz.
+    * Örnekler: blur(2px) -> Hafif bulanık
+    * blur(5px) -> Orta seviye bulanık
+    * blur(10px) -> Çok bulanık
+    * blur(0px) -> Bulanıklık yok
+    */
+    filter: blur(4px);
+
+    /* Yumuşak geçiş efektini buraya taşıdık */
+    transition: background-image 0.7s ease-in-out;
+}
 
         /* En üstteki sabit panel */
         #topPanel {
@@ -212,69 +249,86 @@
 
 
         /* Kasa menüsündeki her bir kasa kutusu */
-        .case-item-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .case-item {
-            position: relative; /* YENİ EKLENEN SATIR */
-            background-color: rgba(30, 41, 59, 0.7); /* Kasa kutusu arka planı saydamlığı artırıldı */
-            border-radius: 0.75rem; /* Köşeleri yuvarla */
-            padding: 5px; /* Padding'i daha da küçült */
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column; /* İçeriği dikey sırala */
-            align-items: center; /* İçeriği yatayda ortala */
-            justify-content: space-between; /* İçeriği dikeyde yay */
-            width: 120px; /* Kutuyu daraltmak için sabit genişlik */
-            height: 125px; /* Yükseklik azaltıldı */
-        }
+/* ======================================================= */
+/* === YENİ KASA KUTUSU STİLLERİ (İsteğinize Göre Uyarlandı) === */
+/* ======================================================= */
 
-        .case-item:hover {
-            transform: translateY(-5px); /* Üzerine gelince hafifçe yukarı kaydır */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Daha belirgin gölge */
-        }
-
-        .case-item img {
-            width: 90px; /* Kasa resimlerinin boyutunu ayarla, kutuya daha yakın */
-            height: 90px;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-
-        /* ===== ESKİ .price-container'ı SİLİP BUNU YAPIŞTIR ===== */
-.case-price-overlay {
-    position: absolute; /* Ana kutuya göre konumlan */
-    bottom: 10px;        /* Alttan 10px yukarıda */
-    right: 10px;         /* Sağdan 10px solda */
-    background-color: rgba(0, 0, 0, 0.3); /* Hafif saydam siyah arkaplan */
-    color: #fff;
-    padding: 2px 8px; /* İç boşluk */
-    border-radius: 0.375rem; /* Köşeleri yuvarla */
-    font-size: 0.75rem; /* Küçük font */
-    font-weight: bold;
+/* Her bir kasanın ana taşıyıcı kutusu */
+.case-item-container {
+    background-color: rgba(30, 41, 59, 0.4); /* Koyu mavi-gri bir arka plan (slate-800) */
+    border-radius: 0.75rem; /* 12px yuvarlatılmış köşeler */
+    overflow: hidden; /* Köşelerden taşan resim veya gölgeleri gizle */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    width: 120px; /* Sabit genişlik */
 }
 
-        .case-name {
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: #e2e8f0;
-            margin-top: 8px;
-            line-height: 1.2;
-            width: 120px;
-            height: 45px; /* Sabit yükseklik ile hizalama sağlandı */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            white-space: normal;
-            word-break: break-word;
-        }
+/* Üzerine gelince hafifçe büyüme ve gölge efekti */
+.case-item-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Sadece kasa resmini içeren üst bölüm */
+.case-image-box {
+    width: 100%;
+    height: 90px;
+    padding: 4px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Kasa adı ve fiyatını içeren alt bölüm */
+.case-details-box {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background-color: rgba(51, 65, 85, 0.4); /* %60 opaklıkta */
+
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* --- İSTEDİĞİNİZ YATAY FİYAT KUTUSU --- */
+.case-price-box {
+    /* ----- SAYDAMLIK AYARI BURADAN YAPILIR ----- */
+    /* background-color'daki son değer (0.5) saydamlığı kontrol eder. */
+    /* 0.1 -> Çok saydam, 0.9 -> Neredeyse opak, 1.0 -> Tamamen opak */
+    background-color: rgba(0, 0, 0, 0.4); /* %50 saydam siyah */
+
+    color: #F8FAFC; /* Yazı rengi (slate-50) */
+    font-size: 0.8rem; /* 12px yazı boyutu */
+    font-weight: 700; /* Kalın yazı */
+    text-align: center;
+    padding: 4px 0; /* Üstten ve alttan boşluk */
+    border-radius: 0.375rem; /* 6px yuvarlatılmış köşeler */
+    margin-bottom: 8px; /* Altındaki kasa adından boşluk bırakır */
+    width: 100%;
+}
+
+/* Kasa adı */
+.case-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #CBD5E1; /* Soluk yazı rengi (slate-300) */
+    text-align: center;
+    line-height: 1.2;
+    flex-grow: 1; /* Kalan dikey boşluğu doldurur */
+    display: flex;
+    align-items: center; /* Dikeyde ortalamak için */
+    justify-content: center;
+}
 
         /* Kasa açma alanındaki büyük resim ve kutu - Ayarlanan saydamlık */
         .large-case-display-container {
@@ -3696,43 +3750,51 @@ function showSection(sectionName) {
 // YUKARIDAKİ HATALI FONKSİYONUN TAMAMINI SİLİP BUNU YAPIŞTIRIN:
 // --- ESKİ createCaseMenu FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR ---
 
+// --- ESKİ createCaseMenu FONKSİYONUNU TAMAMEN SİL VE BUNU YAPIŞTIR ---
 function createCaseMenu() {
     caseSelectionMenu.innerHTML = ''; // Menüyü her seferinde temizle
 
     allCases.forEach(caseData => {
-        // --- DOĞRU FİYAT ALMA MANTIĞI ---
-        // 1. Kasanın fiyatını, sunucudan gelen listeden kendi adıyla arıyoruz.
+        // --- Fiyat Alma Mantığı (Bu kısım aynı kalıyor) ---
         const dynamicPriceInfo = tumFiyatlar[caseData.name];
-        
-        // 2. Varsayılan olarak, kasaya elle yazdığımız statik fiyatı kullan.
-        let displayPrice = caseData.price; 
-
-        // 3. Eğer sunucudan bu kasa için güncel bir fiyat geldiyse...
+        let displayPrice = caseData.price;
         if (dynamicPriceInfo && dynamicPriceInfo.lowest) {
-            // ...varsayılan fiyatın üzerine güncel fiyatı yaz.
             displayPrice = dynamicPriceInfo.lowest;
         }
-        // --- FİYAT ALMA MANTIĞININ SONU ---
 
-        // HTML elementlerini oluştur (bu kısım önceki doğru düzeltmemizdeki gibi)
+        // --- YENİ HTML YAPISI ---
+        // Ana taşıyıcı (her bir kasa kartı)
         const containerDiv = document.createElement('div');
-        containerDiv.className = 'case-item-container';
+        containerDiv.className = 'case-item-container group'; // 'group' kelimesini ekledik (hover efekti için)
+        containerDiv.addEventListener('click', () => selectCase(caseData));
 
-        const caseBox = document.createElement('div');
-        caseBox.className = 'case-item';
-        // HTML'in içine, yukarıda belirlediğimiz 'displayPrice' değişkenini koyuyoruz.
-        caseBox.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}"><div class="case-price-overlay">${displayPrice}</div>`;
+        // Sadece kasa resminin olduğu üst kutu
+        const caseImageContainer = document.createElement('div');
+        caseImageContainer.className = 'case-image-box'; // Yeni CSS sınıfı
+        caseImageContainer.innerHTML = `<img src="${caseData.image}" alt="${caseData.name}">`;
 
+        // Kasa adı ve fiyatının olduğu alt bölüm
+        const detailsContainer = document.createElement('div');
+        detailsContainer.className = 'case-details-box'; // Yeni CSS sınıfı
+
+        // Fiyatın içinde duracağı yeni yatay kutu (İSTEDİĞİNİZ KUTU)
+        const priceBox = document.createElement('div');
+        priceBox.className = 'case-price-box'; // Yeni CSS sınıfı
+        priceBox.textContent = displayPrice;
+
+        // Kasa adını gösteren paragraf
         const caseName = document.createElement('p');
         caseName.className = 'case-name';
         caseName.textContent = caseData.name;
 
-        containerDiv.appendChild(caseBox);
-        containerDiv.appendChild(caseName);
+        // Elementleri doğru sırayla birbirine ekliyoruz
+        detailsContainer.appendChild(priceBox); // Fiyat kutusunu detayların içine
+        detailsContainer.appendChild(caseName);  // Kasa adını detayların içine
 
-        containerDiv.addEventListener('click', () => selectCase(caseData));
+        containerDiv.appendChild(caseImageContainer); // Resim kutusunu ana taşıyıcıya
+        containerDiv.appendChild(detailsContainer);   // Detaylar kutusunu ana taşıyıcıya
 
-        caseSelectionMenu.appendChild(containerDiv);
+        caseSelectionMenu.appendChild(containerDiv); // Biten kartı menüye ekle
     });
 }
 
@@ -4646,6 +4708,97 @@ function showItemModal(itemName, price) {
 // ===== SAYFA YÜKLENDİĞİNDE ÇALIŞACAK TÜM KODLARIN TOPLANDIĞI ANA BLOK =====
 
 window.onload = () => {
+    
+    // ==========================================================
+// ===== YENİ EKLENEN RASTGELE ARKA PLAN KODU BAŞLANGIÇ =====
+// ==========================================================
+const backgroundImages = [
+    // ADIM 1'DE HAZIRLADIĞINIZ LİNKLERİ BURAYA YAPIŞTIRIN
+    // Her link tırnak içinde olmalı ve aralarında virgül bulunmalıdır.
+    'https://i.imgur.com/M8S6SXQ.jpeg',
+    'https://i.imgur.com/UMf17xI.jpeg',
+'https://i.imgur.com/XvzShqB.jpeg',
+'https://i.imgur.com/YRIuTSl.jpeg',
+'https://i.imgur.com/e6hKqBu.jpeg',
+'https://i.imgur.com/S9d9bOt.jpeg',
+'https://i.imgur.com/0jYd2bh.jpeg',
+'https://i.imgur.com/cQsvGAx.jpeg',
+'https://i.imgur.com/LVFwrT8.jpeg',
+'https://i.imgur.com/zvZsfh9.jpeg',
+'https://i.imgur.com/GGDnUjb.jpeg',
+'https://i.imgur.com/2MBjkHh.jpeg',
+'https://i.imgur.com/pS4PSv3.jpeg',
+'https://i.imgur.com/hHNJpDY.jpeg',
+'https://i.imgur.com/uNAigYC.jpeg',
+'https://i.imgur.com/icYEp18.jpeg',
+'https://i.imgur.com/yzpauJs.jpeg',
+'https://i.imgur.com/p7Zswon.jpeg',
+'https://i.imgur.com/Kanbi0p.jpeg',
+'https://i.imgur.com/4t73bDk.jpeg',
+'https://i.imgur.com/fahZBuu.jpeg',
+'https://i.imgur.com/UIQ9MQE.jpeg',
+'https://i.imgur.com/2KNDrdV.jpeg',
+'https://i.imgur.com/PUd35pX.jpeg',
+'https://i.imgur.com/dgHhRwN.jpeg',
+'https://i.imgur.com/G7I8vEG.jpeg',
+'https://i.imgur.com/7b6uIUB.jpeg',
+'https://i.imgur.com/auHQZAc.jpeg',
+'https://i.imgur.com/WzUNBgH.jpeg',
+'https://i.imgur.com/05lFoP7.jpeg',
+'https://i.imgur.com/ym74wgx.jpeg',
+'https://i.imgur.com/zfgyory.jpeg',
+'https://i.imgur.com/v1JpcKE.jpeg',
+'https://i.imgur.com/ieD6TzR.jpeg',
+'https://i.imgur.com/MDYAR5u.jpeg',
+'https://i.imgur.com/mtIpEZt.jpeg',
+'https://i.imgur.com/uS1TNJq.jpeg',
+'https://i.imgur.com/f7HPJWi.jpeg',
+'https://i.imgur.com/q2fna7q.jpeg',
+'https://i.imgur.com/RAyGLzo.jpeg',
+'https://i.imgur.com/cejfSKo.jpeg',
+'https://i.imgur.com/pOUXdW9.jpeg',
+'https://i.imgur.com/7AQxiRm.jpeg',
+'https://i.imgur.com/tmMFTy0.jpeg',
+'https://i.imgur.com/VHDytEw.jpeg',
+'https://i.imgur.com/VRvCEPE.jpeg',
+'https://i.imgur.com/wtiodxy.jpeg',
+'https://i.imgur.com/rLa5ywn.jpeg',
+'https://i.imgur.com/BmJr8hB.jpeg',
+'https://i.imgur.com/6tQsLiL.jpeg',
+'https://i.imgur.com/CLT9Yia.jpeg',
+'https://i.imgur.com/kY9QPGn.jpeg',
+'https://i.imgur.com/CpVUsCC.jpeg',
+'https://i.imgur.com/glrMTMB.jpeg',
+'https://i.imgur.com/X7b49ig.jpeg',
+'https://i.imgur.com/lWKpyCd.jpeg',
+'https://i.imgur.com/Gzo5nMD.jpeg',
+'https://i.imgur.com/orM2eU6.jpeg',
+'https://i.imgur.com/XXKSZpu.jpeg',
+'https://i.imgur.com/uP6Twy0.jpeg',
+'https://i.imgur.com/nJO3n7g.jpeg',
+'https://i.imgur.com/3wckTPY.jpeg',
+'https://i.imgur.com/ufnjk0I.jpeg',
+'https://i.imgur.com/RwhvYFZ.jpeg',
+'https://i.imgur.com/S9Xhqhj.jpeg',
+'https://i.imgur.com/08VdbNT.jpeg',
+'https://i.imgur.com/TI2l2aJ.jpeg',
+'https://i.imgur.com/Zj8o7MF.jpeg',
+'https://i.imgur.com/8HXMzzo.jpeg',
+'https://i.imgur.com/tBtDxV2.jpeg',
+'https://i.imgur.com/cC5kkys.jpeg',
+'https://i.imgur.com/aXc2OPA.jpeg',
+];
+
+// Listeden rastgele bir resim seçme
+const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+const selectedImage = backgroundImages[randomIndex];
+
+// Seçilen resmi sayfanın arkaplanına uygulama
+document.body.style.setProperty('--bg-image', `url('${selectedImage}')`);
+// ========================================================
+// ===== YENİ EKLENEN RASTGELE ARKA PLAN KODU BİTİŞ =====
+// ========================================================
+    
     createCaseMenu();       // Kasaları hemen çiz
     // --- GÖREV 1: TEMEL DEĞİŞKENLER VE KURULUM ---
     let currentLanguage = localStorage.getItem('language') || 'tr';

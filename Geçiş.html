@@ -6,14 +6,45 @@
     <title>Giriş Yap - Kasa Simülatörü</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Önceki body stili silindi ve yerine bu yenisi eklendi */
         body {
             font-family: 'Inter', sans-serif;
-            background-image: url('https://i.imgur.com/f4SkInb.jpeg');
+            position: relative; /* Bu satır eklendi */
+            /* Arkaplan resminin ekranı kaplaması için gerekli stiller */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
+            
+
+            /* JavaScript çalışmazsa diye varsayılan koyu renk */
+            background-color: #111827;
         }
+
+        body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+
+    /* JavaScript'ten gelen resmi bu katmanın arkaplanı yap */
+    background-image: var(--bg-image);
+
+    /* Resim ayarları bu katmana taşındı */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* === BULANIKLIK AYARI BURADAN YAPILIR === */
+    /* 'blur()' içindeki değeri değiştirerek bulanıklığı ayarlayabilirsiniz. */
+    filter: blur(4px);
+
+    /* Yumuşak geçiş efekti bu katmana taşındı */
+    transition: background-image 0.7s ease-in-out;
+}
+
         .form-container {
             background-color: rgba(0, 0, 0, 0.45);
             backdrop-filter: blur(8px);
@@ -22,7 +53,7 @@
         }
     </style>
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-900">
+<body class="flex justify-center items-center h-screen">
 
     <div class="form-container w-full max-w-md p-8 rounded-2xl shadow-lg">
         <h1 class="text-4xl font-bold mb-6 text-white text-center">Welcome To The Case Simulator</h1>
@@ -53,73 +84,108 @@
         const message = document.getElementById('message');
 
         function getUsers() {
-            // localStorage'dan kullanıcıları al, eğer yoksa boş bir obje döndür.
             return JSON.parse(localStorage.getItem('simulator_users')) || {};
         }
 
         function saveUsers(users) {
-            // Kullanıcılar objesini localStorage'a kaydet.
             localStorage.setItem('simulator_users', JSON.stringify(users));
         }
 
         registerButton.addEventListener('click', () => {
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
-
             if (!username || !password) {
                 message.textContent = 'Kullanıcı adı ve şifre boş bırakılamaz!';
                 return;
             }
-
             const users = getUsers();
             if (users[username]) {
                 message.textContent = 'Bu kullanıcı adı zaten alınmış!';
                 return;
             }
-            
-            // Yeni kullanıcıyı varsayılan verilerle oluştur
             users[username] = {
-                password: password, // Gerçek bir projede şifre hash'lenmeli!
+                password: password,
                 balance: 30.00,
                 inventory: []
             };
-
             saveUsers(users);
             message.textContent = 'Kayıt başarılı! Yönlendiriliyor...';
-            
-            // Aktif kullanıcıyı oturum hafızasına kaydet ve yönlendir
             sessionStorage.setItem('active_user', username);
-            window.location.href = 'index.html';
+            window.location.href = 'simulator.html'; // Yönlendirme simulator.html'e yapılıyor
         });
 
         loginButton.addEventListener('click', () => {
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
-
             if (!username || !password) {
                 message.textContent = 'Kullanıcı adı ve şifre boş bırakılamaz!';
                 return;
             }
-
             const users = getUsers();
             const user = users[username];
-
             if (!user || user.password !== password) {
                 message.textContent = 'Kullanıcı adı veya şifre hatalı!';
                 return;
             }
-            
             message.textContent = 'Giriş başarılı! Yönlendiriliyor...';
-            // Aktif kullanıcıyı oturum hafızasına kaydet ve yönlendir
             sessionStorage.setItem('active_user', username);
-            window.location.href = 'index.html';
+            window.location.href = 'simulator.html'; // Yönlendirme simulator.html'e yapılıyor
         });
 
         guestButton.addEventListener('click', () => {
-            // Misafir kullanıcısı için özel bir anahtar kullan
             sessionStorage.setItem('active_user', 'guest');
-            window.location.href = 'index.html';
+            window.location.href = 'simulator.html'; // Yönlendirme simulator.html'e yapılıyor
         });
     </script>
+    
+    <script>
+        // Sayfa yüklendiğinde rastgele arkaplanı ayarla
+        window.onload = function() {
+            // Simulator.html'deki aynı resim listesini kullanıyoruz
+            const backgroundImages = [
+                'https://i.imgur.com/M8S6SXQ.jpeg', 'https://i.imgur.com/UMf17xI.jpeg',
+                'https://i.imgur.com/XvzShqB.jpeg', 'https://i.imgur.com/YRIuTSl.jpeg',
+                'https://i.imgur.com/e6hKqBu.jpeg', 'https://i.imgur.com/S9d9bOt.jpeg',
+                'https://i.imgur.com/0jYd2bh.jpeg', 'https://i.imgur.com/cQsvGAx.jpeg',
+                'https://i.imgur.com/LVFwrT8.jpeg', 'https://i.imgur.com/zvZsfh9.jpeg',
+                'https://i.imgur.com/GGDnUjb.jpeg', 'https://i.imgur.com/2MBjkHh.jpeg',
+                'https://i.imgur.com/pS4PSv3.jpeg', 'https://i.imgur.com/hHNJpDY.jpeg',
+                'https://i.imgur.com/uNAigYC.jpeg', 'https://i.imgur.com/icYEp18.jpeg',
+                'https://i.imgur.com/yzpauJs.jpeg', 'https://i.imgur.com/p7Zswon.jpeg',
+                'https://i.imgur.com/Kanbi0p.jpeg', 'https://i.imgur.com/4t73bDk.jpeg',
+                'https://i.imgur.com/fahZBuu.jpeg', 'https://i.imgur.com/UIQ9MQE.jpeg',
+                'https://i.imgur.com/2KNDrdV.jpeg', 'https://i.imgur.com/PUd35pX.jpeg',
+                'https://i.imgur.com/dgHhRwN.jpeg', 'https://i.imgur.com/G7I8vEG.jpeg',
+                'https://i.imgur.com/7b6uIUB.jpeg', 'https://i.imgur.com/auHQZAc.jpeg',
+                'https://i.imgur.com/WzUNBgH.jpeg', 'https://i.imgur.com/05lFoP7.jpeg',
+                'https://i.imgur.com/ym74wgx.jpeg', 'https://i.imgur.com/zfgyory.jpeg',
+                'https://i.imgur.com/v1JpcKE.jpeg', 'https://i.imgur.com/ieD6TzR.jpeg',
+                'https://i.imgur.com/MDYAR5u.jpeg', 'https://i.imgur.com/mtIpEZt.jpeg',
+                'https://i.imgur.com/uS1TNJq.jpeg', 'https://i.imgur.com/f7HPJWi.jpeg',
+                'https://i.imgur.com/q2fna7q.jpeg', 'https://i.imgur.com/RAyGLzo.jpeg',
+                'https://i.imgur.com/cejfSKo.jpeg', 'https://i.imgur.com/pOUXdW9.jpeg',
+                'https://i.imgur.com/7AQxiRm.jpeg', 'https://i.imgur.com/tmMFTy0.jpeg',
+                'https://i.imgur.com/VHDytEw.jpeg', 'https://i.imgur.com/VRvCEPE.jpeg',
+                'https://i.imgur.com/wtiodxy.jpeg', 'https://i.imgur.com/rLa5ywn.jpeg',
+                'https://i.imgur.com/BmJr8hB.jpeg', 'https://i.imgur.com/6tQsLiL.jpeg',
+                'https://i.imgur.com/CLT9Yia.jpeg', 'https://i.imgur.com/kY9QPGn.jpeg',
+                'https://i.imgur.com/CpVUsCC.jpeg', 'https://i.imgur.com/glrMTMB.jpeg',
+                'https://i.imgur.com/X7b49ig.jpeg', 'https://i.imgur.com/lWKpyCd.jpeg',
+                'https://i.imgur.com/Gzo5nMD.jpeg', 'https://i.imgur.com/orM2eU6.jpeg',
+                'https://i.imgur.com/XXKSZpu.jpeg', 'https://i.imgur.com/uP6Twy0.jpeg',
+                'https://i.imgur.com/nJO3n7g.jpeg', 'https://i.imgur.com/3wckTPY.jpeg',
+                'https://i.imgur.com/ufnjk0I.jpeg', 'https://i.imgur.com/RwhvYFZ.jpeg',
+                'https://i.imgur.com/S9Xhqhj.jpeg', 'https://i.imgur.com/08VdbNT.jpeg',
+                'https://i.imgur.com/TI2l2aJ.jpeg', 'https://i.imgur.com/Zj8o7MF.jpeg',
+                'https://i.imgur.com/8HXMzzo.jpeg', 'https://i.imgur.com/tBtDxV2.jpeg',
+                'https://i.imgur.com/cC5kkys.jpeg', 'https://i.imgur.com/aXc2OPA.jpeg'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+            const selectedImage = backgroundImages[randomIndex];
+            document.body.style.setProperty('--bg-image', `url('${selectedImage}')`);
+        };
+    </script>
+
 </body>
 </html>
