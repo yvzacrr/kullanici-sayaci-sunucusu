@@ -86,8 +86,6 @@
     transform: translate(-50%, -50%);
     width: 3px;
     height: 220px;
-    background: linear-gradient(to bottom, transparent, #a3e635, transparent);
-    box-shadow: 0 0 15px #a3e635, 0 0 25px #a3e635;
     z-index: 20;
     border-radius: 3px;
 }

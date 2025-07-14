@@ -19,7 +19,6 @@
     animation: fadeIn 0.4s ease-out; /* Animasyonla gelsinler */
 }
 
-
 /* Sağ sütundaki bilgilerin biraz aralıklı görünmesi için */
 .inspect-right .font-semibold {
     letter-spacing: 0.5px;
@@ -490,7 +489,12 @@
     color: #fff;
 }
 
-
+.case-open-header-actions {
+    display: inline-flex; 
+    align-items: center;
+    gap: 1rem; 
+    /* Kutu oluşturan arka plan, padding ve kenarlık stilleri kaldırıldı. */
+}
 
 /* Geri ve Aç butonları için ortak stil */
 .case-open-header .btn {
@@ -706,23 +710,42 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     /* İsteğe bağlı: Fotoğrafın etrafında bir gölge oluşturarak daha şık durmasını sağlar */
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5));
 } 
+   
+/* ========================================================== */
+/* ===== PİKSEL PİKSEL BUTON KONUM AYARI (MANUEL KONTROL) ===== */
+/* ========================================================== */
 
-/* ================================================================= */
-/* ===== HİZALAMA İÇİN EZİCİ KURAL - KESİN ÇÖZÜM ===== */
-/* ================================================================= */
-/* ===================================================================== */
-/* ===== BUTON HİZALAMASI İÇİN TEK VE DOĞRU KURAL (KESİN ÇÖZÜM) ===== */
-/* ===================================================================== */
+/* Ana buton kapsayıcısının temel ayarları */
 .case-open-header-actions {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start !important; /* !important ekleyerek garantiliyoruz */
+    position: relative; /* Manuel konumlandırma için bu gerekli */
+    display: flex; /* Geri butonu ve diğer grubu yan yana koyar */
     align-items: flex-start;
-    gap: 1.5rem;
 }
 
-   </style>
+/* SENİN KONTROL EDECEĞİN BÖLÜM BURASI */
+#manuel-kontrol-kutusu {
+    position: absolute; /* Kapsayıcısına göre konumlanacak */
+
+    /* Buradaki değerleri değiştirerek butonu ve fiyatı istediğin gibi kaydırabilirsin */
+    top: 0px;  /* Yukarıdan olan uzaklığı. 5px, 10px gibi değerler dene. */
+    left: 111px; /* Soldan olan uzaklığı. Burayı artırıp azaltarak sağa/sola çekebilirsin. */
+}
+
+/* ============================================== */
+/* ===== MANUEL SARI ÇUBUK STİLİ VE AYARLARI ===== */
+/* ============================================== */
+#manuel-sari-cubuk {
+    background-color: #FFD700; /* Düz, altın sarısı bir renk */
+    /* --- Konumlandırma Ayarları (Bunları değiştirme) --- */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* Şeritlerin arkasında, eski işaretçinin önünde kalması için */
+} 
+ 
+ </style>
 </head>
 
 
@@ -788,7 +811,8 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
     <div class="scene">
         <div id="reelsWrapper" class="reels-wrapper-new">
             </div>
-        <div class="reel-marker"></div>
+        <div id="manuel-sari-cubuk"></div>
+            <div class="reel-marker"></div>
         </div>
 
     
@@ -892,8 +916,7 @@ justify-content: space-between; /* Elemanların arasına boşluk dağıtır */
         </div>
     </div>
 </div>
- 
-
+        
 <script src="simulator-script.js?v=2" defer></script>
 <script src="case_opening_animation.js"></script>    
 
@@ -3732,11 +3755,6 @@ function createCaseMenu() {
 // simulator.html dosyasının içine, sildiğiniz eski fonksiyonun yerine bunu yapıştırın.
 
 // --- ESKİ selectCase FONKSİYONUNU SİLİP BUNU YAPIŞTIRIN ---
-// ===== YAPIŞTIRILACAK YENİ KOD BLOĞU =====
-// ===== YAPIŞTIRILACAK NİHAİ VE DOĞRU KOD =====
-// ===================================================================
-// ===== HİZALAMA SORUNUNU KESİN ÇÖZEN YENİ selectCase FONKSİYONU =====
-// ===================================================================
 function selectCase(caseData) {
     let currentLanguage = localStorage.getItem('language') || 'en';
     caseOpeningSection.innerHTML = '';
@@ -3793,10 +3811,14 @@ function selectCase(caseData) {
     leftColumn.appendChild(caseCountSelector);
 
     // Sağ Grup (Sadece Kasayı Aç ve Fiyat)
-    const unlockArea = document.createElement('div');
-    const unlockAndPriceRow = document.createElement('div');
-    unlockAndPriceRow.className = 'flex flex-row items-center gap-3';
-    
+ // --- YENİ MANUEL KONTROL SİSTEMİ ---
+
+    // 1. "Kasayı Aç" ve Fiyatı bir arada tutacak olan manuel kontrol kutusu
+    const manualControlWrapper = document.createElement('div');
+    manualControlWrapper.id = 'manuel-kontrol-kutusu'; // CSS ile kontrol etmek için özel ID
+    manualControlWrapper.className = 'flex flex-row items-center gap-3'; // İçindekiler yan yana dursun
+
+    // 2. Buton ve Fiyatı oluştur (bu kısım aynı)
     const unlockButton = document.createElement('button');
     unlockButton.className = 'btn unlock-btn';
     unlockButton.textContent = translations.unlockCaseButton[currentLanguage];
@@ -3806,13 +3828,13 @@ function selectCase(caseData) {
     priceText.className = 'price-text';
     const baseCasePrice = parseFloat(caseData.price.replace(/[^0-9.]/g, ''));
     priceText.textContent = `${baseCasePrice.toFixed(2)} $`;
-    
-    unlockAndPriceRow.append(unlockButton, priceText);
-    unlockArea.appendChild(unlockAndPriceRow);
 
-    // Ana kutuya grupları ekle
+    // 3. Buton ve fiyatı manuel kontrol kutusuna ekle
+    manualControlWrapper.append(unlockButton, priceText);
+
+    // 4. Ana kapsayıcıya sol grubu ve yeni manuel kutumuzu ekle
     actionsAndControls.appendChild(leftColumn);
-    actionsAndControls.appendChild(unlockArea);
+    actionsAndControls.appendChild(manualControlWrapper);
 
     
     controlsContainer.append(infoSide, actionsAndControls);
@@ -3826,69 +3848,85 @@ function selectCase(caseData) {
     showSection('opening');
     displayPossibleDrops(caseData.id);
 }
-// ===== YAPIŞTIRMA İŞLEMİ BURADA BİTİYOR =====
 
 
 // --- YENİ VE NİHAİ openCase FONKSİYONU ---
     // ESKİ openCase FONKSİYONUNU SİLİP BUNU YAPIŞTIRIN
    // --- ESKİ openCase FONKSİYONUNU SİLİP BUNU YAPIŞTIRIN ---
+// ===== YAPIŞTIRILACAK TEK VE DOĞRU openCase FONKSİYONU =====
+
+// ===== YAPIŞTIRILACAK TEK VE DOĞRU openCase FONKSİYONU =====
+
+// ===== YAPIŞTIRILACAK YENİ VE DOĞRU openCase FONKSİYONU =====
+
 async function openCase(unlockButtonElement) {
     if (!currentlySelectedCase) return;
 
     let currentLanguage = localStorage.getItem('language') || 'en';
 
-    // --- 1. Butonu ve Arayüzü Kilitle ---
+    // 1. Arayüzü Kilitle
     unlockButtonElement.disabled = true;
     unlockButtonElement.textContent = translations.unlockingButton[currentLanguage];
     document.getElementById('homeButton').style.pointerEvents = 'none';
     document.getElementById('inventoryButton').style.pointerEvents = 'none';
 
-    // --- 2. Gerekli Bilgileri ve Maliyeti Hesapla ---
+    // 2. Gerekli Bilgileri ve Maliyeti Hesapla
     const caseId = currentlySelectedCase.id;
     const caseCount = numberOfCasesToOpen;
     const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
-    const totalCost = casePrice * caseCount;
-
-    // --- 3. Bakiye ve İstatistikleri Güncelle ---
-    userBalance -= totalCost;
+    userBalance -= casePrice * caseCount;
     userStats.openedCases[currentlySelectedCase.name] = (userStats.openedCases[currentlySelectedCase.name] || 0) + caseCount;
     updateBalanceDisplay();
 
-    // --- 4. Animasyonu Başlat ve Bitmesini Bekle ---
-    const openedItems = await runNewFullScreenAnimation(caseCount, caseId);
+    // 3. KAZANAN DESENLERİ ÖNCEDEN BELİRLE
+    const winningSkins = [];
+    for (let i = 0; i < caseCount; i++) {
+        winningSkins.push(getRandomSkin(caseId));
+    }
 
-    // --- 5. Animasyon Bitince Çalışacak Kodlar ---
+    // 4. Animasyonu, kazanan desenleri vererek başlat ve bitmesini bekle
+    const openedItems = await runNewFullScreenAnimation(caseCount, caseId, winningSkins);
+
+    // 5. Animasyondan sonuç döndükten sonra çalışacak kodlar
     if (openedItems && openedItems.length > 0) {
+        // BAŞARILI DURUM:
 
-        // Kazanılanları envantere ve istatistiklere ekle
+        // a. Kazanılanları envantere ekle ve veriyi kaydet
         openedItems.forEach(skin => {
             userInventory.push(skin);
             userStats.rarityCounts[skin.rarity] = (userStats.rarityCounts[skin.rarity] || 0) + 1;
+            skin.caseOrigin = currentlySelectedCase.name;
         });
         saveUserData();
 
-        // Sonuç kartındaki "Devam Et" butonuna tıklama olayını ayarla
-        const continueBtn = document.getElementById('continueButton');
-        continueBtn.onclick = () => {
-            const overlay = document.getElementById('fullScreenAnimationOverlay');
-            overlay.style.opacity = '0';
+        // b. Animasyon ekranını yavaşça gizle
+        const overlay = document.getElementById('fullScreenAnimationOverlay');
+        overlay.style.opacity = '0';
+        
+        // c. Ekran tamamen karardıktan sonra işlemleri yap
+        overlay.addEventListener('transitionend', () => {
+            overlay.style.display = 'none'; // Animasyon ekranını kaldır
 
-            // Overlay tamamen gizlenince ana arayüzü geri getir
-            overlay.addEventListener('transitionend', () => {
-                overlay.style.display = 'none';
-                unlockButtonElement.disabled = false;
-                unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
-                document.getElementById('homeButton').style.pointerEvents = 'auto';
-                document.getElementById('inventoryButton').style.pointerEvents = 'auto';
+            // d. Butonları tekrar kullanılabilir yap
+            unlockButtonElement.disabled = false;
+            unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
+            document.getElementById('homeButton').style.pointerEvents = 'auto';
+            document.getElementById('inventoryButton').style.pointerEvents = 'auto';
 
-                // Çoklu eşya gösterme modalını aç
-                showMultiItemModal(openedItems);
+            // e. ANA OLAY: Detaylı sonuç modalını göster!
+            showMultiItemModal(openedItems);
 
-            }, { once: true });
-        };
+        }, { once: true }); // Olayın sadece bir kere çalışmasını sağla
+
     } else {
-        // Bir hata olursa arayüzü başa sar
-        console.error("Animasyon bir sonuç döndürmedi.");
+        // BAŞARISIZ DURUM (Animasyondan sonuç gelmezse):
+        console.error("Animasyon bir sonuç döndürmedi, arayüz sıfırlanıyor.");
+        
+        unlockButtonElement.disabled = false;
+        unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
+        document.getElementById('homeButton').style.pointerEvents = 'auto';
+        document.getElementById('inventoryButton').style.pointerEvents = 'auto';
+        
         resetToMenu();
     }
 }
@@ -4130,71 +4168,77 @@ function displayPossibleDrops(caseId) {
 
 // MEVCUT openCase FONKSİYONUNU SİL VE BU NİHAİ VERSİYONU YAPIŞTIR
 
-// --- YENİ VE NİHAİ openCase FONKSİYONU ---
-async function openCase() {
-    // Gerekli değişkenleri al
+// ===== YAPIŞTIRILACAK TEK VE DOĞRU openCase FONKSİYONU =====
+
+async function openCase(unlockButtonElement) {
     if (!currentlySelectedCase) return;
+
+    let currentLanguage = localStorage.getItem('language') || 'en';
+
+    // 1. Arayüzü Kilitle
+    unlockButtonElement.disabled = true;
+    unlockButtonElement.textContent = translations.unlockingButton[currentLanguage];
+    document.getElementById('homeButton').style.pointerEvents = 'none';
+    document.getElementById('inventoryButton').style.pointerEvents = 'none';
+
+    // 2. Gerekli Bilgileri ve Maliyeti Hesapla
     const caseId = currentlySelectedCase.id;
     const caseCount = numberOfCasesToOpen;
+    const casePrice = parseFloat(currentlySelectedCase.price.replace(/[^0-9.]/g, ''));
+    userBalance -= casePrice * caseCount;
+    userStats.openedCases[currentlySelectedCase.name] = (userStats.openedCases[currentlySelectedCase.name] || 0) + caseCount;
+    updateBalanceDisplay();
 
-    // Arayüzü animasyona hazırla
-    const overlay = document.getElementById('fullScreenAnimationOverlay');
-    const mainContent = document.getElementById('mainContent');
-    const faqSection = document.getElementById('faqSection');
-    const resultPlaque = document.getElementById('animationResultPlaque');
+    // 3. KAZANAN DESENLERİ ÖNCEDEN BELİRLE
+    const winningSkins = [];
+    for (let i = 0; i < caseCount; i++) {
+        winningSkins.push(getRandomSkin(caseId));
+    }
 
-    // Her şeyi gizle, animasyon sahnesini göster
-    mainContent.style.display = 'none';
-    faqSection.style.display = 'none';
-    overlay.classList.remove('hidden');
-    setTimeout(() => overlay.style.opacity = '1', 10); // CSS geçişi için küçük gecikme
+    // 4. Animasyonu, kazanan desenleri vererek başlat ve bitmesini bekle
+    const openedItems = await runNewFullScreenAnimation(caseCount, caseId, winningSkins);
 
-    // YENİ animasyon fonksiyonunu çağır ve bitmesini bekle
-    const openedItems = await runNewFullScreenAnimation(caseCount, caseId);
-
-    // Animasyon bitince, sonuçları işle
+    // 5. Animasyondan sonuç döndükten sonra çalışacak kodlar
     if (openedItems && openedItems.length > 0) {
-        // Envantere ekle, verileri kaydet
-        openedItems.forEach(skin => addToInventory(skin));
+        // BAŞARILI DURUM:
+
+        // a. Kazanılanları envantere ekle ve veriyi kaydet
+        openedItems.forEach(skin => {
+            userInventory.push(skin);
+            userStats.rarityCounts[skin.rarity] = (userStats.rarityCounts[skin.rarity] || 0) + 1;
+            skin.caseOrigin = currentlySelectedCase.name;
+        });
         saveUserData();
-        updateInventoryUI();
 
-        // Sonuç plakasını doldur
-        const lastItem = openedItems[openedItems.length - 1];
-        const rarityInfo = skinRarities[lastItem.rarity] || {};
-        const priceInfo = tumFiyatlar[lastItem.name] || {};
-        const wearPrice = priceInfo[lastItem.wear.name] || 'N/A';
+        // b. Animasyon ekranını yavaşça gizle
+        const overlay = document.getElementById('fullScreenAnimationOverlay');
+        overlay.style.opacity = '0';
         
-        resultPlaque.innerHTML = `
-            <h3 class="text-2xl font-bold ${rarityInfo.color}">${lastItem.name}</h3>
-            <p class="text-lg text-gray-300">${lastItem.wear.name}</p>
-            <p class="text-xl text-green-400 font-bold mt-2">${wearPrice}</p>
-            <div class="mt-4">
-                <button id="closeAnimationButton" class="btn back-btn">Kapat</button>
-            </div>
-        `;
-        
-        // Sonuç plakasını görünür yap
-        resultPlaque.classList.remove('hidden');
-        setTimeout(() => resultPlaque.classList.add('visible'), 10);
+        // c. Ekran tamamen karardıktan sonra işlemleri yap
+        overlay.addEventListener('transitionend', () => {
+            overlay.style.display = 'none'; // Animasyon ekranını kaldır
 
-        // Kapat butonuna tıklama olayı ekle
-document.getElementById('closeAnimationButton').onclick = () => {
-    overlay.style.opacity = '0';
-    // Animasyon sahnesi tamamen kaybolduktan sonra...
-    overlay.addEventListener('transitionend', () => {
-        // ...sahneyi ve sonuç plakasını tamamen gizle...
-        overlay.classList.add('hidden');
-        resultPlaque.classList.add('hidden');
-        resultPlaque.classList.remove('visible');
-        
-        // ...ve en önemlisi, ana içerik bölümlerini tekrar göster.
-        // Bu, seni ana menüye değil, en son baktığın kasanın ekranına döndürür.
-        mainContent.style.display = '';
-        faqSection.style.display = '';
+            // d. Butonları tekrar kullanılabilir yap
+            unlockButtonElement.disabled = false;
+            unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
+            document.getElementById('homeButton').style.pointerEvents = 'auto';
+            document.getElementById('inventoryButton').style.pointerEvents = 'auto';
 
-    }, { once: true });
-};
+            // e. ANA OLAY: Detaylı sonuç modalını göster!
+            showMultiItemModal(openedItems);
+
+        }, { once: true }); // Olayın sadece bir kere çalışmasını sağla
+
+    } else {
+        // BAŞARISIZ DURUM (Animasyondan sonuç gelmezse):
+        console.error("Animasyon bir sonuç döndürmedi, arayüz sıfırlanıyor.");
+        
+        unlockButtonElement.disabled = false;
+        unlockButtonElement.textContent = translations.unlockCaseButton[currentLanguage];
+        document.getElementById('homeButton').style.pointerEvents = 'auto';
+        document.getElementById('inventoryButton').style.pointerEvents = 'auto';
+        
+        resetToMenu();
     }
 }
 // ===== YENİ FONKSİYONUN SONU =====
